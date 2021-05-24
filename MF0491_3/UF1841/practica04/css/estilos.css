@@ -1,0 +1,353 @@
+@charset "utf-8";
+/* CSS Document
+
+/* Estilos Globales */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Arial, " sans-serif";
+    font-family: 'Roboto', " sans-serif";
+
+    width: 100%;
+    /*max-width: 1200px;
+    margin: 0 auto;  arriba y abajo / izquierda derecha(auto) sobre el width, si es el 100 no se ve resultado
+    border 1px solid black*/
+    margin: 0 auto;
+    border: 1px solid black;
+}
+html {
+    scroll-behavior: smooth;
+}
+p{
+    line-height: 1.3em;
+}
+/* Hasta aquí estilos comunes a las distintas prácticas */
+
+/* --------------------------------------------- HEADER ---------------------------------------------------*/
+header{
+    background-image: url(../img/cabecera-moviles.jpg);
+    background-size: cover;
+    background-position: left center;
+    height: 250px;
+}
+header .titulos{
+    display: flex; 
+    flex-direction: column; /*para que los elementos se alineen unos debajo del otro*/
+    justify-content: flex-end; /*alineacion horizontal, en la parte final del elemento*/
+    align-items: flex-end; /*alineación vertical con respecto al contenedor, en este caso header*/
+    color:white; /*todo lo que este dentro que sea blanco */
+    /*border: 1px solid red; /* para ver lo que ocupa*/
+    padding-top: 100px;
+}
+header .titulos h1{ /*elemento h1 dentro de titulos, tambien se podría poner '.titulos h1' */
+    font-size: 3.5em; /*tres veces mñas el tamaño que tiene*/
+    margin: 0px;
+    padding: 0px;
+    /* efectos de sombreadohttps://www.w3schools.com/css/css3_shadows.asp*/
+    /* se pueden meter varios efectos de sombras, 1, 2, 3, en nuestro caso ponemos una sombra*/    
+    text-shadow: 2px 2px 4px #000000;
+}
+header .titulos h3{
+    font-size: 1.5em;
+    margin: 0px;
+    padding: 0px;
+    /* efectos de sombreadohttps://www.w3schools.com/css/css3_shadows.asp*/
+    /* se pueden meter varios efectos de sombras, 1, 2, 3, en nuestro caso ponemos una sombra*/
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* --------------------------------------------- Menu ---------------------------------------------------*/
+nav {
+    background-color: black;
+    /*height: 150px;*/
+}
+nav .navbar {
+    /* Para hacerlo con float tenemos que usar la siguiente propiedad para que no se desborde
+    overflow:  hidden; */
+    /*podemos ver si se desborda o no poniendo un borde temporalmente(algo asi como debug css
+    border: 3px solid red; */
+    display: flex; /*despliegue en línea*/
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; /* alinea vertical , no se aprecia si el menu nav anterior no tiene una altura(height) */
+}
+/* las <a href> son elementos en línea */
+nav .navbar a{
+    /*float: left;*/
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+}
+nav .navbar a:hover{ /* encima del enlace */
+    background-color: red;
+}
+
+/* ------------------------------------------- Section 1--------------------------------------------------*/
+section > h2 {
+    text-align: center;
+    color: white;
+    background-color: #146aa7;
+    padding: 10px;
+    margin: 0;
+}
+
+.divSection1{
+    display:flex; /* por defecto es row, y nowrap, se pone en el elemento padre */
+}
+.divSection1 article {
+    width: 33.33%;
+    padding: 10px;
+}
+
+.divSection1 > article > video { /* el > indica que es hijo directo */
+    width: 100%;
+}
+
+/* ------------------------------------------- Section 2--------------------------------------------------*/
+.divSection2 {
+    display: flex; /* por defecto es row, y nowrap, se pone en el elemento padre */
+    background-color: black;
+}
+.divSection2 .menu {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color: black;
+}
+.divSection2 .iframe {
+    width: 100%;
+    background-color: black;
+}
+.divSection2 .menu .ulMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.divSection2 .menu .ulMenu li {
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+.divSection2 .menu .ulMenu li:hover {
+    background-color: dodgerblue;
+}
+
+.divSection2 .menu .ulMenu a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ------------------------------------------- Section 3--------------------------------------------------*/
+
+picture {
+    background-color: black;
+}
+
+.divSection3 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin:0;
+}
+
+.iconChip {
+    position: absolute;
+    max-width: 65px;
+    max-height: 65px;
+    top: 12%;
+    left: 47%;
+}
+
+.divSection3 h1 {
+    position: absolute;
+    top: 35%;
+    color: white;
+    font-size: 4em;
+    align-self: center;
+    margin:0;
+}
+
+.divSection3 p {
+    position: absolute;
+    top: 55%;
+    color: white;
+    padding-top: 25px;
+    margin:0;
+    font-size: small;
+    align-self: center;
+    width: 50%;
+}
+
+button {
+    position: absolute;
+    top: 75%;
+    color: white;
+    width: 155px;
+    background-color: black;
+    padding: 9px 0 9px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    transition-duration: 0.4s;
+    border-radius: 25px;
+    border: 1px solid white;
+    align-self: center;
+  }
+    
+  .button:hover {
+    background-color: #146aa7;
+    color:black;
+  }
+  
+
+/* ------------------------------------------- Section 4--------------------------------------------------*/
+
+.divSection4 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ------------------------------------------- Footer--------------------------------------------------*/
+
+ul {
+    list-style-position: outside;
+    list-style-type: none ;
+    color: white;
+  }
+
+ul > li > ul {
+    padding: 0px 50px 0px 50px;
+}
+ul > li > ul > li {
+    font-size: small;
+}
+
+ul > li > ul > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+ul > li > ul > li > a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+ul > li > ul > li::before{
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    padding-left: 5px;
+    background-image: url('../img/icon-arrow.png');
+ }
+
+.piePagina {
+    background-image: url("../img/fondo-azul.jpg");
+}
+.enlacesPie {
+    display:flex;
+    padding: 10px 10px 10px 10px;
+}
+
+.acercaDe {
+    background-color: #146aa7;
+    padding-top: 10px;
+    text-align: center;
+    font-size: small;
+    color: white;
+    height: 35px;
+    width: 100%;
+}
+.acercaDe > a {
+    text-decoration: none;
+    color: white;
+}
+
+.facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .youtube {
+    background: #bb0000;
+    color: white;
+  }
+
+  /* BOTON SUBIR ARRIBA */
+
+.buttonUp {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    z-index: 1;
+  }
+  .buttonUp a {
+    font-size: 3em;
+    color: black;
+    text-decoration: none;
+  }
+  .buttonUp a:hover {
+    opacity: 0.8;
+  }
+
+/* -------------------------------------- Consulta de Medios --------------------------------------------*/
+
+/* Los siguientes elementos van ordenados en cascada de mayor a menor*/
+@media screen and (max-width:1200px){ /*cuando la resolución sea de 1200 o menos hacemos los siguientes ajustes*/
+    header .titulos h1{ /*elemento h1 dentro de titulos, tambien se podría poner '.titulos h1' */
+        font-size: 3em; /*tres veces mñas el tamaño que tiene*/
+    }
+}
+@media screen and (max-width:1000px){ /*cuando la resolución sea de 1000 o menos hacemos los siguientes ajustes*/
+    header .titulos h1{ /*elemento h1 dentro de titulos, tambien se podría poner '.titulos h1' */
+        font-size: 2.5em; /*tres veces mñas el tamaño que tiene*/
+    }
+}
+@media screen and (max-width:900px){ /*cuando la resolución sea de 900 o menos hacemos los siguientes ajustes*/
+    header .titulos {
+        padding-top: 50px;
+    }
+    header .titulos h1{ /*elemento h1 dentro de titulos, tambien se podría poner '.titulos h1' */
+        font-size: 2em; /*tres veces mñas el tamaño que tiene*/
+    }
+}
+@media screen and (max-width:600px){ /*cuando la resolución sea de 600 o menos hacemos los siguientes ajustes*/
+    header .titulos {
+        padding-top: 50px;
+    }
+    header .titulos h1{ /*elemento h1 dentro de titulos, tambien se podría poner '.titulos h1' */
+        font-size: 1.5em; /*tres veces mñas el tamaño que tiene*/
+    }
+}
+
+

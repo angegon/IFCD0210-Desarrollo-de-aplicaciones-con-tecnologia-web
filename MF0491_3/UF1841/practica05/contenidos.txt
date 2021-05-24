@@ -1,0 +1,44 @@
+Tipos de desarrollo de aplicaciones web más relevantes
+El desarrollo de aplicaciones web te permite tener una app que será accesible desde cualquier navegador en cualquier dispositivo. Además, al contrario de lo que sucede con las aplicaciones nativas, no requieren descarga.
+
+Home Search Contact Login
+
+Home Category Article
+
+Aplicaciones Web
+F1. Imagen Aplicación Web
+¿Qué es una aplicación web?
+Una aplicación web o web app es una versión de una página web que ha sido optimizada, normalmente por un equipo de desarrollo, para poder ser utilizada desde un teléfono móvil. Gracias a esto se adapta a cualquier dispositivo.
+
+Estas son 4 características de una aplicación web que te ayudarán a diferenciarlas de otros tipos de apps:
+
+Requieren un único desarrollo para cualquier dispositivo. Un mismo desarrollo en HTML5 es suficiente para cualquier sistema operativo.
+No es necesario descargarlas. La aplicación se aloja en un servidor y se accede a ella a partir de un navegador. Esto significa que es necesario estar conectado para acceder a ella.
+Son accesibles desde cualquier navegador. Si tienes un navegador instalado en el dispositivo (Firefox, Safari, Chrome…) podrás acceder a la aplicación web.
+Aparecen como resultado en los buscadores tradicionales. Al no necesitar descarga no las encontrarás en las app stores, pero sí aparecerán como resultado en motores como Google.
+Aunque las aplicaciones nativas permiten desarrollos más complejos, también son más costosos y no siempre necesarios. La decisión dependerá del uso que se vaya a hacer de la aplicación.
+
+Ventajas y beneficios de las aplicaciones web
+Se ahorra tiempo: al ser apps de fácil gestión, se pueden realizar tareas sin tener que descargar o instalar programas adicionales.
+Se recuperan datos: la información puede ser recuperada desde cualquier dispositivo a través del nombre y la contraseña.
+Al contratar un servidor ajeno, las tareas y acciones del software no consumen recursos propios en tus sistemas.
+Es compatible con múltiples plataformas: solo necesitan contar con un navegador web.
+No hay virus: los datos que se guardan en el servidor de la app no se ven afectados por virus, gracias a sus sistemas de seguridad.
+Se actualiza de manera continua e inmediata.
+
+Leguajes de programación más utilizados
+
+TIOBE Index for April 2021
+Apr 2021	Apr 2020	Programming Language	Ratings	Change
+1	2	C	14.32%	-2.40%
+2	1	Java	11.23%	-5.49%
+3	3	Python	11.03%	+1.72%
+4	4	C++	7.14%	+0.36%
+5	5	C#	4.91%	+0.16%
+6	6	Visual Basic	4.55%	-0.18%
+7	7	JavaScript	2.44%	+0.06%
+8	14	Assembly language	2.32%	+1.16%
+9	8	PHP	1.84%	-0.54%
+10	9	SQL	1.83%	-0.34%
+    
+Aviso Legal | Política de privacidad | Política de Cookies

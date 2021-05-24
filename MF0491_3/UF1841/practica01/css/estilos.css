@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* width: 80%; */
+    margin: 0 auto;
+    /* border: 2px solid black; */
+    background-color: black;
+    max-width: 1200px;
+}
+header {
+    background-color: lightseagreen;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+header hr {
+    width: 50%;
+    border: 1px solid white;
+}
+nav {
+    background-color: #333333;
+    overflow: hidden;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    /* display: inline-block; */
+    /* border: 1px solid white; */
+    /* display: block;*/
+    float: left; 
+}
+nav a:hover {
+    background-color: #dddddd;
+    color: black;
+}
+nav a.active {
+    background-color: #666666;
+    color: white;
+}
+nav a.right {
+    float: right;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+section {
+    flex: 70%;
+    padding: 20px;
+    background-color: #ffffff;
+}
+aside {
+    flex: 250px;
+    padding: 20px;
+    background-color: #f1f1f1;
+}  
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+}
+footer {
+    background-color: #dddddd;
+    padding: 20px;
+    text-align: center;
+}
+.imagen {
+   background-color: rgb(170,170,170); 
+   width: 100%;
+   height: 200px;
+}
+.enlace {
+    text-decoration: none;
+    color: lightseagreen;
+    /* border: 2px solid lightseagreen;
+    padding: 5px 16px; */
+}
+.enlace:hover {
+    text-decoration: underline;
+    color: black;
+    /* background-color: lightseagreen; */
+}

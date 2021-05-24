@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<title>Operaciones de cálculo con JavaScript</title>
+
+<!-- Información sobre el documento web -->
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="description" content="Confección y publicación de páginas web">
+<meta name="author" content="Francisco">
+<meta name="generator" content="Visual Studio Code">
+	
+<!-- Etiquetas de adaptación del contenido -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- FAVICON (icono de favoritos)-->
+<link rel="icon" href="javascript.png" type="image/png">
+
+<!-- Enlace externo a un documento de estilos CSS -->
+<link rel="stylesheet" href="./css/estilos.css" type="text/css">
+	
+<!-- Enlace externo a un documento de funciones JavaScript -->
+<script src="./js/funciones.js"></script>
+	
+
+	
+</head>
+
+<body>
+<div class="container mt-3 mb-3">
+<h2>Operaciones de cálculo con JavaScript</h2>
+<hr>
+<div class="p-3 rounded mb-3" style="background-color: rgba(0,0,0,0.1)">
+<div class="col-12">
+<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+	<p><strong><em><u>Ejercicio 1: (Cálculo)</u></em><br>
+	  </strong><strong>Crear</strong>&nbsp;<strong>una función que calcule el sueldo neto mensual introduciendo el  salario bruto anual en un campo de formulario. Mostrar los datos desglosados  como se visualiza en una nómina.</strong><strong><br>
+	  </strong>(Seguridad Social = 6,4%), (IRPF = 15%), (pagas = 14), (fórmula: sueldo  mensual - (IRPF + Seguridad Social).</p>
+	<form id="form1" name="form1" method="post">
+	  <label for="number1">Introduce el sueldo bruto:</label><br>
+	  <input type="number" name="number1" id="number1">
+	  <input type="button" name="button1" id="button1" value="Enviar" onClick="sueldoNeto()">
+	</form>
+	<p id="etiqueta1"></p>
+</div>
+</div>
+	
+<div class="col-12">
+<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+	<p><strong><em><u>Ejercicio 2: (Cálculo)</u></em><br>
+	  </strong><strong>Crear</strong>&nbsp;<strong>una función que calcule el precio final de un producto aplicándole  un descuento y el impuesto fijo. Mostrar los datos desglosados como se  visualizan en un ticket de compra.</strong><strong><br>
+	  </strong>(Ejemplo: precio = 50€, Descuento -20%, Impuesto +21%).</p>
+	<form id="form2" name="form2" method="post">
+	  <label for="number2">Introduce el precio del producto:</label><br>
+	  <input type="number" name="number2" id="number2">
+	  <input type="button" name="button2" id="button2" value="Enviar" onClick="precioFinal()">
+	</form>
+	<p id="etiqueta2"></p>
+</div>
+</div>
+
+<div class="col-12">
+<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+	<p><strong><em><u>Ejercicio 3: (</u><strong><u>Extracción</u></strong><u>)</u></em></strong> <br>
+	  <strong>Crear una función que, al  introducir una dirección de correo electrónico en un campo de formulario extraiga  las 3 partes que forman la dirección de email &ldquo;correo@dominio.ext&rdquo;. Muestra de  forma individual el usuario, el dominio y la extensión en forma de lista  ordenada HTML, y muestra también la dirección concatenada.</strong></p>
+<form id="form3" name="form3" method="post">
+  <label for="text3">Introduce la dirección de correo </label>
+	  <br>
+	  <input type="text" name="text3" id="text3">
+	  <input type="button" name="button3" id="button3" value="Enviar" onClick="email()">
+	</form>
+	<p id="etiqueta3"></p>
+</div>
+</div>
+
+<div class="col-12">
+<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+	<p><strong><em><u>Ejercicio 4: (Análisis)</u></em></strong> <br>
+	  <strong>Crear una función que, al introducir una frase,  muestre la frase entre comillas, en mayúsculas, en minúsculas, al revés y con  la palabra &quot;Cita:&quot; al comienzo de la frase. Representar el resultado  con saltos de línea.</strong></p>
+	<form id="form4" name="form4" method="post">
+	  <label for="number4">Introduce una frase:</label><br>
+	  <input type="text" name="number4" id="number4">
+	  <input type="button" name="button4" id="button4" value="Enviar" onClick="frase()">
+	</form>
+	<p id="etiqueta4"></p>
+</div>
+</div>
+
+<div class="col-12">
+<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+	<p><strong><em><u>Ejercicio 5: (Comparativa)</u></em><br>
+	</strong><strong>Crear una función que, introduciendo varios valores  numéricos separados por comas compare cuál es el número mayor, el menor, y  muestre el resultado de sumar los números. Representar los datos a través de en  una lista desordenada HTML.</strong></p>
+	<form id="form5" name="form5" method="post">
+	  <label for="number5">Introduce valores numéricos separados por comas</label><br>
+	  <input type="text" name="number5" id="number5">
+	  <input type="button" name="button5" id="button5" value="Enviar" onClick="comparativa()">
+	</form>
+	<p id="etiqueta5"></p>
+</div>
+</div>
+
+
+<div class="col-12">
+<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+	<p><strong><em><u>Ejercicio 6: (Listado)</u></em></strong><strong><br>
+	</strong><strong>Crear una función que, introduciendo un número del 1  al 10 muestre la tabla de multiplicar de ese número. Los datos deben ser  representados en forma de lista hacia abajo desde el 1 hasta el 10. Ejemplo: 2  x 5 = 10.</strong></p>
+	<form id="form6" name="form6" method="post">
+	  <label for="number6">Introduce un número</label><br>
+	  <input type="number" name="number6" id="number6">
+	  <input type="button" name="button6" id="button6" value="Enviar" onClick="tablaMultiplicar()">
+	</form>
+	<p id="etiqueta6"></p>
+</div>
+</div>
+
+<div class="col-12">
+	<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+		<p><strong><em><u>Ejercicio 7: (Objeto)</u></em></strong><br>
+		<strong>Crea una función que, introduciendo la frase "Juan tiene 50 años y está casado", extraiga el nombre, la edad y el estado y cree un objeto con esos valores. Mostrar los valores del "Objeto" en forma de tabla HTML con el nombre del campo y su valor.<br>
+		</strong><em><u>Representación del objeto</u>: var persona = {nombre: "Juan", edad: 50, estado: "casado"}</em>;</p>
+		<form id="form7" name="form7" method="post">
+		  <label for="text7">Introduce una frase</label><br>
+		  <input type="text7" name="number7" id="text7" value="Juan tiene 50 años y está casado">
+		  <input type="button" name="button7" id="button7" value="Enviar">
+		</form>
+		<p id="etiqueta7"></p>
+	</div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles</title>
+    <script>
+        function fInicio() {
+            document.getElementById("div_color").style.backgroundColor="green";
+            document.getElementById("div_color").style.color="white";
+        }
+        function fSereBueno() {
+            for(i = 0; i < 100; i++) {
+                document.getElementById("visor").innerHTML += i + ","; 
+            }
+            document.getElementById("visor").innerHTML += i;
+        }
+    </script>
+</head>
+<body onload="fInicio()">
+    <div id="div_color">
+        Lorem ipsum sit amet consectetur adipisicing elit. Ratione ad consequatur, odio quam, nos..
+    </div>
+    <input type="button" value="Sere bueno" onclick="fSereBueno()"/>
+    <div id="visor">
+
+    </div>
+    
+</body>
+</html>

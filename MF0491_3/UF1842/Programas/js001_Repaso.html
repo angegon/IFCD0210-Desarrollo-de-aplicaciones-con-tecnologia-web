@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><!-- Como interpreta los bytes que le llegan-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso de Javascript</title>
+    <script>
+        function fClick(){
+            //var nombre = prompt("Teclee su nombre: ")
+            //var texto = "Has pulsado en Controlar";
+            //texto = "hola";
+            var nombre = document.getElementById('nombre').value;
+            document.getElementById("nombre").style.color=("red");
+            document.getElementById("nombre").style.backgroundColor=("gray");
+
+            var apellidos = document.getElementById('apellidos').value;
+            document.getElementById("apellidos").style.color=("red");
+            document.getElementById("apellidos").style.backgroundColor=("gray");
+
+            document.getElementById("apellidos").value = "Apellido cambiado";
+            document.getElementById("apellidos").style.fontSize = "25px";
+            alert("Me has dicho que te llamas " + nombre + " " + apellidos);
+        }
+    </script>
+</head>
+<body>
+    Nombre:
+    <input type="text" id="nombre"/><br/>
+    Apellidos:
+    <input type="text" id="apellidos"/><br/>
+    <input type="button" value="Controlar" onclick="fClick()">
+</body>
+</html>

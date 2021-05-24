@@ -1,0 +1,323 @@
+@charset "utf-8";
+/* CSS Document
+
+/* Estilos Globales */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Arial, " sans-serif";
+    font-family: 'Roboto', " sans-serif";
+
+    width: 100%;
+    /*max-width: 1200px;
+    margin: 0 auto;  arriba y abajo / izquierda derecha(auto) sobre el width, si es el 100 no se ve resultado
+    border 1px solid black*/
+    margin: 0 auto;
+    border: 1px solid black;
+}
+html {
+    scroll-behavior: smooth;
+}
+p{
+    line-height: 1.3em;
+}
+/* Hasta aquí estilos comunes a las distintas prácticas */
+
+/* --------------------------------------------- HEADER ---------------------------------------------------*/
+header{
+    background-image: url(../img/fondo-cabecera.jpg);
+    background-size: cover;
+    background-position: left top;
+    height: 200px;
+}
+
+header .titulos{
+  display: flex; 
+  flex-direction: column; /*para que los elementos se alineen unos debajo del otro*/
+  justify-content: flex-end; /*alineacion horizontal, en la parte final del elemento*/
+  align-items: center; /*alineación vertical con respecto al contenedor, en este caso header*/
+  color:white; /*todo lo que este dentro que sea blanco */
+  /*border: 1px solid red; /* para ver lo que ocupa*/
+  padding-top: 80px;
+}
+
+header .titulos h1{ /*elemento h1 dentro de titulos, tambien se podría poner '.titulos h1' */
+  font-size: 3em; /*tres veces mñas el tamaño que tiene*/
+  margin: 0px;
+  padding: 0px;
+  /* efectos de sombreadohttps://www.w3schools.com/css/css3_shadows.asp*/
+  /* se pueden meter varios efectos de sombras, 1, 2, 3, en nuestro caso ponemos una sombra*/    
+  text-shadow: 2px 2px 4px #000000;
+  /*border: 1px solid red;*/ /*Lo usamos para ver dimensiones*/ 
+}
+header .titulos h4{
+  font-size: 1em;
+  margin: 5px;
+  padding: 0px;
+  /* efectos de sombreadohttps://www.w3schools.com/css/css3_shadows.asp*/
+  /* se pueden meter varios efectos de sombras, 1, 2, 3, en nuestro caso ponemos una sombra*/
+  text-shadow: 2px 2px 4px #000000;
+  /*border: 1px solid red;*/ /*Lo usamos para ver dimensiones*/ 
+}
+
+/* --------------------------------------------- MENU ---------------------------------------------------*/
+
+nav{
+  background-color: black;
+  margin: 0;
+}
+
+nav .navbar {
+  display: flex;
+  justify-content: center;
+}
+
+nav .navbar a {
+  font-size: 16px;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  margin: 0;
+}
+
+nav  .navbar a:hover {
+  background-color: teal;
+}
+
+/* ------------------------------------------- Section 1 --------------------------------------------------*/
+
+main section > h4 {
+  background-color: orange;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 7px;
+}
+
+main section .divSection1 {
+  display: flex;
+}
+
+main section .divSection1 article {
+  width: 25%;
+  padding: 5px;
+}
+
+main section .divSection1 > article > img { /* el > indica que es hijo directo */
+  width: 100%;
+}
+
+.divSection1 h4 { /* el > indica que es hijo directo */
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+main section .divSection1 > article .pAutor { /* el > indica que es hijo directo */
+  color: red;
+  font-size: small;
+}
+
+main section .divSection1 > article > p { /* el > indica que es hijo directo */
+  font-size: small;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.image {
+  display: block;
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 10;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  opacity: 0.5;
+  background-color: slategray;
+  transition: opacity 2s ease;
+  -webkit-transition: opacity 2s ease;
+  -moz-transition: opacity 2s ease;
+  -ms-transition: opacity 2s ease;
+  -o-transition: opacity 2s ease;
+  /* transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+  transition-delay: 1s; */
+}
+.container:hover .overlay {
+  opacity: 0.5;
+}
+.text {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+.checked {
+  color: orange;
+}
+
+
+/* ------------------------------------------- Section 2 --------------------------------------------------*/
+
+.divSection2 {
+  display: flex;
+  width: auto;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.divSection2 h4 { /* el > indica que es hijo directo */
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+/* ------------------------------------------- Section 3 --------------------------------------------------*/
+
+.divSection3 {
+  display: flex;
+  position: relative;
+  width: auto;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0%;
+  width: 40%;
+  padding: 10px;
+}
+.container4 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 40%;
+  width: 40%;
+  padding: 10px;
+}
+
+.divSection3 h4 { /* el > indica que es hijo directo */
+  color: cornflowerblue;
+  font-weight: bold;
+}
+/* ------------- Sub Section 3 Aside------------*/
+.divSection3_aside {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  left: 80%;
+  width: 20%;
+  padding: 10px;  
+}
+.divSection3_aside_intra {
+  display: flex ;
+  flex-direction: row;
+  height: 25%;
+  margin: 5px;
+}
+
+.divSection3_aside h4 { /* el > indica que es hijo directo */
+  color: cornflowerblue;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.image_aside {
+  display: block;
+  width: 50%;
+}
+
+
+/* ------------------------------------------- Footer  ----------------------------------------------------*/
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  text-align: center;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1;  
+  bottom: -10px;
+  width: 100%;
+}
+
+.acercas {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+.icon-bar a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 16px;
+  width: 50px;
+}
+.icon-bar a:hover {
+  opacity: 0.8;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+/* BOTON SUBIR ARRIBA */
+
+.buttonUp {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  z-index: 1;
+}
+.buttonUp a {
+  font-size: 3em;
+  color: black;
+  text-decoration: none;
+}
+.buttonUp a:hover {
+  opacity: 0.8;
+}

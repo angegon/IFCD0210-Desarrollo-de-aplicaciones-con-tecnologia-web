@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+    <script>
+        function fCalcular(){
+            // Imprimir en el div 'aprobado' o 'suspenso' 
+            var nota = document.getElementById("nota").value;
+            if (nota < 0 || nota > 10 || isNaN(nota)){
+                document.getElementById("visor").innerHTML = "Nota incorrecta. Valores entre 0 y 10.";
+                document.getElementById("visor").style.backgroundColor = "orange";
+                return;
+            }
+            else if (nota >= 5 && nota <= 10){
+                document.getElementById("visor").innerHTML = "Has aprobado";
+                document.getElementById("visor").style.backgroundColor = "green";
+                return;
+            }
+            else if (nota < 5 && nota >= 0){
+                document.getElementById("visor").innerHTML = "Has suspendido";
+                document.getElementById("visor").style.backgroundColor = "red";
+                return;
+            }
+        }
+    </script>
+</head>
+<body>
+    Nota:
+    <input type="text" name="nota" id="nota"/>
+    <input type="button" value="Calcular" onclick="fCalcular()"/>
+    <div id="visor">
+
+    </div>
+</body>
+</html>
