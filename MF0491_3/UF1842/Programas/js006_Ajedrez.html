@@ -5,15 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajedrez</title>
-    <script>
-        function fpintar() {
+    <style>
+        #principal{
             
+        }
+        #tablero{
+            background-color: green;
+            margin: 0 auto;
+        }
+        .casilla {
+            width: 100px;
+            height: 100px;
+            float: left;
+            cursor: pointer;
+        }
+        .negra{
+            background-color: black;
+            color: white;
+        }
+        .blanca{
+            background-color: white;
+            color: black;
+        }
+        .clear{
+            clear: both;
+        }
+        .rojo{
+            background-color: red;
+        }
+        .t14{
+            font-size: 20px; 
+            background-color: blue;
+        }
+    </style>
+    <script>
+        function fPintar(){
+            var tablero="";
+            // i marca la fila
+            for (i=0; i<8; i++){
+                // j marca las columnas
+                for (j=0; j<8; j++){
+                    var color_casilla;
+                    if ( (i+j) % 2 == 0){
+                        color_casilla = " blanca ";
+                    } else {
+                        color_casilla = " negra ";
+                    }
+                    var coordenada = i + "-" + j;
+                    tablero += "<div coor='" + coordenada + "' class='casilla " + color_casilla + "' onclick='fCasilla()'></div>";
+                }
+                tablero +="<div class='clear'></div>";
+            }
+            document.getElementById("tablero").innerHTML = tablero;
+        }
+        function fCasilla(){
+            alert("Has clicado en " + this.coor);
         }
     </script>
 </head>
 <body onload="fPintar()">
-    <div id="visor">
+    <input type="button" class="rojo t14" value="Prueba">
 
+    <div id="principal">
+        <div id="tablero"></div>
     </div>
 </body>
 </html>
