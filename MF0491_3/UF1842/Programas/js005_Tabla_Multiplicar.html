@@ -13,11 +13,52 @@
             }
             document.getElementById("visor").innerHTML = tablaMultiplicar;
         }
+        function fMultiplicarNumero() {
+            var numero = parseInt(document.getElementById("numero").value);
+            if (isNaN(numero))
+                document.getElementById("visor").innerHTML = "El número introducido no es correcto";
+            else {
+                tablaMultiplicar = "<h3> Tabla del " + numero + "</h3>";
+                for(i = 0;i <= 10; i++) {
+                    tablaMultiplicar += numero + " * " + i + " = " + (numero * i) + '<br>' ;
+                }
+                document.getElementById("visor").innerHTML = tablaMultiplicar;
+            }
+        }
+        function fMultiplicarNumeroLimites() {
+            var numero = parseInt(document.getElementById("numero1").value);
+            var desde = parseInt(document.getElementById("desde").value);
+            var hasta = parseInt(document.getElementById("hasta").value);
 
+            if (isNaN(numero) || isNaN(desde) || isNaN(hasta))
+                document.getElementById("visor").innerHTML = "El número introducido no es correcto";
+            else {
+                tablaMultiplicar = "<h3> Tabla del " + numero + "</h3>";
+                for(i = desde; i <= hasta; i++) {
+                    tablaMultiplicar += numero + " * " + i + " = " + (numero * i) + '<br>' ;
+                }
+                document.getElementById("visor").innerHTML = tablaMultiplicar;
+            }
+        }             
     </script>
 </head>
 <body>
-    <input type="button" value="Tabla de Multiplicar" onclick="fMultiplicar()"/>
+    <input type="button" value="Tabla de Multiplicar del 3" onclick="fMultiplicar()"/><br/>
+    <hr>    
+    <input type="text" id="numero">
+    <input type="button" value="Tabla de Multiplicar de un número" onclick="fMultiplicarNumero()"/><br>
+    <hr>
+    <h2>Tabla de multiplicar con limites:</h2>
+    Introduce para que numero quieres la tabla de Multiplicar: 
+    <input type="text" id="numero1"><br>
+    Introduce desde que valor quieres la tabla:
+    <input type="text" id="desde"><br>
+    Introduce hasta que valor quieres la tabla:
+    <input type="text" id="hasta"><br>
+    <input type="button" value="Tabla de Multiplicar de un número con límites" onclick="fMultiplicarNumeroLimites()"/>
+
+    <hr>
+    <h2>Resultado:</h2>
     <div id="visor">
 
     </div>

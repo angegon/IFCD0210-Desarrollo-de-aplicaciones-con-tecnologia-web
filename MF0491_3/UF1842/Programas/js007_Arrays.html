@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        ul, ol{
+            list-style;
+        }
+        li{
+
+        }
+    </style>
+    <script>
+        // Array conjunto de variables que se diferencian por su posición
+
+        /* Ambito de una variable:
+            Una variable es accesible por todos los elementos del mismo bloque.
+        */
+        var Nombres = ["Pepe", "Juan", "Ana" , "Eva" ]; 
+        var Frutas = new Array("Peras", "Naranjas" , "Uvas" , "Platanos" );     
+
+        function fListar() {
+
+            var TodosLosNombres = "";
+            var TodasLasFrutas = "";
+            for ( i = 0; i < Nombres.length ; i++) {
+                TodosLosNombres += i + " " + Nombres[i] + "<br/>"; 
+            }
+            document.getElementById("visor").innerHTML = TodosLosNombres;
+            for ( i = 0; i < Frutas.length ; i++) {
+                TodasLasFrutas += i + " " + Frutas[i] + "<br/>"; 
+            }
+            document.getElementById("visor").innerHTML += "<hr>" + TodasLasFrutas;            
+        }
+        function fTabla(){
+            var html = "";
+            html += "<table border='1'>";
+            html += "<tr><th>Posición</th><th>Fruta</th></tr>";
+            for ( i = 0; i < Frutas.length ; i++) {
+                html += "<tr><td>" + i + "</td><td>" + Frutas[i] + "</td></tr>"; 
+            }            
+            html += "</table>";
+            document.getElementById("visor1").innerHTML = html;            
+        }
+        function fLista() {
+            //Sacar todos los datos en formato lista
+            var html = "";
+            html += "<ul>";
+            for ( i = 0; i < Frutas.length ; i++) {
+                html += "<li>" + i + " " + Frutas[i] + "</li>"; 
+            }            
+            html += "</ul>";
+            document.getElementById("visor2").innerHTML = html;  
+        }
+        function fSeleccion() {
+            var html = "";
+            for (i = 0; i < Frutas.length; i++) {
+                html += Frutas[i] + "<input type='radio' name='fruta' value='" + Frutas[i] + "' />";
+            }
+            document.getElementById("visor3").innerHTML = html;              
+        }
+
+        function fSeleccionExcluyente() {
+            var html = "";
+            for (i = 0; i < Frutas.length; i++) {
+                html += Frutas[i] + "<input type='checkbox' value='" + Frutas[i] + "' />";
+            }
+            document.getElementById("visor4").innerHTML = html;  
+        }
+
+        function fSeleccionCombo() {
+            var html = "<select>";
+            for (i = 0; i < Frutas.length; i++) {
+                html +=  "<option value='" + Frutas[i] + "'>" + Frutas[i]  + "</option>/>";
+            }
+            html += "</select>";            
+            document.getElementById("visor5").innerHTML = html;  
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Listar" onclick="fListar()">
+    <h3>Array de Nombres y Frutas</h3>
+    <div id="visor">
+
+    </div>
+    <hr>
+    <input type="button" value="Listar en formato tabla" onclick="fTabla()">
+    <h3>Array en formato tabla</h3>
+    <div id="visor1">
+
+    </div>
+    <hr>
+    <input type="button" value="Listar en formato lista" onclick="fLista()">
+    <h3>Array en formato Lista</h3>
+    <div id="visor2">
+
+    </div>
+    <hr>
+    <input type="button" value="Listar en formato selección" onclick="fSeleccion()">
+    <h3>Array en formato Selección</h3>
+    <div id="visor3">
+
+    </div> 
+    <hr>
+    <input type="button" value="Listar en formato selección excluyente" onclick="fSeleccionExcluyente()">
+    <h3>Array en formato selección excluyente</h3>
+    <div id="visor4">
+
+    </div> 
+    <hr>
+    <input type="button" value="Listar en formato combo" onclick="fSeleccionCombo()">
+    <h3>Array en formato Combo</h3>
+    <div id="visor5">
+
+    </div>                         
+</body>
+</html>

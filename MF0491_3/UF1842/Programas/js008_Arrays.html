@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays push & unshift</title>
+    <script>
+        var lista = new Array();
+        function fAnadirNombreAlFinal() {
+            var nombre = document.getElementById("nombre").value;
+            lista.push(nombre);
+            imprimir();
+            document.getElementById("nombre").value = "";
+            document.getElementById("nombre").focus();
+        }
+        function fAnadirNombreAlPrincipio() {
+            var nombre = document.getElementById("nombre").value;
+            lista.unshift(nombre);
+            var html = "";
+            imprimir();
+            document.getElementById("nombre").value = "";
+            document.getElementById("nombre").focus();
+        }
+        function imprimir() {
+            var html = "";            
+            for (i = 0; i < lista.length; i++)
+            {
+                html += lista[i] + "</br>"
+            }
+            document.getElementById("visor").innerHTML = html;
+        }
+        function fBorrarPrimero() {
+            if (lista.length > 0)            
+                lista.shift();
+            else
+                alert("no hay nombres");
+            imprimir();
+        }
+        function fBorrarUltimo() {
+            if (lista.length > 0)
+                lista.pop();
+            else
+                alert("no hay nombres");                
+            imprimir();            
+        }
+    </script>
+</head>
+<body>
+    Nombre: 
+    <input type="text" id="nombre">
+    <input type="button" value="Añadir Nombre al final" onclick="fAnadirNombreAlFinal()">
+    <input type="button" value="Añadir Nombre al principio" onclick="fAnadirNombreAlPrincipio()">
+    <input type="button" value="Borrar Primero" onclick="fBorrarPrimero()">
+    <input type="button" value="Borrar último" onclick="fBorrarUltimo()">
+
+    <div id="visor">
+
+    </div>
+</body>
+</html>
