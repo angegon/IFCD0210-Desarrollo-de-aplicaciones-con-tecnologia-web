@@ -13,13 +13,23 @@
           temporal.push(document.getElementById("Producto").value);  
           temporal.push(document.getElementById("Precio").value);
           temporal.push(document.getElementById("Sección").value);
+
+          var vendedores = [];
+          vendedores.push("Ana");
+          vendedores.push("Eva");
+          temporal.push(vendedores);  
+
           lista.push(temporal);
           imprimir();
         }
         function imprimir() {
             var html = "";
             for (i = 0; i < lista.length; i++){
-                html += lista[i][0] + " - " + lista[i][1] + " - " + lista[i][2] + "</br>";
+                html += lista[i][0] + " - " + lista[i][1] + " - " + lista[i][2] + " - ";
+                for (j = 0; j < lista[i][3].length; j++) {
+                    html += " " + lista[i][3][j] ;
+                }
+                html += "<br>";
             }
             document.getElementById("visor").innerHTML = html;
         }
@@ -28,7 +38,7 @@
 <body>
     Producto <input type="text" id="Producto"><br>
     Precio <input type="text" id="Precio"><br>
-    Sección <input type="text" id="Sección"><br>
+    Sección <input type="text" id="Sección"><br>  
     <input type="button" value="Añadir artículo" onclick="fGuardar()">
     <div id="visor">
 
