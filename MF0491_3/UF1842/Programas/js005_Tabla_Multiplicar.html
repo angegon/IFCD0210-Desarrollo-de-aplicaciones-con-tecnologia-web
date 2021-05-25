@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+    <script>
+        function fMultiplicar() {
+            tablaMultiplicar = "<h3> Tabla del 3 </h3>";
+            for(i = 0;i <= 10; i++) {
+                tablaMultiplicar += 3 + " * " + i + " = " + (3 * i) + '<br>' ;
+            }
+            document.getElementById("visor").innerHTML = tablaMultiplicar;
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Tabla de Multiplicar" onclick="fMultiplicar()"/>
+    <div id="visor">
+
+    </div>
+</body>
+</html>

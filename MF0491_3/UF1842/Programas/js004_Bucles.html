@@ -6,26 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bucles</title>
     <script>
-        function fInicio() {
+        function fInicio(){
             document.getElementById("div_color").style.backgroundColor="green";
             document.getElementById("div_color").style.color="white";
-        }
-        function fSereBueno() {
-            for(i = 0; i < 100; i++) {
-                document.getElementById("visor").innerHTML += i + ","; 
+            // Generar 100 botones
+            var botonera = "";
+            for ( i=0; i<100; i++ ){
+                botonera += '<input type="button" value="' + (i+1) + '">';
             }
-            document.getElementById("visor").innerHTML += i;
+            document.getElementById("visor").innerHTML = botonera;
+        }
+        
+        function fSereBueno(){
+            /*
+                for ( valor inicio; condicion vida; incremento ){
+
+                } 
+            */
+            var resultado = "";
+            for ( i=0; i<50; i++ ){
+                resultado +=  (i + 1) + " Seré bueno<br/>";
+            }
+            document.getElementById("visor").innerHTML = resultado;
+        }
+        function fMultiplo7(){
+           var resultado = "";
+            
+           for ( i=7; i<1000; i+=7 ){
+                resultado +=  i + "<br/>";
+            }
+            document.getElementById("visor").innerHTML = resultado;
         }
     </script>
+
 </head>
 <body onload="fInicio()">
     <div id="div_color">
-        Lorem ipsum sit amet consectetur adipisicing elit. Ratione ad consequatur, odio quam, nos..
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ad consequatur, odio quam, nostrum expedita amet saepe laborum eaque cum at soluta? Nihil, tenetur doloribus unde blanditiis sed incidunt voluptates.
     </div>
-    <input type="button" value="Sere bueno" onclick="fSereBueno()"/>
-    <div id="visor">
+    <input type="button" value="Seré bueno" onclick="fSereBueno()"/>
+    <input type="button" value="Multiplos de 7 del 0 al 1000" onclick="fMultiplo7()"/>
 
-    </div>
-    
+    <div id="visor"></div>
 </body>
 </html>
