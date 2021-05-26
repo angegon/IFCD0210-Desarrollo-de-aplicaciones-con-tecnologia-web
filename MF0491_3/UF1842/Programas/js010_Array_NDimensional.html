@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array NDimensional</title>
+    <script>
+        var lista = new Array();
+        function fGuardar() {
+            // Validar datos de entrada
+            // Si son correctos los guarda e imprime, y sino muestra error
+            var producto = document.getElementById("producto").value;
+            var precio = document.getElementById("precio").value;
+            document.getElementById("tderror").innerHTML = "&nbsp;";
+            if (producto == "") {
+                document.getElementById("tderror").innerHTML = "Debe introducir un producto."
+                document.getElementById("producto").focus();
+                return;
+            }
+            if (precio == "" || isNaN(precio) || precio < 0) {
+                document.getElementById("tderror").innerHTML = "El precio es incorrecto."
+                document.getElementById("precio").focus();
+                return;
+            }
+            if (document.getElementById("p1").checked == false &&
+                document.getElementById("p2").checked == false &&
+                document.getElementById("p3").checked == false &&
+                document.getElementById("p4").checked == false &&
+                document.getElementById("p5").checked == false) {
+                document.getElementById("tderror").innerHTML = "No ha seleccionado ningún proveedor.";
+                return;
+            }                
+            document.getElementById("tderror").innerHTML = "Todos los datos introducidos son correctos."
+            + "</br> Puede introducir más datos si así lo desea.";
+
+            // Añadimos los datos
+            var datos_producto = new Array();
+            datos_producto.push(producto);
+            datos_producto.push(precio);
+            var datos_proveedor = [];
+            if (document.getElementById("p1").checked == true) {
+                datos_proveedor.push(document.getElementById("p1").value);
+            }
+            if (document.getElementById("p2").checked == true) {
+                datos_proveedor.push(document.getElementById("p2").value);
+            }
+            if (document.getElementById("p3").checked == true) {
+                datos_proveedor.push(document.getElementById("p3").value);
+            }
+            if (document.getElementById("p4").checked == true) {
+                datos_proveedor.push(document.getElementById("p4").value);
+            }
+            if (document.getElementById("p5").checked == true) {
+                datos_proveedor.push(document.getElementById("p5").value);
+            }                                                            
+            datos_producto.push(datos_proveedor);
+            lista.push(datos_producto);
+            //Mostramos datos
+            fImprimir();
+            //Limpiamos campos para siguientes usos.
+            fLimpiar();   
+        }
+
+        function fImprimir(){
+            var html = "";
+            html = "<h1>Lista de productos</h1>";
+            // Para cada producto de la lista
+            // Imprimir el producto
+            for(i = 0; i < lista.length; i++){
+                //Volcar nombre y precio de producto
+                html += lista[i][0] + " - " + lista[i][1] + " / ";
+                for (j = 0; j < lista[i][2].length; j++)
+                    html += " " + lista[i][2][j];
+                html += "<br/>";                    
+            }
+
+            document.getElementById("visor").innerHTML = html;
+        }
+
+        function fLimpiar(){
+            document.getElementById("p1").checked = false;
+            document.getElementById("p2").checked = false;
+            document.getElementById("p3").checked = false;
+            document.getElementById("p4").checked = false;
+            document.getElementById("p5").checked = false;
+            document.getElementById("producto").value = "";
+            document.getElementById("precio").value = "";           
+            document.getElementById("producto").focus(); 
+        }
+    </script>
+</head>
+<body>
+    <div id="div_principal">
+        <table border="1">
+            <tr>
+                <td>Producto</td>
+                <td>
+                    <input type="text" id="producto">
+                </td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td>
+                    <input type="text" id="precio">
+                </td>
+            </tr>
+            <tr>
+                <td>Proveedores</td>
+                <td>
+                    Proveedor 1 <input type="checkbox" id="p1" value="P1"><br/>
+                    Proveedor 2 <input type="checkbox" id="p2" value="P2"><br/>
+                    Proveedor 3 <input type="checkbox" id="p3" value="P3"><br/>
+                    Proveedor 4 <input type="checkbox" id="p4" value="P4"><br/>
+                    Proveedor 5 <input type="checkbox" id="p5" value="P5">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Añadir" onclick="fGuardar()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="tderror">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div id="visor">
+
+    </div>
+</body>
+</html>
