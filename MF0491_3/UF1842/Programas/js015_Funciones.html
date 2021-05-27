@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <script>
+        // Función: conjunto de instrucciones que resuelven un problema
+        //      Argumento o parámetro: Valor que necesita la función al que no tiene acceso
+        //                             Puede haber infinitos parámetos
+        //      Valor de retorno:      Cálculo que hace la función y devuelve con un return
+        //                             Solo puede haber uno o ningunp
+        function fSumadora( op1, op2 ){
+            var calculo= op1 + op2;
+            document.getElementById("visor").innerHTML = calculo;
+        }
+        function fCalculadora(operacion){
+            var calculo =0;
+            var op1 = parseInt(document.getElementById("op1").value);
+            var op2 = parseInt(document.getElementById("op2").value);
+
+            if (operacion == "+"){
+                calculo = op1 + op2;
+            }
+            if (operacion == "-"){
+                calculo = op1 - op2;
+            }
+            if (operacion == "*"){
+                calculo = op1 * op2;
+            }
+            if (operacion == "/"){
+                calculo = op1 / op2;
+            }
+            if (operacion == "%"){
+                calculo = op1 % op2;
+            }                        
+            document.getElementById("visor").innerHTML = calculo;
+        }
+    </script>
+</head>
+<body>
+    Op1 <input type="text" name="op1" id="op1">
+    Op2 <input type="text" name="op2" id="op2">
+    <input type="button" value="Sumadora" onclick="fSumadora( op1, op2)">
+    <input type="button" value="+" onclick="fCalculadora('+')">
+    <input type="button" value="-" onclick="fCalculadora('-')">
+    <input type="button" value="*" onclick="fCalculadora('*')">
+    <input type="button" value="/" onclick="fCalculadora('/')">
+    <input type="button" value="%" onclick="fCalculadora('%')">        
+    <div id="visor"></div>
+</body>
+</html>

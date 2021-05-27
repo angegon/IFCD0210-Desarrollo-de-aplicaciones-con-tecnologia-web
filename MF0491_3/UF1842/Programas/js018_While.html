@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+    <script>
+        // Pedir nombres y guardarlos hasta que el nombre sea 'fin'
+        // Cuando finalice, imprimir los nombres
+        var nombres = [];
+
+        function fPrograma(){
+            do {
+                var name = prompt("Teclee su nombre: ");
+                nombres.push(name);
+            } while (name != "fin");
+            var texto = "Lista de nombres \n";
+            for (i = 0; i < nombres.length - 1; i++){
+                texto += nombres[i] + "\r\n";
+            }
+            alert(texto);
+        }
+    </script>
+</head>
+<body onload="fPrograma()">
+    
+</body>
+</html>

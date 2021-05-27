@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con strings</title>
+    <script> 
+        function fFuncion(){
+            //Char at i, caracter que ocupa la posición i en el string
+            var html ="";
+            var texto_escrito = document.getElementById("texto").value;       
+            html += "<br/>Has escrito " + texto_escrito.length + " caracteres<br/>";
+            html += "El 2º caracater que has escrito es " + texto_escrito.charAt(1) +"<br/>";
+            html += "Su código es " + texto_escrito.charCodeAt(1) +"<br/>"; 
+            // indexOf devuelve la posicion donde se encuentra una subcadena
+            html += "Las letras La ocupan la posición " + texto_escrito.indexOf("La") + "<br/>";
+            html += "El último espacio esta en la posición " + texto_escrito.lastIndexOf(" ") + "<br/>";
+            html += "Comienza por AL? " + texto_escrito.startsWith("AL") + "<br/>";
+            html += "Acaba con cha? " + texto_escrito.endsWith("cha") + "<br/>";
+            html += "contiene lug? " + texto_escrito.includes("lug") + "<br/>";
+            // CSV (comma separated values)
+            var x ="pepe, ruiz, alvarez";
+            var campos = x.split(",");
+            html += "Los campos por separado son " + campos[0] + " - " + campos[1] + " - " + campos [2] + "<br/>";
+            html += "La cadena de caracteres desde el 2 al 8 es " + texto_escrito.slice(2,8) + "<br/>";
+            html += "La subcadena desde el 2 al 8 es " + texto_escrito.substring(2,8) + "<br/>";
+            html += "La subcadena desde el 2, 5 caracateres es " + texto_escrito.substr(2,8)+ "<br/>";
+            html += "El texto en mayusculas " + texto_escrito.toUpperCase()+ "<br/>";
+            html += "El texto en mayusculas " + texto_escrito.toLowerCase()+ "<br/>";
+
+            var alfa = "       pepe     ";
+            html += "El texto sin espacios es " + alfa.trim()+ "<br/>";
+            document.getElementById("visor").innerHTML += html;
+            //Sacar el texto letra a letra en vertical
+            for(i = 0; i < texto_escrito.length; i++){
+                html += texto_escrito.charAt(i).toUpperCase() + "<br/>";
+            }
+            document.getElementById("visor").innerHTML += html;
+        }
+    </script>
+</head>
+<body>
+    Texto: <input type="text" id="texto">
+    <input type="button" value="funcion" onclick=fFuncion()>
+    <di id="visor">
+
+    </div>
+</body>
+</html>

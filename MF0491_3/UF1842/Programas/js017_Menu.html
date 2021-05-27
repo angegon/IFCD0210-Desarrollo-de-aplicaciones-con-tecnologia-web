@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <script>
+        var enlaces = [ ["Google", "http://www.google.es"],
+                    ["El pais", "http://www.elpais.es"],
+                    ["El mundo", "http://www.elmundo.es"],
+                    ["Marca", "http://www.marca.com"]
+                    ];
+        function fEnlazar(url){
+            //document.location = url;
+            window.open(url, "_blank");
+        }
+        function fPintarMenu(){
+            var html = "<ul>";
+            for(i = 0; i < enlaces.length; i++){
+                var donde = "\"" + enlaces[i][1] + "\"";
+                html += "<li onclick='fEnlazar(" + donde + ")' style='cursor:pointer'>" + enlaces[i][0]+ "</li>";
+                //html += `<li><a href="${enlaces[i][1]}" target="_blank">${enlaces[i][0]}</a></li>`
+            }
+            html += "</ul>"
+            document.getElementById("menu").innerHTML += html;
+        }
+    </script>
+</head>
+<body onload="fPintarMenu()">
+    <div id="menu">
+
+    </div>
+</body>
+</html>

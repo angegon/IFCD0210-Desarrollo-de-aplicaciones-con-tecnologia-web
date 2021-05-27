@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo letra Dni</title>
+    <script>
+        var letra=['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
+        function fCalcular() {
+            var dni = parseInt(document.getElementById("dni").value);
+            if (dni == "" || isNaN(dni)) {
+                alert("Dni incorrecto")
+                return;
+            }
+            var resto = dni % 23;
+            fImprimirLetra(letra[resto]);
+            //alert("La letra que le corresponde es: " + letra[resto]);            
+        }
+        function fImprimirLetra(letra){
+            alert("La letra que le corresponde es: " + letra);            
+
+        }
+        function fComprueba(){
+            if (fCalculoletra() == true){
+                alert("La letra es correcta");
+            } else {
+                alert("La letra es incorrecta");
+            }
+
+        }
+        function fCalculoletra() {
+            var dni = parseInt(document.getElementById("dni").value);
+            var letra2 = document.getElementById("letra").value;
+            if (dni == "" || isNaN(dni)) {
+                alert("Dni incorrecto");
+                return;
+            }
+            var resto = dni % 23;
+            if (letra[resto] == letra2)
+                return true;
+            else
+                return false;      
+        }
+    </script>
+</head>
+<body>
+    Dni <input type="text"  id="dni"><br/>
+    Letra <input type="text" id="letra"/><br/>
+    <input type="button" value="Calcular Letra" onclick="fCalcular()">
+    <input type="button" value="Comprueba Letra" onclick="fComprueba()">
+
+    <div id="visor">
+
+    </div>
+</body>
+</html>

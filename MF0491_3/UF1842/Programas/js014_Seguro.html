@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguros ACME</title>
+    <script>
+        var conceptos = ["Todo Riesgo","Seguro Obligatorio","Terceros","Robo", "Lunas","Incendio"];
+        var precios = [200, 100, 50, 5, 3, 4];
+        var importe = 0;
+
+        function fCalcular(){
+            importe=0;
+            if ( document.getElementById("todo").checked == true ){
+                importe=200;
+            }
+            if ( document.getElementById("seguro_terceros").checked == true ){
+                var lista_checkbox = document.getElementsByClassName("concepto_terceros");
+                // Para cada checkbox
+                for (i=0; i<lista_checkbox.length; i++){
+                    // Si está marcado, incrementar importe
+                    if ( lista_checkbox[i].checked == true ){
+                        importe +=  precios[i+1];
+                    }
+                }
+            }
+            document.getElementById("visor").innerHTML = "Prima a pagar: " + importe;
+        }
+        function fOcultar(){
+            document.getElementById("div_terceros").style.display="none";
+            importe = 200;
+            document.getElementById("visor").innerHTML = "Importe : " + importe;
+        }
+        function fMostrar(){
+            document.getElementById("div_terceros").style.display="block";
+            document.getElementById("visor").innerHTML = "";
+        }
+        function fPreparar_formulario(){
+            var html="";
+            for (i=1; i<conceptos.length;i++){
+                html += conceptos[i];// +"<br/>";
+                html += "<input type='checkbox' class='concepto_terceros' onclick='fCalcular()'>" + "<br/>";
+            }
+            document.getElementById("div_terceros").innerHTML = html;
+        }
+    </script>
+</head>
+<body onload="fPreparar_formulario()">
+    <div id="ppal">
+        Todo Riesgo(200) <input type="radio" name="seguro" id="todo" onclick="fOcultar()"><br/>
+        Terceros(50) <input type="radio" name="seguro" id="seguro_terceros" onclick="fMostrar()"><br/>
+        <div id="div_terceros" style="display: none;">
+            
+        </div>
+    <div id="visor"></div>
+</body>
+</html>

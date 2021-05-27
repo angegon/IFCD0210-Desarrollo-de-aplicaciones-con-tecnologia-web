@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores Javascript</title>
+    <script>
+        function fVer(){
+            var listaPaises = document.getElementsByClassName("pais");
+            var html = "<h2> Listado de Paises seleccionados</h2>";
+            for (i = 0; i < listaPaises.length; i++) {
+                var objeto = listaPaises[i];
+                //alert(objeto.id + " - " + objeto.type + " - " +  objeto.value);
+                if (objeto.checked == true) {
+                    html += objeto.id + " - " + objeto.type + " - " +  objeto.value + "</br>";
+                }
+            }
+            document.getElementById("visor").innerHTML = html;
+        }
+        function fPonerRoja(){
+            var lista = document.getElementsByTagName("li");
+            for (i = 0; i < lista.length; i++){
+                lista[i].style.color = "red";
+                lista[i].style.fontSize = "20px";
+                lista[i].style.backgroundColor = "yellow";
+            }
+        }
+
+        function fCopiarObjeto() {
+            var lista = document.getElementsByTagName("li");
+            var hay_inicialmente = lista.length;
+
+            for (i = 0; i < hay_inicialment; i++){
+                var texto = "<li>" + lista[i].innerHTML + "</li>";
+                document.getElementById("ul").innerHTML += texto;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="ppal">
+        <h1>Lista de Países</h1>
+        <ul>
+            <li>
+                España <input type="checkbox" value="es" class="pais" id="p1" checked/>
+            </li>
+            <li>
+                Francia <input type="checkbox" value="fr" class="pais" id="p2" checked/>
+            </li>
+            <li>
+                Italia <input type="checkbox" value="it" class="pais" id="p3"/>
+            </li>
+            <li>
+                Inglaterra <input type="checkbox" value="en" class="pais" id="p4"/>
+            </li>
+            <li>
+                Alemania <input type="checkbox" value="de" class="pais" id="p5"/>
+            </li>
+            <li>
+                Portugal <input type="checkbox" value="pt" class="pais" id="p6"/>
+            </li>            
+        </ul>
+        <input type="button" value="Paises Seleccionados" onclick="fVer()">
+        <input type="button" value="Poner letra roja en li" onclick="fPonerRoja()">
+        <input type="button" value="Copiar Objeto" onclick="fCopiarObjeto()">        
+    </div>
+    <div id="visor">
+    </div>
+    <p id="p">Uno</p>
+</body>
+</html>
