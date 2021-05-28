@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Animate</title>
+    <style>
+        #div1 {
+            background-color: royalblue;
+            width: 400px;
+            height: 400px;
+            position: absolute;  /* Posicion absoluta respecto al body, relativa respecto al contenedor */      
+            left: 200px;
+            top: 200px;
+        }
+        p{
+            background-color: orange;
+            position: relative;  /* position relative respecto a su contendor*/
+            left: 30px;
+            top: 30px;
+        }
+
+    </style>
+    <!--Hola -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/js024.js"></script>
+</head>
+<body>
+    <h1>Animar</h1>
+    <div id="div1"> DIV 1
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia cumque est vel atque velit aperiam alias doloribus, consectetur, repudiandae pariatur error autem maxime perferendis unde voluptatibus adipisci sapiente optio! Molestias?</p>
+    </div>
+    <input id="B_Animar" type="button" value="Animate"/>
+    <input id="B_Mover_Horizontal" type="button" value="Mover horizontal"/>
+    <input id="B_Mover_Vertical" type="button" value="Mover Vertical"/>
+    <div id="externo">
+
+    </div>
+
+</body>
+</html>
