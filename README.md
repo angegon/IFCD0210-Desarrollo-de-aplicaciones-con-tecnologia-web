@@ -1,45 +1,76 @@
-Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
-590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, Css, Javascript, pho, mysql <a href=" https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank">Más info </a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página flexbox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/IFCD0210-Desarrollo-de-aplicaciones-con-tecnologia-web/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/360db1fee7.js"></script>
 
-<b>Ejercicios del curso:</b>
+    <script>
+        let arr = ['a', {b:'b'}, ['c', 'd'], {e:['f','g']}];
+        console.log(arr[0]);console.log(arr[2][0]);console.log(arr[3].e[1]);
 
-<a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank">--> Ejercicio js001_Repaso</a>
+        var array = [1,2,3,10];
+        var suma = 0; for (i = 0; i < array.length; i ++) {suma += array[i];} console.log(suma); 
 
-<b>Links interesantes:</b>
+         let coche = {
+             "marca":'honda', 
+             "motor":{
+                 "combustible":"gasolina",
+                 "consumo": 5,
+             }, 
+             "extras":{
+                 "0": 'radio',
+                 "1":'vaca',
+                 "2":'A/C',
+                },
+         };
+            console.log(coche); 
+        if (coche.marca === 'honda') {
+        console.log('viva los japos!');
+        }
+        if (coche.motor.combustible === 'gasolina') {
+        console.log('¿y sólo consume 5 litros a los 100km?');
+        }
+        if (coche.motor.consumo === 5) {
+        console.log('¿y sólo consume 5 litros a los 100km?');
+        }
+        if (coche.extras[2] === 'A/C') {
+        console.log('¿Venden el A/C como un extra?!');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="menu-navegacion contenedor">
+            <div class="logo">
+                <img src="imagenes/logo.jpg" alt="Foto de No disponible" id="logo">
+            </div>
+            <div class="logo_texto">
+                
+            </div>
 
-<b>HTML:</b>
+            <ul class="enlaces">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quien">Quien soy</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
 
---> <a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5</a><br>
---> <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"> Elementos semánticos</a><br>
---> <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" target="_blank"> Metodos get, post..</a><br>
---> <a href="https://www.w3schools.com/html/html_id.asp" target="_blank"> Id´s</a><br>
---> <a href="https://www.w3schools.com/html/html_classes.asp" target="_blank"> Clases </a><br>
---> <a href="https://www.w3schools.com/html/html_urlencode.asp" target="_blank"> URL Encode</a><br>
---> <a href="https://validator.w3.org/" target="_blank"> Validador html</a>
-
-<b>CSS:</b>
-
---> <a href="https://www.youtube.com/watch?v=OWKXEJN67FE" target="_blank"> Curso 1</a> <br>
---> <a href="https://www.youtube.com/watch?v=-k-w8JpTNwA&list=PLROIqh_5RZeDbvISffzihyxzqJBt_z3-Z" target="_blank"> Curso 2</a><br>
---> <a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_blank"> Box Model</a><br>
---> <a href="https://www.mclibre.org/consultar/htmlcss/html/html-entidades-nombres-lista.html" target="_blank"> Listas</a><br>
---> <a href="https://www.w3schools.com/css/css3_pagination.asp" target="_blank"> Paginación css</a><br>
---> <a href="https://www.w3schools.com/css/css3_flexbox_container.asp" target="_blank"> Contenedor Flexbox</a><br>
---> <a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank"> Conceptos Básicos de Flexbox</a><br>
---> <a href="https://fontawesome.com/" target="_blank"> fontawesome</a>
-
-<b>Links interesantes Javascript:</b>
-
---> <a href="https://www.w3schools.com/howto/howto_js_sidenav.asp" target="_blank"> Javascript sidenav</a><br>
---> <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank"> Primeros pasos en Javascript</a><br>
---> <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank"> Objetos en Javascript</a><br>
---> <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank"> Eventos del DOM</a><br>
-
-<b>Link fonts:</b>
-
---> <a href="https://fonts.google.com/" target="_blank"> Fonts gratis</a>
-
-<b>Images Gratuitas:</b>
-
---> <a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a>
-
+        </nav>
+        <section class="hero">
+            <div class="contenedor-textos contenedor">
+                <h1>Desarrollo web</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, non vel accusamus quasi blanditiis mollitia, saepe totam id adipisci beatae nostrum nulla repellat tenetur nihil obcaecati fuga porro! Perferendis, et.</p>
+                <a class="boton" href="#">Más info</a>
+            </div>
+        </section>
+    </header>
+</body>
+</html>
