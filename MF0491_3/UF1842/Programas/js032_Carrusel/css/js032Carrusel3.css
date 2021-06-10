@@ -1,0 +1,39 @@
+*{  /* Quitamos margenes*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.diapositivas {
+    position: relative;
+}
+.diapositivas > ul{
+    list-style: none;
+}
+
+#iconos  ul {
+    list-style: none;
+}
+#iconos  li{
+    display: inline-block;
+    margin-left: 20px;
+    color: black;
+}
+
+
+.fa-chevron-left, .fa-chevron-right{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.flechas {
+    position: relative;
+    z-index: 1;
+    top: 150px;
+    width: 886px;
+    display: flex;
+    align-items: center; /** Alineamos centro verticalmente*/
+    justify-content: space-between; /** Espacio entre medias */
+    visibility: hidden;
+}

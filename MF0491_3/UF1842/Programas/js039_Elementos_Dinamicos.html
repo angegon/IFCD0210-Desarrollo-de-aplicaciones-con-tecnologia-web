@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamiento de datos dinamicos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        td {
+            cursor: pointer;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        li{
+            background-color: salmon;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+            width: 100px;
+            height: 60px;
+            margin: 10px;
+            line-height: 60px;
+        }
+        li:hover{
+            background-color: lightsalmon;
+            color: black;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        var frutas = [ 
+                [1,"naranjas",1.0],
+                [2,"limones",1.5],
+                [3,"sandias",2.0],
+                [4,"melones",2.5],
+                [5,"plátanos",3]
+            ];
+        $(document).ready(function(){
+            $("#boton").on("click", function(){
+                var html="<table class='table table-hover table-bordered'>";
+                html += "<tr>";
+                html +="     <th>#ID</th>";
+                html +="     <th>Producto</th>";
+                html +="     <th>Precio</th>";
+                html += "</tr>";
+                for(i=0; i<frutas.length; i++){
+                    html += "<tr class='datos'>";
+                    html += "   <td>" + frutas[i][0] + "</td>";
+                    html += "   <td>" + frutas[i][1] + "</td>";
+                    html += "   <td>" + frutas[i][2] + "</td>";
+                    html += "</tr>";
+                }
+                html+="</table>";
+                $("#div_productos").html(html);
+            });
+            // Para controlar eventos sobre elementos dinamicos se usa
+            // el selector del elementos estático y la función on
+            // con 3 parámetros (evento, elemento dinámico, función)
+            $("#div_productos").on("click", ".datos", function(){
+                // $(this) --> #div_productos .datos seleccionada
+                // children("td") --> Vuelca todos los td de la fila seleccionada
+                // eq(0) --> Selecciona el primer td
+                // html() --> Saca el contenido del td(0)
+                var id = $(this).children("td").eq(0).html();
+                var producto = $(this).children("td").eq(1).html();
+                var precio = $(this).children("td").eq(2).html();
+                alert ( id + "-" + producto + "-" + precio );
+            });
+            $("#botonlista").on("click", function(){
+                var html="<ul>";
+                for(i=0; i<frutas.length; i++){
+                    html += "<li>" + frutas[i][1] + "</li>";
+                }
+                html+="</ul>";
+                $("#div_productos").html(html);
+            });
+            $("#div_productos").on("click", "li", function(){
+                alert ( $(this).html() );
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="boton">Generar tabla</button>
+    <button id="botonlista">Generar lista de productos</button>
+    <div id="div_productos"></div>
+</body>
+</html>

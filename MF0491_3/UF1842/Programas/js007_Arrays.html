@@ -7,115 +7,96 @@
     <title>Arrays</title>
     <style>
         ul, ol{
-            list-style;
+            list-style: none;
         }
         li{
-
+            width: 200px;
+            height: 50px;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 10px;
         }
     </style>
     <script>
-        // Array conjunto de variables que se diferencian por su posición
+        // Un array o tabla o vector o matriz o arreglo o lista es
+        // un conjunto de variables con el mismo nombre que se 
+        // diferencian por su posición
 
-        /* Ambito de una variable:
-            Una variable es accesible por todos los elementos del mismo bloque.
+        /*
+            Ambito de una variable
+            Una variable es accesible por todos los elementos del mismo bloque e inferiores
         */
-        var Nombres = ["Pepe", "Juan", "Ana" , "Eva" ]; 
-        var Frutas = new Array("Peras", "Naranjas" , "Uvas" , "Platanos" );     
+        var Nombres=["Pepe", "Juan", "Ana", "Eva","Anselmo", "Perico"];
+        var Frutas=new Array("Peras", "Naranjas", "Uvas", "Plátanos");
 
-        function fListar() {
+        function fListar(){
 
-            var TodosLosNombres = "";
-            var TodasLasFrutas = "";
-            for ( i = 0; i < Nombres.length ; i++) {
-                TodosLosNombres += i + " " + Nombres[i] + "<br/>"; 
+            //alert( Nombres[0] );
+            var resultado="";
+            for (i=0; i<Frutas.length; i++){
+                resultado += Frutas[i] + "<br/>";
             }
-            document.getElementById("visor").innerHTML = TodosLosNombres;
-            for ( i = 0; i < Frutas.length ; i++) {
-                TodasLasFrutas += i + " " + Frutas[i] + "<br/>"; 
-            }
-            document.getElementById("visor").innerHTML += "<hr>" + TodasLasFrutas;            
+            document.getElementById("visor").innerHTML = resultado;
         }
         function fTabla(){
-            var html = "";
-            html += "<table border='1'>";
-            html += "<tr><th>Posición</th><th>Fruta</th></tr>";
-            for ( i = 0; i < Frutas.length ; i++) {
-                html += "<tr><td>" + i + "</td><td>" + Frutas[i] + "</td></tr>"; 
-            }            
+            // Sacar los datos de la lista en formato table
+            var html="";
+            html += "<table>";
+            html += "<tr><th>Nombre</th></tr>";
+            for (i=0; i<Frutas.length; i++){
+                html += "<tr>";
+                html += "<td>" + Frutas[i] + "</td>";
+                html += "</tr>";
+            }
             html += "</table>";
-            document.getElementById("visor1").innerHTML = html;            
+            document.getElementById("visor").innerHTML = html;
         }
-        function fLista() {
-            //Sacar todos los datos en formato lista
-            var html = "";
-            html += "<ul>";
-            for ( i = 0; i < Frutas.length ; i++) {
-                html += "<li>" + i + " " + Frutas[i] + "</li>"; 
-            }            
+        function fLista(){
+            // Sacar los datos de la lista en formato table
+            var html="";
+            html += "<ul>";           
+            for (i=0; i<Frutas.length; i++){                
+                html += "<li>" + Frutas[i] + "</li>";
+            }
             html += "</ul>";
-            document.getElementById("visor2").innerHTML = html;  
+            document.getElementById("visor").innerHTML = html;
         }
-        function fSeleccion() {
-            var html = "";
-            for (i = 0; i < Frutas.length; i++) {
+        function fSeleccion(){
+            // Sacar los datos de la lista en formato radio (excluyente)
+            var html="";      
+            for (i=0; i<Frutas.length; i++){                
                 html += Frutas[i] + "<input type='radio' name='fruta' value='" + Frutas[i] + "' />";
             }
-            document.getElementById("visor3").innerHTML = html;              
+            document.getElementById("visor").innerHTML = html;
         }
-
-        function fSeleccionExcluyente() {
-            var html = "";
-            for (i = 0; i < Frutas.length; i++) {
+        function fSeleccionNoExcluyente(){
+            // Sacar los datos de la lista en formato radio (excluyente)
+            var html="";      
+            for (i=0; i<Frutas.length; i++){                
                 html += Frutas[i] + "<input type='checkbox' value='" + Frutas[i] + "' />";
             }
-            document.getElementById("visor4").innerHTML = html;  
+            document.getElementById("visor").innerHTML = html;
         }
-
-        function fSeleccionCombo() {
-            var html = "<select>";
-            for (i = 0; i < Frutas.length; i++) {
-                html +=  "<option value='" + Frutas[i] + "'>" + Frutas[i]  + "</option>/>";
+        function fSeleccionCombo(){
+            // Sacar los datos de la lista en formato radio (excluyente)
+            var html="<select>";      
+            for (i=0; i<Frutas.length; i++){                
+                html += "<option value='" + Frutas[i] + "'>" + Frutas[i] + "</option>";
             }
-            html += "</select>";            
-            document.getElementById("visor5").innerHTML = html;  
+            html += "</select>";
+            document.getElementById("visor").innerHTML = html;
         }
     </script>
 </head>
 <body>
     <input type="button" value="Listar" onclick="fListar()">
-    <h3>Array de Nombres y Frutas</h3>
-    <div id="visor">
-
-    </div>
-    <hr>
-    <input type="button" value="Listar en formato tabla" onclick="fTabla()">
-    <h3>Array en formato tabla</h3>
-    <div id="visor1">
-
-    </div>
-    <hr>
-    <input type="button" value="Listar en formato lista" onclick="fLista()">
-    <h3>Array en formato Lista</h3>
-    <div id="visor2">
-
-    </div>
-    <hr>
-    <input type="button" value="Listar en formato selección" onclick="fSeleccion()">
-    <h3>Array en formato Selección</h3>
-    <div id="visor3">
-
-    </div> 
-    <hr>
-    <input type="button" value="Listar en formato selección excluyente" onclick="fSeleccionExcluyente()">
-    <h3>Array en formato selección excluyente</h3>
-    <div id="visor4">
-
-    </div> 
-    <hr>
-    <input type="button" value="Listar en formato combo" onclick="fSeleccionCombo()">
-    <h3>Array en formato Combo</h3>
-    <div id="visor5">
-
-    </div>                         
+    <input type="button" value="Listar Tabla" onclick="fTabla()">
+    <input type="button" value="Listar formato Lista" onclick="fLista()">
+    <input type="button" value="Listar formato selección" onclick="fSeleccion()">
+    <input type="button" value="Listar formato múltiple" onclick="fSeleccionNoExcluyente()">
+    <input type="button" value="Listar formato combo" onclick="fSeleccionCombo()">
+    <div id="visor"></div>
 </body>
 </html>

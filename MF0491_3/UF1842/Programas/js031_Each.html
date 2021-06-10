@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            var valor = 1;
+            $("main > div").each( function (){
+                //$(this).html(valor++);
+                $(this).css("background-color", "rgb(100, 100, " + (valor * 30) + ")");
+            });
+            var texto="";
+            $("main a").each( function (){
+                var url = $(this).attr("href");
+                var pagina = $(this).html();
+                texto += "<a href = '" + url + "'>" + pagina + "</a><br/>"
+            });
+            //alert(texto);
+            $("#resumen_enlaces").html( texto );
+        });
+    </script>
+</head>
+<body>
+    <main class="contenedor">
+        <div><a href="http://www.google.es">GOOGLE</a></div>
+        <div><a href="http://www.marca.com">Marca</a></div>
+        <div><a href="http://www.elpais.es">El País</a></div>
+        <hr><hr><hr><hr>
+        <div id="resumen_enlaces"></div>
+    </main>
+</body>
+</html>

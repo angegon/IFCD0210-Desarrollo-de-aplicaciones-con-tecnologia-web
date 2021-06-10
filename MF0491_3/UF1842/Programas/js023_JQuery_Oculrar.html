@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        #div1, #div2 {
+            background-color: aliceblue;
+            width: 400px;
+            height: 300px;
+        }
+        .clase {
+            font-size: 40px;
+            color: purple;
+            height: 600px;
+        }
+        p{
+            width: 50%;
+            background-color: beige;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+           $("#boton_hide_ocultar").click( function (){
+               $("#div1").hide(3000);
+           } );
+           $("#boton_show_mostrar").click( function (){
+                $("#div1").show(3000);
+           } );
+           $("#boton_show_toggle").click( function (){
+                $("#div1").toggle(3000);
+           } );
+           $("#boton_slideUp_ocultar").click( function (){
+                $("#div1").slideUp(3000);
+           } );
+           $("#boton_slideDown_mostrar").click( function (){
+                $("#div1").slideDown(3000);
+           } );
+           $("#boton_slideToggle_mostrar").click( function (){
+                $("#div1").slideToggle(3000);
+           } );
+           $("#boton_fadeOut_ocultar").click( function (){
+                $("#div1").fadeOut(3000);
+           } );
+           $("#boton_fadeIn_mostrar").click( function (){
+                $("#div1").fadeIn(3000);
+           } );
+           $("#boton_fadeToggle").click( function (){
+                $("#div1").fadeToggle(3000, function(){
+                    alert("Acabé");
+                });
+           } );
+        });
+    </script>
+</head>
+<body>
+    <h1>Ocultar/Mostrar</h1>
+    
+    <div id="div1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita nobis, ipsum omnis obcaecati ab animi rerum est repellat debitis, corrupti quia soluta. Qui necessitatibus eveniet sit, ratione rem sapiente.
+    </div>
+    
+    <input id="boton_hide_ocultar" type="button" value="Hide"/>
+    <input id="boton_show_mostrar" type="button" value="Show"/>
+    <input id="boton_show_toggle" type="button" value="Toggle"/>
+    <input id="boton_slideUp_ocultar" type="button" value="SlideUp"/>
+    <input id="boton_slideDown_mostrar" type="button" value="SlideDown"/>
+    <input id="boton_slideToggle_mostrar" type="button" value="SlideToggle"/>
+    <input id="boton_fadeOut_ocultar" type="button" value="FadeOut"/>
+    <input id="boton_fadeIn_mostrar" type="button" value="FadeIn"/>
+    <input id="boton_fadeToggle" type="button" value="FadeToggle"/>
+</body>
+</html>

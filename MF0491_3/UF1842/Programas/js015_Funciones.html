@@ -14,6 +14,7 @@
         function fSumadora( op1, op2 ){
             var calculo= op1 + op2;
             document.getElementById("visor").innerHTML = calculo;
+            alert("Buenos días");
         }
         function fCalculadora(operacion){
             var calculo =0;
@@ -34,7 +35,7 @@
             }
             if (operacion == "%"){
                 calculo = op1 % op2;
-            }                        
+            }
             document.getElementById("visor").innerHTML = calculo;
         }
     </script>
@@ -45,9 +46,9 @@
     <input type="button" value="Sumadora" onclick="fSumadora( op1, op2)">
     <input type="button" value="+" onclick="fCalculadora('+')">
     <input type="button" value="-" onclick="fCalculadora('-')">
-    <input type="button" value="*" onclick="fCalculadora('*')">
-    <input type="button" value="/" onclick="fCalculadora('/')">
-    <input type="button" value="%" onclick="fCalculadora('%')">        
+    <input type="button" value="-" onclick="fCalculadora('*')">
+    <input type="button" value="-" onclick="fCalculadora('/')">
+    <input type="button" value="-" onclick="fCalculadora('%')">
     <div id="visor"></div>
 </body>
 </html>

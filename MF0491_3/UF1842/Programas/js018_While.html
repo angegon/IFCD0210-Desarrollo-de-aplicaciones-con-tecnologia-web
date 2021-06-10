@@ -4,22 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>While</title>
+    <title>WHILE</title>
     <script>
         // Pedir nombres y guardarlos hasta que el nombre sea 'fin'
         // Cuando finalice, imprimir los nombres
         var nombres = [];
+        var valores = [ 2,4,6,8,10 ];
 
         function fPrograma(){
             do {
-                var name = prompt("Teclee su nombre: ");
-                nombres.push(name);
-            } while (name != "fin");
-            var texto = "Lista de nombres \n";
-            for (i = 0; i < nombres.length - 1; i++){
+                var name = prompt("Teclee nombre");
+                if (name.toLowerCase() != 'fin'){
+                    nombres.push( name.toUpperCase() );
+                }
+                
+            } while ( name.toLowerCase() != "fin" );
+            
+            var texto="Lista de nombres\r\n";
+            /*
+            for (i=0; i<nombres.length; i++){
                 texto += nombres[i] + "\r\n";
             }
+            */
+            var posicion=0;
+            while (posicion < nombres.length){
+                texto += nombres[posicion] + "\r\n";
+                posicion++;
+            }
             alert(texto);
+
+
+            // Ejemplo de acumulador
+            var total=0;
+            for (i=0; i<valores.length; i++){
+                total += valores[i];
+            }
+            console.log ("la suma es " + total);
         }
     </script>
 </head>

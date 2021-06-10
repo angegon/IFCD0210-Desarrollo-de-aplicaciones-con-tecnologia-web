@@ -4,34 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JQuery CSS</title>
+    <title>Jquery</title>
     <style>
         #div1, #div2 {
             background-color: aliceblue;
-            width: 100px;
-            height: 100px;
+            width: 400px;
+            height: 300px;
         }
         .clase {
             font-size: 40px;
             color: purple;
             height: 600px;
         }
-        p {
+        p{
             width: 50%;
             background-color: beige;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/js022.js"></script>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+           console.log ("El color de fondo de div1 es " + $("#div1").css("background-color") );
+           console.log ("El tamaño  de fuente de div1 es " + $("#div1").css("font-size") );
+           $("#div1").css("background-color","gray");
+           $("div").css("float","left");
+           $(".especial").css( { "font-size":"20px", "color":"red","width":"600px" } );
+
+           $("#pc").click( function(){
+               $("#div1").addClass("clase");
+           });
+
+           $("#qc").click( function(){
+               $("#div1").removeClass("clase");
+           });
+
+           $("#ic").click( function(){
+               $("#div1").toggleClass("clase");
+           });
+
+           $("p").attr("prueba","Esto es una prueba");
+           $("p").removeAttr("style");
+        });
+    </script>
 </head>
 <body>
     <h1>Contenidos</h1>
-    Json Javascript Object Notation
-    <div id="div1"> DIV 1</div>
-    <div id="div2" class="especial"> DIV 2</div>
-    <p class="especial">Parrafo</p>
+    JSON            Javascript Object Notation
+    <div id="div1">
+        DIV1
+    </div>
+    <div id="div2" class="especial">
+        DIV2
+    </div>
+    <p class="especial">Párrafo</p>
     <input id="pc" type="button" value="Poner clase a div1"/>
     <input id="qc" type="button" value="Quitar clase de div1"/>
-    <input id="ic" type="button" value="Intecambiar clase a div1"/>
+    <input id="ic" type="button" value="Intercambiar clase a div1"/>
 </body>
 </html>

@@ -1,0 +1,14 @@
+*{  /* Quitamos margenes*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.diapositivas > ul{
+    list-style: none;
+}
+.diapositivas img{
+    width: 100%;
+    position: absolute;
+}
+

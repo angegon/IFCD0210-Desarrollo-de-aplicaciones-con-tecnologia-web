@@ -4,58 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays push & unshift</title>
+    <title>Arrays</title>
     <script>
-        var lista = new Array();
-        function fAnadirNombreAlFinal() {
-            var nombre = document.getElementById("nombre").value;
-            lista.push(nombre);
-            imprimir();
-            document.getElementById("nombre").value = "";
+        var lista = new Array("Pepe", "Juan", "Ana");
+
+        function fAniadirFinal(){
+            lista.push( document.getElementById("nombre").value );
+            Imprimir();
+            document.getElementById("nombre").value ="";
             document.getElementById("nombre").focus();
         }
-        function fAnadirNombreAlPrincipio() {
+        function fAniadirPrincipio(){
             var nombre = document.getElementById("nombre").value;
             lista.unshift(nombre);
-            var html = "";
-            imprimir();
-            document.getElementById("nombre").value = "";
+            Imprimir();
+            document.getElementById("nombre").value ="";
             document.getElementById("nombre").focus();
         }
-        function imprimir() {
-            var html = "";            
-            for (i = 0; i < lista.length; i++)
-            {
-                html += lista[i] + "</br>"
+        function Imprimir(){
+            var html="";
+            for (i=0; i<lista.length; i++){
+                html += lista[i] + "<br/>";
             }
             document.getElementById("visor").innerHTML = html;
         }
-        function fBorrarPrimero() {
-            if (lista.length > 0)            
+        function fBorrarPrimero(){
+            if (lista.length>0){
                 lista.shift();
-            else
-                alert("no hay nombres");
-            imprimir();
+                Imprimir();
+            } else{
+                alert("No hay nombres");
+            }     
         }
-        function fBorrarUltimo() {
-            if (lista.length > 0)
+        function fBorrarUltimo(){
+            if (lista.length>0){
                 lista.pop();
-            else
-                alert("no hay nombres");                
-            imprimir();            
+                Imprimir();
+            }  else{
+                alert("No hay nombres");
+            }          
         }
     </script>
 </head>
 <body>
-    Nombre: 
-    <input type="text" id="nombre">
-    <input type="button" value="Añadir Nombre al final" onclick="fAnadirNombreAlFinal()">
-    <input type="button" value="Añadir Nombre al principio" onclick="fAnadirNombreAlPrincipio()">
+    Nombre <input type="text" id="nombre" />
+    <input type="button" value="Añadir Final" onclick="fAniadirFinal()">
+    <input type="button" value="Añadir Principio" onclick="fAniadirPrincipio()">
     <input type="button" value="Borrar Primero" onclick="fBorrarPrimero()">
-    <input type="button" value="Borrar último" onclick="fBorrarUltimo()">
-
-    <div id="visor">
-
-    </div>
+    <input type="button" value="Borrar Último" onclick="fBorrarUltimo()">
+    <div id="visor"></div>
 </body>
 </html>

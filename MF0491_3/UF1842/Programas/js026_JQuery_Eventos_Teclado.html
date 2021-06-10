@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JQuery Eventos de teclado</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/js026.js"></script>
+    <title>Selectores</title>
     <style>
-    </style>    
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready( function(){
+            $("#texto1").on("keydown",function(){
+                console.log("Has presionado tecla");
+            });
+            $("#texto1").on("keypress",function(event){
+                var permitidos ="ABCDE";
+                var letra = String.fromCharCode( event.charCode );
+                console.log("Procesando tecla " + letra + " - " + event.charCode);
+                if (permitidos.indexOf(letra) == -1){
+                    return false;
+                }
+                if (event.charCode >= 48 && event.charCode <= 57){
+                    return false;
+                }
+            });
+            $("#texto1").on("keyup",function(){
+                console.log("Has soltado la tecla");
+            });
+        } );
+    </script>
 </head>
 <body>
-    <h1>JQuery Eventos de teclado</h1>
-    keydown - Cuando Presiono la teclado
-    keypress - Cuando Proceso la tecla
-    keyUp - Cuando suelto esa tecla
-    Texto <input type="text"  id="texto1">
-
+    <h1>Eventos de teclado</h1>
+    keydown.- Cuando presiono la tecla<br>
+    keypress.- Cuando proceso la tecla<br>
+    keyup.- Cuando suelto la tecla<br>
+    Texto <input type="text" id="texto1">
 </body>
 </html>

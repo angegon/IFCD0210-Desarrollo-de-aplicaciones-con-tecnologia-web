@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Bidimensionales</title>
+    <script>
+        var lista = [];
+
+        function fGuardar(){
+            var temporal = [];
+            var producto = document.getElementById("producto").value;
+            var precio = document.getElementById("precio").value;
+            var seccion = document.getElementById("seccion").value;
+            
+            var vendedores = [];
+            vendedores.push("Ana");
+            vendedores.push("Eva");
+            vendedores.push("Lucas");
+
+            temporal.push( producto );
+            temporal.push( precio );
+            temporal.push( seccion );
+            temporal.push(vendedores);
+
+            
+            lista.push ( temporal );
+
+            var html ="";
+            for (i=0; i<lista.length; i++){
+                html += lista[i][0]  + " - " + lista[i][1] + " - " + lista[i][2];
+                for (j=0; j<lista[i][3].length; j++){
+                    html +=   " - " + lista[i][3][j];
+                }
+                html += "<br>";
+            }
+            document.getElementById("visor").innerHTML = html;
+        }
+    </script>
+</head>
+<body>
+    Producto <input type="text" id="producto"><br>
+    Precio <input type="text" id="precio"><br>
+    Seccíon <input type="text" id="seccion"><br>
+    <input type="button" value="Guardar" onclick="fGuardar()">
+    <div id="visor"></div>
+</body>
+</html>

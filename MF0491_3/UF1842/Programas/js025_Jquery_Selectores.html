@@ -4,22 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JQuery Selectores CSS</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/js025.js"></script>
+    <title>Selectores</title>
     <style>
-
-        li{
-            background-color: orange;
-            position: relative;  /* position relative respecto a su contendor*/
-            left: 30px;
-            top: 30px;
+        li {
+            background-color: aqua;
         }
-
-    </style>    
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready( function(){
+            // Poner los LI con ancho 100px y alto 30px
+            $("li").width(100).height(30);
+            // Añadir a los li un margin top de 10px y un border radius de 5px
+            $("li").css( { "margin-top":10, "border-radius":15, "text-align":"center", "line-height":"30px" } );
+            // Quitar viñetas
+            $("ul").css("list-style","none");
+            // El color de los li pares tiene que ser azul y el de los impares rojo
+            $("#div1>ul>li:odd").css("color","blue");
+            $("#div1>ul>li:even").css("color","red");
+            // El primer li tiene un ancho de 200px
+            $("li:first-child").width(200);
+            // El ultimo li tiene un ancho de 300px
+            $("li:last-child").width(300);
+            // Todos los input type=text con value 'PRUEBA'
+            $("[type=text]").attr("value","PRUEBA");
+            //Poner verde el país
+            $("[href='http://www.elpais.es']").css("color","green");
+            //Poner purple el enlace siguiente a el país
+            $("[href='http://www.elpais.es']").next().css("color","purple");
+            //Poner azul el enlace anterior a el país
+            $("[href='http://www.elpais.es']").prev().css("color","blue");
+            $("#li_b").on("click", function(){
+                alert( $(this).parent().attr("name") );
+            });
+        } );
+    </script>
 </head>
 <body>
-    <h1>JQuery Selectores CSS</h1>
+    <h1>Selectores CSS</h1>
     <div id="div1">
         <ul>
             <li>1</li>
@@ -33,22 +55,19 @@
         </ul>
     </div>
     <div id="div2">
-        <ul>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>d</li>
-            <li>e</li>
-            <li>f</li>
-            <li>g</li>
-            <li>h</li>
+        <ul name="SEGUNDO">
+            <li>A</li>
+            <li id="li_b">B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
         </ul>
-        <input type="text"  id="texto1">
-        <input type="text"  id="texto2">
-        <input type="button" value="boton">
-        <a href="http://www.google.es">Google</a> 
-        <a href="http://www.elpais.es">El pais</a> 
-        <a href="http://www.elmundo.es">El mundo</a>
     </div>
+    <input type="text" id="texto1">
+    <input type="text" id="texto2">
+    <input type="button" value="boton">
+    <a href="http://www.google.es">Google</a>
+    <a href="http://www.elpais.es">El País</a>
+    <a href="http://www.elmundo.es">El Mundo</a>
 </body>
 </html>

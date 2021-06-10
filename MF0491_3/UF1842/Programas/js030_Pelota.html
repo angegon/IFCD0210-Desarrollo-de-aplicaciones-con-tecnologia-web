@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #campo {
+            width: 600px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+        #campo img{
+            position: relative;
+            top: 20px;
+            left: 40px;
+            width: 30px;
+            height: 50px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        var inc_left = 1;
+        var inc_top = 1;
+        $(document).ready(function(){
+            setInterval (fMover, 10);
+        });
+        function fMover(){
+            var pelota_inicio_x = parseInt($("#pelota").css("left"));
+            var pelota_inicio_y = parseInt($("#pelota").css("top"));
+            var pelota_fin_x = parseInt($("#pelota").css("left")) + parseInt($("#pelota").css("width"));
+            var pelota_fin_y = parseInt($("#pelota").css("top")) + parseInt($("#pelota").css("height"));
+
+            var campo_inicio_x = 0;
+            var campo_inicio_y = 0;
+            var campo_fin_x = parseInt($("#campo").css("width"));
+            var campo_fin_y = parseInt($("#campo").css("height"));
+
+            // Antes de mover la pelota, me aseguro de que quede dentro
+            if ( pelota_fin_x + inc_left > campo_fin_x ||
+                 pelota_inicio_x + inc_left < campo_inicio_x){
+                    inc_left *= -1;
+            }
+            if ( pelota_fin_y + inc_top > campo_fin_y ||
+                 pelota_inicio_y + inc_top < campo_inicio_y){
+                    inc_top *= -1;
+            }
+            var x = parseInt ( $("#pelota").css("left") ) + inc_left;
+            var y = parseInt ( $("#pelota").css("top") ) + inc_top;
+            
+            $("#pelota").css("left", x +"px");
+            $("#pelota").css("top", y +"px");
+        }
+    </script>
+</head>
+<body>
+    <div id="campo">
+        <img id="pelota" src="pelota.jpg">
+    </div>
+</body>
+</html>

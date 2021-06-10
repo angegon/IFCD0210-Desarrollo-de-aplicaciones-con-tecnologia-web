@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rojo{
+            color:red;
+        }
+        .verde{
+            color:green;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready( function(){
+            $("#btnJquery").on("click", function(){
+                var texto="";
+                $(".list-item").children("p").each(function(){
+                    texto += "El párrafo contiene <span class='rojo'>" + $(this).html() + "</span><br>";
+                    //alert();
+                });
+                $("#visor").html( texto );
+            });
+        } );
+        function fClick(){
+            var objetos = document.querySelectorAll("li p");
+            console.log (objetos);
+            var texto = "";
+            for (i=0; i<objetos.length; i++){
+                texto += "<p class='verde'>" + objetos[i].innerHTML + "</p>";
+            }
+            document.getElementById("visor").innerHTML = texto;
+        }
+    </script>
+</head>
+<body>
+    <p>Este no cuenta</p>
+    <ul class="list global" id="lista">
+        <li class="list-item">
+            <p>Elemento 1</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 2</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 3</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 4</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 5</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 6</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 7</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 8</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 9</p>
+        </li>
+        <li class="list-item">
+            <p>Elemento 10</p>
+        </li>
+    </ul>
+    <button id="btnJquery" class="btn btn-primary ">JQUERY</button>
+    <button id="btnJavascript" class="btn btn-primary" onclick="fClick()">Javascript</button>
+    <div id="visor"></div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/** ALL **/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/** END ALL **/
+
+/** HEADER **/
+
+/*NAV*/
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo > img{
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 15px;
+}
+.logo_texto{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5em;
+}
+
+.enlaces {
+    display: flex;
+    align-items: stretch;
+    list-style-type: none;
+
+}
+.enlaces li {
+    display: flex;
+    align-self: stretch;
+}
+
+.enlaces li a{
+    padding: 0 5px;
+    display: flex; 
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.5em;
+    color: black;
+}
+
+.enlaces li a:hover{
+    background-color: black;
+    color: white;
+}
+
+/*HERO*/
+.hero{
+    background: url("../imagenes/fondo.jpg")  no-repeat center;
+    background-size: cover;
+}
+
+.contenedor-textos{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-textos h1{
+    font-family: 'Amatic SC', cursive;
+    font-size: 4em;
+    margin: 2%;
+}
+
+.contenedor-textos p{
+    font-family: 'Amatic SC', cursive;
+    font-size: 2em;
+    padding: 2% 10%;
+    text-align: center;
+}
+
+.boton {
+    text-decoration: none;
+    background-color: blueviolet;
+    border-radius: 15px;
+    margin: 2%;
+    padding: 5px 25px;
+    color: white;
+}
+
+.boton:hover {
+    background-color: white;
+    color: black;
+}
+/** END HEADER **/

@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Menú</title>
     <script>
-        var enlaces = [ ["Google", "http://www.google.es"],
-                    ["El pais", "http://www.elpais.es"],
-                    ["El mundo", "http://www.elmundo.es"],
-                    ["Marca", "http://www.marca.com"]
-                    ];
-        function fEnlazar(url){
+        var enlaces = [ ["Google","http://www.google.es"],
+                        ["El país","http://www.elpais.es"],
+                        ["El mundo","http://www.elmundo.es"],                        
+                        ["Marca","http://www.marca.com"]
+                      ];
+        function fEnlazar( url ){
+            //alert (url);
             //document.location = url;
-            window.open(url, "_blank");
+            
+            window.open( url, "_blank" );
         }
-        function fPintarMenu(){
+        function fPintar_Menu(){
             var html = "<ul>";
-            for(i = 0; i < enlaces.length; i++){
-                var donde = "\"" + enlaces[i][1] + "\"";
-                html += "<li onclick='fEnlazar(" + donde + ")' style='cursor:pointer'>" + enlaces[i][0]+ "</li>";
-                //html += `<li><a href="${enlaces[i][1]}" target="_blank">${enlaces[i][0]}</a></li>`
+            for (i=0; i<enlaces.length; i++){
+                var donde = "\"" +  enlaces[i][1] + "\"";
+                html += "<li onclick='fEnlazar(" + donde + " )' style='cursor:pointer'>" + enlaces[i][0] + "</li>";
             }
-            html += "</ul>"
-            document.getElementById("menu").innerHTML += html;
+            html += "</ul>";
+            document.getElementById("menu").innerHTML = html;
         }
     </script>
 </head>
-<body onload="fPintarMenu()">
-    <div id="menu">
-
-    </div>
+<body onload="fPintar_Menu()">
+    <div id="menu"></div>
+    <a href="http://www.google.es" target="_blank">Google</a>
 </body>
 </html>

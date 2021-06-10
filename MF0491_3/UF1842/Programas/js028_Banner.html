@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANNER</title>
+    <style>
+        #banner {
+            height: 30px;
+            color: blue;
+            background-color: bisque;
+            text-shadow: 1px 1px black;
+            font-family: algerian;
+            font-weight: bold;
+            width: 100%;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        var intervalo;
+        var incremento = 10;
+        // Cada x tiempo tengo que hacer algo
+        $(document).ready(function(){
+           intervalo = setInterval(fRotulo, 100);           
+        });
+        // Lo que quiero es cambiar el padding-left para mover el texto en el div
+        function fRotulo(){
+            // Saber donde estoy
+            var padding_left = parseInt( $("#banner").css("padding-left") );
+            // Saber donde rebotar
+            var tope = parseInt($("#banner").css("width"));
+            //console.log("tope : " + tope);
+            // Si al incrementar supero el tope, paso el incremento a negativo
+            // Si es <0, a positivo
+            if ( padding_left + incremento > tope ||  padding_left + incremento < 0){
+                incremento *= -1;
+                //clearInterval(intervalo);
+            }
+            // Aplico el incremento
+            padding_left += incremento; 
+            //console.log(padding_left);     ;
+            // Aplico el cálculo al objeto
+            $("#banner").css( "padding-left", padding_left + 'px');
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio de Banner</h1>
+    <div id="banner">
+        Prueba de rótulo
+    </div>
+</body>
+</html>

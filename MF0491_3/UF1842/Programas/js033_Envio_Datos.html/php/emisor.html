@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio datos</title>
+</head>
+<body>
+    <!-- 
+        El form debe indicar a quien envio la información (action) y como de visible(method)
+        GET -> visible;      POST->Oculta
+    -->
+    <!-- REGLA DE ORO 
+        Cuando se hace submit a un formulario (se envía), se envían los values de todos los 
+        campos de formulario que tengan name excepto los checkbox o radios no marcados
+    -->
+    <input type="text" name="prueba" value="Prueba">
+
+    <form action="receptor3.php" method="POST">
+        Nombre <input type="text" name="nombre"><br>
+        Apellidos <input type="text" name="apellidos" value="Ordóñez"><br>
+        Intereses: Front-End 
+        <input type="checkbox" name="front" value="Front-End" checked>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Back-End <input type="checkbox" name="back" value="Back-End" checked>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Sistemas <input type="checkbox" name="sistemas" value="Sistemas" checked>
+        <br>
+        Nacionalidad
+        <select name="nacionalidad">
+            <option value="es">Española</option>
+            <option value="ve">Venezuela</option>
+            <option value="pe">Peruana</option>
+            <option value="ar">Argentina</option>
+        </select>
+        <br>
+        Sexo   Mucho <input type="radio" name="sexo" value="Mucho">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        Regular <input type="radio" name="sexo" checked value="Regular">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        Poco <input type="radio" name="sexo" value="Poco">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        A ti que te importa <input type="radio" name="sexo" value="NS/NC">
+        <br>
+        Observaciones
+        <textarea name="observaciones"></textarea>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

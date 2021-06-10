@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .contenedor{
+            height: 300px;
+            width: 90%;
+            border: 3px solid black;
+        }
+        .contenido{
+            height: 80px;
+            width: 200px;            
+        }
+        .c1{
+            background: lemonchiffon;
+        }
+        .c2{
+            background: lightgreen;
+            
+            width: 300px;
+        }
+        .c3{
+            background: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <br><hr>
+    <h2>Contenedor con flex, flex-wrap</h2>
+    <style>
+        .flex-wrap{
+            flex-wrap:wrap;
+        }
+    </style>
+    <div class="contenedor flex centrado flex-wrap">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+        <div class="contenido c1">Caja 4</div>
+        <div class="contenido c2">Caja 5</div>
+        <div class="contenido c3">Caja 6</div>
+        <div class="contenido c1">Caja 7</div>
+        <div class="contenido c2">Caja 8</div>
+        <div class="contenido c3">Caja 9</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor con flex, flex-direction</h2>
+    <style>
+        .flex-direction{
+            flex-direction:column;
+            justify-content: space-around;
+        }
+    </style>
+    <div class="contenedor flex centrado flex-direction">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor con flex, align y justify stretch (ambos)</h2>
+    <style>
+        .stretch{
+            align-items: stretch;
+            justify-content: space-evenly;
+        }
+    </style>
+    <div class="contenedor flex centrado stretch">
+        <div class=" c1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dignissimos velit similique placeat necessitatibus, assumenda aspernatur quibusdam suscipit deleniti quas deserunt ad. Illo, assumenda! Libero, deleniti fugit! Totam, itaque soluta!
+        Dolor, dicta pariatur id provident officia nobis saepe eum beatae vel architecto sunt, vero quas ratione nostrum aliquid modi consectetur recusandae iste rerum quod dolores cum hic ut! Corporis, voluptatibus?
+        Nostrum alias eligendi vitae officiis autem repellendus distinctio tempora, eius cumque rerum, ex veniam! Debitis facere delectus laudantium odio repudiandae, possimus eveniet laborum voluptate quis iure nemo ipsa veniam mollitia?</div>
+        <div class=" c2">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </div>
+        <div class=" c3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio beatae asperiores corporis animi, voluptatibus ipsa fugiat quam dolor perferendis, similique veritatis omnis explicabo a cumque nemo quia laudantium eligendi tempora.</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor con flex, justify align (ambos)</h2>
+    <style>
+        .h-v{
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    </style>
+    <div class="contenedor flex centrado h-v">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor con flex align-content (colocar en vertical)</h2>
+    <style>
+        .flex-v{
+            align-items: center;
+        }
+    </style>
+    <div class="contenedor flex centrado flex-v">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor con flex justify-content (colocar en horizontal)</h2>
+    <style>
+        .flex-h{
+            justify-content: space-evenly;
+        }
+    </style>
+    <div class="contenedor flex centrado flex-h">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor con flex centrado</h2>
+    <style>
+        .flex{
+            display:inline-flex;
+        }
+    </style>
+    <div class="contenedor flex centrado">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor sin flex centrado</h2>
+    <style>
+        .centrado{
+            margin: 0 auto;
+        }
+    </style>
+    <div class="contenedor centrado">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+    <h2>Contenedor sin flex</h2>
+    <div class="contenedor">
+        <div class="contenido c1">Caja 1</div>
+        <div class="contenido c2">Caja 2</div>
+        <div class="contenido c3">Caja 3</div>
+    </div>
+    <br><hr>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fDonar(){
+            var texto = "http://localhost:8080/HTML%20curso/Cas-Training/js033_Envio_Datos.html/php/datos_recibo.php?donacion=100";
+            document.location=texto;
+        }
+    </script>
+</head>
+<body>
+    <form action="datos_recibo.php" method="POST">
+        Donación <input type="text" name="donacion" id="donacion">
+        <input type="hidden" name="secreto" value="Alto secreto">
+        <input type="button" value="Enviar">
+        <input type="button" value="Donar 100" onclick="fDonar()">
+    </form>
+</body>
+</html>

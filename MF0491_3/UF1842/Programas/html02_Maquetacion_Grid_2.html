@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .contenedor{
+            position:absolute;
+            height: 100%;
+            width: 100%;
+            display:grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 70px 1fr 70px;
+            grid-template-areas: 
+                "cabecera   cabecera    cabecera"
+                "menu1      contenido   menu2"
+                "footer     footer      footer";
+        }
+        .contenedor > .header, 
+        .contenedor .footer, 
+        .contenedor .nav, 
+        .contenedor .aside
+        {
+            text-align: center;
+        }
+        .header{
+            grid-area: cabecera;
+            background-color: #444;
+            color: white;
+        }
+        .nav {
+            grid-area: menu1;
+            background-color: lightgreen;
+        }
+        .aside {
+            grid-area: menu2;
+            background-color: rgb(9, 75, 9);
+            color: white;
+        }
+        .content{
+            grid-area: contenido;
+            background-color: #DDD;            
+            text-align: justify;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: #444;
+            color: white;
+        }
+
+        @media screen and (max-width:768px) {
+            .contenedor{
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                    "cabecera   cabecera"
+                    "contenido contenido"
+                    "menu1      menu2"
+                    "footer     footer";
+                grid-template-rows: 70px 3fr 1fr 70px;
+            }            
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //alert( $(window).width() + " - " + $(window).height() );
+            //alert( screen.width + " - " + screen.height );
+        });
+    </script>
+</head>
+<body>
+    <main class="contenedor">
+        <header class="header">
+            <h2>HEADER</h2>
+        </header>
+        <nav class="nav">
+            <h2>NAV</h2>
+        </nav>
+        <section class="content">
+            <h2>CONTENT</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>Repellat expedita accusantium similique, nobis alias dolores fuga quo doloremque officia! Earum, alias reprehenderit recusandae aspernatur cupiditate soluta nihil voluptate doloremque laborum.
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>Repellat expedita accusantium similique, nobis alias dolores fuga quo doloremque officia! Earum, alias reprehenderit recusandae aspernatur cupiditate soluta nihil voluptate doloremque laborum.
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>Repellat expedita accusantium similique, nobis alias dolores fuga quo doloremque officia! Earum, alias reprehenderit recusandae aspernatur cupiditate soluta nihil voluptate doloremque laborum.
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>Repellat expedita accusantium similique, nobis alias dolores fuga quo doloremque officia! Earum, alias reprehenderit recusandae aspernatur cupiditate soluta nihil voluptate doloremque laborum.
+            </p>
+        </section>
+        <aside class="aside">
+            <h2>ASIDE</h2>
+        </aside>
+        <footer class="footer">
+            <h2>FOOTER</h2>
+        </footer>
+    </main>
+</body>
+</html>

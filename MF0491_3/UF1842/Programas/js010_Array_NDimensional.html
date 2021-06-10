@@ -4,93 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array NDimensional</title>
+    <title>Arrays</title>
     <script>
-        var lista = new Array();
-        function fGuardar() {
-            // Validar datos de entrada
-            // Si son correctos los guarda e imprime, y sino muestra error
-            var producto = document.getElementById("producto").value;
-            var precio = document.getElementById("precio").value;
+        // Defino un array para guardar los datos
+        var lista = [];
+
+        function fGuardar(){
+            // Validar datos (Comprobar que los datos son correctos)
+
             document.getElementById("tderror").innerHTML = "&nbsp;";
-            if (producto == "") {
-                document.getElementById("tderror").innerHTML = "Debe introducir un producto."
+            // Si no son correctos, sacar un mensaje de error
+
+            // Validar producto
+            var producto = document.getElementById("producto").value;
+            if ( producto == "" ){
+                document.getElementById("tderror").innerHTML = "Teclee el producto";
                 document.getElementById("producto").focus();
                 return;
             }
-            if (precio == "" || isNaN(precio) || precio < 0) {
-                document.getElementById("tderror").innerHTML = "El precio es incorrecto."
+            // Validar precio
+            var precio = document.getElementById("precio").value;
+            if ( precio == "" || isNaN(precio) || precio < 0 ){
+                document.getElementById("tderror").innerHTML = "Teclee un precio correcto";
                 document.getElementById("precio").focus();
                 return;
             }
-            if (document.getElementById("p1").checked == false &&
-                document.getElementById("p2").checked == false &&
-                document.getElementById("p3").checked == false &&
-                document.getElementById("p4").checked == false &&
-                document.getElementById("p5").checked == false) {
-                document.getElementById("tderror").innerHTML = "No ha seleccionado ningún proveedor.";
+            // Validación de proveedores
+            if ( document.getElementById("p1").checked == false &&
+                 document.getElementById("p2").checked == false &&
+                 document.getElementById("p3").checked == false &&
+                 document.getElementById("p4").checked == false &&
+                 document.getElementById("p5").checked == false 
+               ){
+                document.getElementById("tderror").innerHTML = "Seleccione, al menos, un proveedor";
                 return;
-            }                
-            document.getElementById("tderror").innerHTML = "Todos los datos introducidos son correctos."
-            + "</br> Puede introducir más datos si así lo desea.";
+            }
+            //document.getElementById("tderror").innerHTML = "Todo OK";
 
-            // Añadimos los datos
-            var datos_producto = new Array();
+            // Si son correctos, guardarlos e imprimirlos
+            var datos_producto = [];
             datos_producto.push(producto);
             datos_producto.push(precio);
-            var datos_proveedor = [];
-            if (document.getElementById("p1").checked == true) {
-                datos_proveedor.push(document.getElementById("p1").value);
+            var datos_proveedores = [];
+            if ( document.getElementById("p1").checked == true ){
+                datos_proveedores.push( document.getElementById("p1").value );
             }
-            if (document.getElementById("p2").checked == true) {
-                datos_proveedor.push(document.getElementById("p2").value);
+            if ( document.getElementById("p2").checked == true ){
+                datos_proveedores.push( document.getElementById("p2").value );
             }
-            if (document.getElementById("p3").checked == true) {
-                datos_proveedor.push(document.getElementById("p3").value);
+            if ( document.getElementById("p3").checked == true ){
+                datos_proveedores.push( document.getElementById("p3").value );
             }
-            if (document.getElementById("p4").checked == true) {
-                datos_proveedor.push(document.getElementById("p4").value);
+            if ( document.getElementById("p4").checked == true ){
+                datos_proveedores.push( document.getElementById("p4").value );
             }
-            if (document.getElementById("p5").checked == true) {
-                datos_proveedor.push(document.getElementById("p5").value);
-            }                                                            
-            datos_producto.push(datos_proveedor);
+            if ( document.getElementById("p5").checked == true ){
+                datos_proveedores.push( document.getElementById("p5").value );
+            }
+            datos_producto.push(datos_proveedores);
+
+            // Dejar com definitivo esos datos
             lista.push(datos_producto);
-            //Mostramos datos
             fImprimir();
-            //Limpiamos campos para siguientes usos.
-            fLimpiar();   
-        }
 
-        function fImprimir(){
-            var html = "";
-            html = "<h1>Lista de productos</h1>";
-            // Para cada producto de la lista
-            // Imprimir el producto
-            for(i = 0; i < lista.length; i++){
-                //Volcar nombre y precio de producto
-                html += lista[i][0] + " - " + lista[i][1] + " / ";
-                for (j = 0; j < lista[i][2].length; j++)
-                    html += " " + lista[i][2][j];
-                html += "<br/>";                    
-            }
-
-            document.getElementById("visor").innerHTML = html;
-        }
-
-        function fLimpiar(){
+            // Dejar preparada siguiente introducción
+            document.getElementById("producto").value = "";
+            document.getElementById("precio").value = "";
+            
             document.getElementById("p1").checked = false;
             document.getElementById("p2").checked = false;
             document.getElementById("p3").checked = false;
             document.getElementById("p4").checked = false;
             document.getElementById("p5").checked = false;
-            document.getElementById("producto").value = "";
-            document.getElementById("precio").value = "";           
-            document.getElementById("producto").focus(); 
+
+            document.getElementById("producto").focus();
+        }
+        function fImprimir(){
+            var html="";
+            html ="<h1>Lista de productos</h1>";
+            // Para cada producto de la lista
+            //      Imprimir el producto
+            for (i=0; i<lista.length; i++){
+                // Volcar nombre del producto
+                html += lista[i][0] + " - ";
+                // Volcar precio del producto
+                html += lista[i][1] ;
+                // Volcar proveedores del producto
+                var lista_proveedores = lista[i][2];
+                for (j=0; j<lista_proveedores.length; j++){
+                    html += " - " + lista_proveedores[j];
+                }
+                html += "<br/>";
+            }
+            document.getElementById("visor").innerHTML = html;
         }
     </script>
 </head>
-<body>
+<body onload="fImprimir()">
     <div id="div_principal">
         <table border="1">
             <tr>
@@ -125,8 +135,6 @@
             </tr>
         </table>
     </div>
-    <div id="visor">
-
-    </div>
+    <div id="visor"></div>
 </body>
 </html>

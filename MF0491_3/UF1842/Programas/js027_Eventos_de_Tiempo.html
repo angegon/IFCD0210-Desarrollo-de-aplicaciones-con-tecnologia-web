@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de tiempo</title>
+    <style>
+        #casilla {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready( function (){
+            var intervalo;
+            var timeout;
+            $("#boton_mover").on("click", function(){
+                intervalo = setInterval( fMover, 100);
+            });
+            $("#boton_parar").on("click", function(){
+                clearInterval( intervalo );
+            });
+            $("#boton_timeout").on("click", function(){
+                timeout = setTimeout(fTimeout, 2000);
+            });
+        });
+        function fMover(){
+            var valor = parseInt( $("#casilla").css("left") ) + 1;
+            //alert(valor);
+            $("#casilla").css("left", valor + 'px');
+        }
+        function fTimeout(){
+            $("#casilla").css("background-color", "red");
+            alert("Cambiado");
+        }
+    </script>
+</head>
+<body>
+    <h1>Interval</h1>
+    <p>Interval repite una función cada x tiempo</p>
+    <div id="casilla"></div>
+    <input type="button" id="boton_mover" value="Mover">
+    <input type="button" id="boton_parar" value="Parar">
+
+    <h1>Timeout</h1>
+    <p>Timeout ejecuta una función pasado x tiempo</p>
+    <input type="button" id="boton_timeout" value="Timeout">
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envío de datos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="jquery.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script>
+        $(document).ready( function(){
+            $("button").on("click", function(){
+                // Quitar cualquier posible error anterior
+                $(".validar").html("");
+                $(".validar").css("color","black");
+                $("span").siblings("input").css("color","black");
+                var con_error = 0;
+                if ( $("#nombre").val().trim().length==0){
+                    $("#enombre").html("Nombre obligatorio").css("color","red");
+                    $("#nombre").css("color","red");
+                    con_error++;
+                }  
+                
+                if ( $("#edad").val()< 18 ){
+                    $("#eedad").html("Menor de edad").css("color","red");
+                    $("#edad").css("color","red");                  
+                    con_error++;
+                }              
+                if (con_error>0)  {
+                    return false;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="js034.Receptor.php" method="POST">
+        Nombre <input type="text" name="nombre" id="nombre">
+        <span id="enombre" class="validar"></span>
+        <br>
+        Edad <input type="number" name="edad" id="edad">
+        <span id="eedad" class="validar"></span>
+        <br>
+        Carnet<br>
+        A1 <input type="checkbox" name="a1" id="a1" checked value="a1">
+        A2 <input type="checkbox" name="a2" id="a2" value="a2">
+        B <input type="checkbox" name="b" id="b" checked value="b">
+        <br>
+        Color de pelo<br>
+        Rubio <input type="radio" name="pelo" id="rubio" value="rubio">
+        Moreno <input type="radio" name="pelo" id="moreno" checked value="moreno">
+        Pelirrojo <input type="radio" name="pelo" id="pelirrojo" value="pelirrojo">
+        Cano <input type="radio" name="pelo" id="cano" value="cano">
+        <br>
+        Estudios
+        <select name="estudios" id="estudios">
+            <option value="1">Superiores</option>
+            <option value="2" selected>Módulo</option>
+            <option value="3">COU</option>
+            <option value="4">Bachiller</option>
+        </select>
+        <br>
+        <textarea name="observaciones" id="observaciones"></textarea><br>
+        <button>Enviar</button>
+        
+    </form>
+</body>
+</html>

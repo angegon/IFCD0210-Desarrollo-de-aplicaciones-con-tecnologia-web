@@ -7,29 +7,72 @@
     <title>Condicionales</title>
     <script>
         function fCalcular(){
-            // Imprimir en el div 'aprobado' o 'suspenso' 
-            var nota = document.getElementById("nota").value;
-            if (nota < 0 || nota > 10 || isNaN(nota)){
-                document.getElementById("visor").innerHTML = "Nota incorrecta. Valores entre 0 y 10.";
-                document.getElementById("visor").style.backgroundColor = "orange";
+           // Imprimir en el div 'aprobado' o 'suspenso' 
+           if ( isNaN( document.getElementById("nota").value ) ){
+                document.getElementById("visor").innerHTML = "Nota no numérica";
+                document.getElementById("nota").focus();
                 return;
-            }
-            else if (nota >= 5 && nota <= 10){
-                document.getElementById("visor").innerHTML = "Has aprobado";
-                document.getElementById("visor").style.backgroundColor = "green";
+           }
+           var nota = parseInt(document.getElementById("nota").value);
+           // Operadores de comparación
+           // >, >=, <, <=, ==, !=, ===, !==
+           //Operadores de union de condiciones
+           //               || o            y        && y
+           // 
+           /*
+           if ("5" == 5){
+               alert("Son iguales");
+           }
+           if ("5" === 5){
+               alert("Son  exactamente iguales");
+           } else {
+            alert("No son  exactamente iguales");
+           }
+           */
+          /*
+           if ( nota < 0 || nota >10){
+                document.getElementById("visor").innerHTML = "Nota incorrecta. Válido entre 0 y 10";
+           } else {
+                if ( nota >= 5 ){
+                    // si condiciones son verdad
+                    document.getElementById("visor").innerHTML = "Has aprobado";
+                } else {
+                    // si condiciones falso
+                    document.getElementById("visor").innerHTML = "Has suspendido";
+                }
+           } 
+           */
+           if ( nota < 0 || nota >10){
+                document.getElementById("visor").innerHTML = "Nota incorrecta. Válido entre 0 y 10";
+                document.getElementById("nota").focus();
                 return;
-            }
-            else if (nota < 5 && nota >= 0){
-                document.getElementById("visor").innerHTML = "Has suspendido";
-                document.getElementById("visor").style.backgroundColor = "red";
+           } 
+            if ( nota < 5 ){
+                // si condiciones son verdad
+                document.getElementById("visor").innerHTML = "Suspenso";       
                 return;
+            } 
+            if ( nota >= 5 && nota < 7){
+                // si condiciones son verdad
+                document.getElementById("visor").innerHTML = "Has aprobado";       
+                return;
+            } 
+            if ( nota >= 7 && nota < 9){
+                // si condiciones son verdad
+                document.getElementById("visor").innerHTML = "Notable";       
+                return;
+            } 
+            if ( nota >= 9 && nota <= 10 ){
+                // si condiciones falso
+                document.getElementById("visor").innerHTML = "Sobresaliente";
             }
+        
         }
     </script>
 </head>
 <body>
-    Nota:
-    <input type="text" name="nota" id="nota"/>
+    Nota
+    <input type="text" id="nota"/>
     <input type="button" value="Calcular" onclick="fCalcular()"/>
     <div id="visor">
 

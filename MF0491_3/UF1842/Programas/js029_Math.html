@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        // Math es una librería Javascript Matemática
+        // contiene funciones matemáticas y geométricas
+        $(document).ready(function(){
+            $("#div_ppal").append(  "Resulucion Ancho de pantalla" + screen.width + " <br/>");
+            $("#div_ppal").append(  "Resolucion Alto de pantalla" + screen.height + " <br/>");
+            $("#div_ppal").append(  "Ancho de body " + screen.innerWidth + " <br/>");
+            $("#div_ppal").append(  "Alto de body " + screen.innerHeight + " <br/>");
+
+            $("#div_ppal").append(  "CEIL(4.1) " + Math.ceil(4.1) + " Entero superior al dado<br/>");
+            $("#div_ppal").append(  "FLOOR(4.1) " + Math.floor(4.1) + " Entero inferior al dado<br/>");            
+            $("#div_ppal").append(  "SQRT(9) " + Math.sqrt(9) + " Raíz cuadrada<br/>");
+            $("#div_ppal").append(  "POW(2,6) " + Math.pow(2,6) + " Potencia de 2 a la 6<br/>");
+            $("#div_ppal").append(  "ROUND(5.6) " + Math.round(5.6) + " Redondea 5.6<br/>");
+            $("#div_ppal").append(  "RANDOM() " + Math.random() + " Devuelve un nº aleatorio entre 0 y <1<br/>");
+
+            $("#moneda").on("click", function(){
+                // Simulación de la tirada de una moneda
+                var numero = Math.floor ( Math.random() * 2 );
+                if ( numero == 0 ){
+                    $("#div_ppal").append("cara<br>");
+                }else{
+                    $("#div_ppal").append("cruz<br>");
+                }
+            });
+            $("#dados").on("click", function(){
+                // Simulación de la tirada de un dado
+                var numero = Math.floor ( Math.random() * 6 ) + 1;
+                $("#div_ppal").append(numero + "<br>");
+            });
+            $("#primitiva").on("click", function(){
+                // Simulación de la tirada de un dado para sacar la primitiva
+                var numero = Math.floor ( Math.random() * 49 ) + 1;
+                $("#div_ppal").append(numero + "<br>");
+            });
+            // Guardar 6 nºs distintos del 1 al 49 e imprimirlos
+            $("#primitiva_6_nos").on("click", function(){               
+                var valores_generados = [];
+                while ( valores_generados.length < 6){
+                    var numero = Math.floor( Math.random() * 49 ) + 1;
+                    // Buscar el numero  en el array
+                    var encontrado = false;
+                    for (i=0; i<valores_generados.length; i++){
+                        if (numero == valores_generados[i]){
+                            encontrado = true;
+                            //break;
+                        }
+                    }
+                    if (encontrado == false){
+                        valores_generados.push(numero);
+                    }
+                }
+                //var texto = "";
+                /*
+                for (i=0; i<valores_generados.length; i++){
+                    texto += valores_generados[i];
+                    
+                    if (i != valores_generados.length - 1 ){
+                        texto += "-";
+                    }
+                  
+                }  */
+                $("#div_ppal").html(valores_generados.join(" - ") + "<br/>");
+            });
+            $("#primitiva_49_nos").on("click", function(){
+                var numeros = [];
+                var validos = [];
+                // Vaciar el array
+                for (i=0; i<49; i++){
+                    numeros[i] = "";
+                }
+                var contador = 0;
+                // Contador indica cuantos quiero calcular
+                while (contador < 49){
+                    var n = Math.floor ( Math.random() * 49 );
+                    // Comprobar si no ha salido el nº
+                    if (numeros[n] ==""){
+                        numeros[n]="x";
+                        validos.push(n+1);
+                        contador++;
+                    }
+                }
+                $("#div_ppal").html(validos.join(" - ") + "<br/>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div_ppal">
+    </div>
+    <input id="moneda" type="button" value="Cara o Cruz">;
+    <input id="dados" type="button" value="Dado">;
+    <input id="primitiva" type="button" value="Primitiva">;
+    <input id="primitiva_6_nos" type="button" value="6 nºs de Primitiva no repetidos">;
+    <input id="primitiva_49_nos" type="button" value="49 nºs de Primitiva no repetidos">;
+
+</body>
+</html>

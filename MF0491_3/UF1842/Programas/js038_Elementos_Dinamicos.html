@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos dinámicos</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #div_comunidad {
+            text-align: center;
+        }
+        #div_caracteristica ul{
+            list-style: none;
+            display: flex;
+        }
+        #div_caracteristica li {
+            display: inline-block;
+            width: 20%;  
+            justify-content: space-between;
+            padding: 10px;         
+        }
+        #div_caracteristica li:nth-child(even) {
+            background-color: aquamarine;
+        }
+        #div_caracteristica li:nth-child(odd) {
+            background-color: lavenderblush;
+        }
+        .oculto{
+            display: none;
+        }
+        .comunidad{
+            display: none;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#ComunidadAutonoma").on("change", function(){ 
+                // Borrar todos los checked               
+                $(".carac").eq(0).attr("checked",true);
+                // Saber el elemento seleccionado
+                var pos = $(this).prop("selectedIndex");
+                // Poner checked el radio asociado
+                $(".carac").eq( pos ).attr("checked","true");
+                // Oculto todas las comunidades
+                $(".comunidad").css("display","none");
+                // Muestro la que quiero
+                $(".comunidad").eq(pos).css("display","block");
+
+                //alert( $(this).children("option").eq(pos).html());
+                
+                var texto = "";
+                if (pos > 0){
+                    texto= $(this).children("option").eq(pos).val();
+                }
+                $("#visor").html( texto );                
+            });
+            
+            $(".carac").on("click", function(){
+                // Para seleccionar un elemento de un select, prop("selectedIndex", Nº)
+                var id = $(this).attr("id");
+                var numero=id.substr(2,99);
+                //alert(numero);
+                $("#ComunidadAutonoma").prop("selectedIndex", numero);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div_comunidad">
+        Seleccion comunidad autónoma
+        <select id="ComunidadAutonoma">
+                <option value="No vale">Seleccione comunidad</option>
+                <option value="Madrid">C.A.Madrid</option>
+                <option value="Cataluña">C.A.Cataluña</option>
+                <option value="Andalucía">C.A.Andalucía</option>
+                <option value="Galicia">C.A.Galicia</option>
+                <option value="Euskadi">C.A.Euskadi</option>
+        </select>
+
+    </div>
+
+    <p>El apelativo cariñoso para la gente de esta comunidad es</p>
+    <div id="div_caracteristica">
+        <input type="radio" name="caracteristica" class="carac oculto">
+        <ul>
+            <li><input type="radio" name="caracteristica" id="ch1" class="carac"> CHULOS</li>
+            <li><input type="radio" name="caracteristica" id="ag2" class="carac"> AGARRADOS</li>
+            <li><input type="radio" name="caracteristica" id="ex3" class="carac"> EXAGERADOS</li>
+            <li><input type="radio" name="caracteristica" id="in4" class="carac"> INDECISOS</li>
+            <li><input type="radio" name="caracteristica" id="ca5" class="carac"> CABEZOTAS</li>
+        </ul>     
+    </div>
+
+    <div id="visor"></div>
+
+    <div class="comunidad"></div>
+    <div class="comunidad">Madrid</div>
+    <div class="comunidad">Cataluña</div>
+    <div class="comunidad">Andalucia</div>
+    <div class="comunidad">Galicia</div>
+    <div class="comunidad">Euskadi</div>
+</body>
+</html>
