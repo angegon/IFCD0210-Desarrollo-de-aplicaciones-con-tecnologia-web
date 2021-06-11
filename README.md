@@ -38,8 +38,8 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 <ul>
     <li><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank"> Curso de 30 días de Javascript en Github</a></li>
     <li><a href="https://github.com/jonasschmedtmann/complete-javascript-course" target="_blank"> Curso Javascript en Github</a></li>    
-    <li><a href="https://www.youtube.com/playlist?list=PLPl81lqbj-4I2ZOzryjPKxfhK3BzTlaJ7" target="_blank"> Curso Javascript en Youtube</a></li>
-    <li><a href="https://www.youtube.com/watch?v=OqfhPpJeJ-c&list=PLROIqh_5RZeAQNwyRBAENdRgphQwWXdEk" target="_blank"> Curso Javascript en Youtube</a></li>        
+    <li><a href="https://www.youtube.com/playlist?list=PLPl81lqbj-4I2ZOzryjPKxfhK3BzTlaJ7" target="_blank"> Curso Javascript en Youtube 1</a></li>
+    <li><a href="https://www.youtube.com/watch?v=OqfhPpJeJ-c&list=PLROIqh_5RZeAQNwyRBAENdRgphQwWXdEk" target="_blank"> Curso Javascript en Youtube 2</a></li>        
     <li><a href="https://www.w3schools.com/howto/howto_js_sidenav.asp" target="_blank"> Javascript sidenav</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank"> Primeros pasos en Javascript</a></li>
     <li><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank"> Objetos en Javascript</a></li>
@@ -59,5 +59,5 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 
 <b>Proyectos Tutorizados:</b>
 <ul>
-    <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Front Mentor</a></li>
+    <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
 </ul>
