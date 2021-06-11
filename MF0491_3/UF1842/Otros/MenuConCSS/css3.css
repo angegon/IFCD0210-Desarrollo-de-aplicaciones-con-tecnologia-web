@@ -30,7 +30,8 @@ padding:0;
 }
 
 #menu ul li:hover {
-background:#0e0f0f;
+  background:#0e0f0f;
+  color: white;
 }
 
 #menu ul ul {
