@@ -61,3 +61,8 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 <ul>
     <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
 </ul>
+
+<b>Compatibilidad Navegadores:</b>
+<ul>
+    <li><a href="https://caniuse.com/?search=grid" target="_blank">Frontend Mentor</a></li>
+</ul>
