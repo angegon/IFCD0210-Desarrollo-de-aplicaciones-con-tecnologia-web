@@ -9,9 +9,10 @@
 Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, Css, Javascript, pho, mysql <a href=" https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank">Más info </a>
 
+<br>
 <nav id="menu">
     <ul>
-        <li><a href="#">Ejercicios del curso:</a>
+        <li>Ejercicios del curso:
         <ul>
             <li><a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank">Ejercicio js001_Repaso</a></li>
             <li><a href="./MF0491_3/UF1842/Otros/MenuConCSS/menu.html" target="_blank">Menú desplegable con CSS</a></li>
