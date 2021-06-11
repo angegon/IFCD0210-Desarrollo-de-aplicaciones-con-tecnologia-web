@@ -2,7 +2,6 @@
   background-color:#5a94f1;
   margin: 5px;
   padding: 5px;
-  width: 100%;
 }
 
 #menu ul {
@@ -15,9 +14,9 @@ padding:0;
 display:block;
 color:#fff;
 text-decoration:none;
-font-weight:400;
-font-size:15px;
-padding:10px;
+font-weight:300;
+font-size:10px;
+padding: 5px;px;
 font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 text-transform:uppercase;
 letter-spacing:1px;
