@@ -1,5 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./MF0491_3/UF1842/Otros/MenuConCSS/css2.css">
+    <title>Menú</title>
+</head>
+<body>
 Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, Css, Javascript, pho, mysql <a href=" https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank">Más info </a>
+
+<nav id="menu">
+    <ul>
+        <li><a href="#">Enlace 1</a></li>
+        <li><a href="#">Enlace 2</a>
+        <ul>
+            <li><a href="#">Enlace 2.1</a></li>
+            <li><a href="#">Enlace 2.2</a></li>
+            <li><a href="#">Enlace 2.3</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Enlace 3</a></li>
+        <li><a href="#">Enlace 4</a></li>
+        <li><a href="#">Enlace 5</a></li>
+    </ul>
+    </nav>
 
 <b>Ejercicios del curso:</b>
 <ol>
@@ -66,3 +92,10 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 <ul>
     <li><a href="https://caniuse.com/?search=grid" target="_blank">Compatibilidad etiquetas, etc..</a></li>
 </ul>
+
+
+
+
+
+</body>
+</html>
