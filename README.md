@@ -65,7 +65,7 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
                 <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
             </ul>
         </li>
-        <li><b>Proyectos Tutorizados:</b>
+        <li><b>Proyectos Tutorizados</b>
             <ul>
                 <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
             </ul>
