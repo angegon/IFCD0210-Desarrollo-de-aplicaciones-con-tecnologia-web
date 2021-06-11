@@ -21,6 +21,7 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
         </li>
         <li><a href="#">HTML</a>
             <ul>
+                <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de HTML y muchos más..</a></li>
                 <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5 youtube</a></li>
                 <li><a href="https://github.com/Asabeneh/30-Days-Of-HTML" target="_blank">Curso de HTML5 en Github</a></li>
                 <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"> Elementos semánticos</a></li>
@@ -41,6 +42,7 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
                 <li><a href="https://www.w3schools.com/css/css3_flexbox_container.asp" target="_blank"> Contenedor Flexbox</a></li>
                 <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank"> Conceptos Básicos de Flexbox</a></li>
                 <li><a href="https://fontawesome.com/" target="_blank"> fontawesome</a></li>
+                <li><a href="https://www.youtube.com/watch?v=UBoEXXzjUw4" target="_blank"> De floats a flex y grid</a></li>
             </ul>
         </li>
         <li><a href="#">Javascript</a>
