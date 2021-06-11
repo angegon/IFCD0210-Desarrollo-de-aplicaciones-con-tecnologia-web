@@ -12,7 +12,8 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 
 <b>HTML:</b>
 <ul>
-    <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5</a></li>
+    <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5 youtube</a></li>
+    <li><a href="https://github.com/Asabeneh/30-Days-Of-HTML" target="_blank">Curso de HTML5 en Github</a></li>
     <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"> Elementos semánticos</a></li>
     <li><a href="https://www.w3schools.com/tags/ref_httpmethods.asp" target="_blank"> Metodos get, post..</a></li>
     <li><a href="https://www.w3schools.com/html/html_id.asp" target="_blank"> Id´s</a></li>
@@ -35,6 +36,10 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 
 <b>Links interesantes Javascript:</b>
 <ul>
+    <li><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank"> Curso de 30 días de Javascript en Github</a></li>
+    <li><a href="https://github.com/jonasschmedtmann/complete-javascript-course" target="_blank"> Curso Javascript en Github</a></li>    
+    <li><a href="https://www.youtube.com/playlist?list=PLPl81lqbj-4I2ZOzryjPKxfhK3BzTlaJ7" target="_blank"> Curso Javascript en Youtube</a></li>
+    <li><a href="https://www.youtube.com/watch?v=OqfhPpJeJ-c&list=PLROIqh_5RZeAQNwyRBAENdRgphQwWXdEk" target="_blank"> Curso Javascript en Youtube</a></li>        
     <li><a href="https://www.w3schools.com/howto/howto_js_sidenav.asp" target="_blank"> Javascript sidenav</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank"> Primeros pasos en Javascript</a></li>
     <li><a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank"> Objetos en Javascript</a></li>
@@ -49,4 +54,10 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 <b>Images Gratuitas:</b>
 <ul>
     <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
+</ul>
+
+
+<b>Proyectos Tutorizados:</b>
+<ul>
+    <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Front Mentor</a></li>
 </ul>
