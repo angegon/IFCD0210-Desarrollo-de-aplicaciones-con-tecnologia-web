@@ -11,7 +11,6 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 
 <nav id="menu">
     <ul>
-        <li><a href="#">Enlace 1</a></li>
         <li><a href="#">Ejercicios del curso:</a>
         <ul>
             <li><a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank">Ejercicio js001_Repaso</a></li>
@@ -19,22 +18,11 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
             <li><a href="./MF0491_3/UF1842/Otros/flexbox2/index.html" target="_blank">Cabecera con Flex Box</a></li>    
         </ul>
         </li>
-        <li><a href="#">Enlace 3</a></li>
-        <li><a href="#">Enlace 4</a></li>
-        <li><a href="#">Enlace 5</a></li>
     </ul>
     </nav>
+<br>
 
-<b>Ejercicios del curso:</b>
-<ol>
-    <li><a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank">Ejercicio js001_Repaso</a></li>
-    <li><a href="./MF0491_3/UF1842/Otros/MenuConCSS/menu.html" target="_blank">Menú desplegable con CSS</a></li>
-    <li><a href="./MF0491_3/UF1842/Otros/flexbox2/index.html" target="_blank">Cabecera con Flex Box</a></li>        
-</ol>
-
-<b>Links interesantes:</b>
-
-<b>HTML:</b>
+<b>Links HTML:</b>
 <ul>
     <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5 youtube</a></li>
     <li><a href="https://github.com/Asabeneh/30-Days-Of-HTML" target="_blank">Curso de HTML5 en Github</a></li>
@@ -46,7 +34,7 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
     <li><a href="https://validator.w3.org/" target="_blank"> Validador html</a></li>
 </ul>
 
-<b>CSS:</b>
+<b>Links CSS:</b>
 <ul>
     <li><a href="https://www.youtube.com/watch?v=OWKXEJN67FE" target="_blank"> Curso 1</a> </li>
     <li><a href="https://www.youtube.com/watch?v=-k-w8JpTNwA&list=PLROIqh_5RZeDbvISffzihyxzqJBt_z3-Z" target="_blank"> Curso 2</a></li>
@@ -58,7 +46,7 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
     <li><a href="https://fontawesome.com/" target="_blank"> fontawesome</a></li>
 </ul>
 
-<b>Links interesantes Javascript:</b>
+<b>Links Javascript:</b>
 <ul>
     <li><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank"> Curso de 30 días de Javascript en Github</a></li>
     <li><a href="https://github.com/jonasschmedtmann/complete-javascript-course" target="_blank"> Curso Javascript en Github</a></li>    
@@ -75,18 +63,18 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
     <li><a href="https://fonts.google.com/" target="_blank"> Fonts gratis</a></li>
 </ul>
 
-<b>Images Gratuitas:</b>
+<b>Links Images Gratuitas:</b>
 <ul>
     <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
 </ul>
 
 
-<b>Proyectos Tutorizados:</b>
+<b>Links Proyectos Tutorizados:</b>
 <ul>
     <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
 </ul>
 
-<b>Compatibilidad Navegadores:</b>
+<b>Links Compatibilidad Navegadores:</b>
 <ul>
     <li><a href="https://caniuse.com/?search=grid" target="_blank">Compatibilidad etiquetas, etc..</a></li>
 </ul>
