@@ -3,7 +3,9 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 
 <b>Ejercicios del curso:</b>
 <ol>
-    <li><a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank"><li>Ejercicio js001_Repaso</a></li>
+    <li><a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank">Ejercicio js001_Repaso</a></li>
+    <li><a href="./MF0491_3/UF1842/Otros/MenuConCSS/menu.html" target="_blank">Menú desplegable con CSS</a></li>
+    <li><a href="./MF0491_3/UF1842/Otros/flexbox2/index.html" target="_blank">Cabecera con Flex Box</a></li>        
 </ol>
 
 <b>Links interesantes:</b>
