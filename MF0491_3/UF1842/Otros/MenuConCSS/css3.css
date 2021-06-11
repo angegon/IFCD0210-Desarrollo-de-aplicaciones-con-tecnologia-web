@@ -24,7 +24,7 @@ letter-spacing:1px;
 
 #menu ul li {
 position:relative;
-float:left;
+/*float:left;*/
 margin:0;
 padding:0;
 }
