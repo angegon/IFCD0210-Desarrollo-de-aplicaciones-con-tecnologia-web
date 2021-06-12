@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Modal</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .fondo{            
+            width: 100vw;
+            height: 100vh;
+            background-color: #888;
+            z-index: 10;
+            display: none;
+            opacity: 0.5;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        .ventana{
+            --tamano: 300px;
+            z-index: 20;
+            background-color: green;
+            color: #fff;
+            position: absolute;
+            width: var(--tamano);
+            height: var(--tamano);
+            display: none;
+        }
+        .container{
+            background-color: orange;
+        }
+        .titulo_ventana{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #btnCerrar{
+            cursor: pointer;
+        }
+        .ventana {
+            padding: 10px;
+        }
+        .ventana li{
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready( function(){
+            $("#btnAbrirJQ").on("click", function(){
+                $(".ventana").load("js042.html");
+                //alert( "DOCUMENT " + $(document).width() + "-" + $(document).height() );
+                //alert( "WINDOW " + $(window).width() + "-"+$(window).height() );
+                $(".fondo").height( $(document).height() );
+                $(".fondo").show();
+                // Centrar ventana en screen
+                var alto_screen = $(window).height();
+                var ancho_screen = $(window).width();
+                var alto_ventana = $(".ventana").height();
+                var ancho_ventana = $(".ventana").width();
+                var x = ( ancho_screen - ancho_ventana ) / 2;
+                var y = ( alto_screen - alto_ventana ) / 2;
+
+                $(".ventana").css( { "left":x, "top":y  } );
+                $(".ventana").fadeIn(500);
+            });
+            $(".ventana").on("click","#btnCerrar", function(){
+                $(".ventana").fadeOut(500);
+                $(".fondo").slideUp(300);
+            });
+            $(".fondo").on("click", function(){
+                $(".ventana").fadeOut(500);
+                $(".fondo").slideUp(300);
+            });
+        });
+        function fAbrir(){
+            // Javascript no reconoce estos valores iniciales
+            document.getElementById("ventana").style.height="300px";
+            document.getElementById("ventana").style.width ="300px";
+            // Mostrar valores de Javascript
+            console.log("DOCUMENT: " + document.body.clientWidth + " - " + document.body.clientHeight);
+            console.log("WINDOW: " + window.innerWidth + " - " + window.innerHeight);
+            // Necesito añadir 'px' al height
+            document.getElementById("fondo").style.height = document.body.clientHeight + 'px';
+            // Poner visible el fondo
+            document.getElementById("fondo").style.display = "block";
+            // Calcular las coordenadas donde pintar la ventana
+            var alto_screen = window.innerHeight;
+            var ancho_screen = window.innerWidth;
+            var alto_ventana = parseInt(document.getElementById("ventana").style.height);
+            var ancho_ventana = parseInt(document.getElementById("ventana").style.width);
+            var x = ( ancho_screen - ancho_ventana ) / 2;
+            var y = ( alto_screen - alto_ventana ) / 2;
+            // Tengo que añadir la unidad 'px'
+            document.getElementById("ventana").style.left = x + 'px';
+            document.getElementById("ventana").style.top = y + 'px';
+            // Muestro ventana
+            document.getElementById("ventana").style.display = "block";
+            return false;
+        }
+        function fCerrar(){
+            document.getElementById("fondo").style.display = "none";
+            document.getElementById("ventana").style.display = "none";
+        }
+    </script>
+</head>
+<body>    
+    <div class="container">
+        <button id="btnAbrirJQ" class="btn" title="Abrir Ventana">Abrir Ventana Modal JQuery</button>
+        <button class="btn" onclick="fAbrir()">Abrir Ventana Modal Javascript</button>
+        <br>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt sapiente numquam possimus veritatis labore commodi doloremque expedita. Error voluptas ipsa, tempora quisquam, et est esse distinctio magnam nesciunt doloremque ad.
+        Earum odit laudantium voluptas nam veniam ratione, dolores officiis voluptatum quod aspernatur tempora ab id vitae voluptates repellat dolorum quisquam minus hic nulla voluptatem molestiae officia dolorem. Fuga, vero doloremque.
+        Sunt aspernatur consectetur quas magnam assumenda saepe at officiis eligendi culpa tempore laudantium, obcaecati nihil id velit nobis sit, repellat doloremque ducimus accusantium autem quia? Amet labore illo incidunt odio.
+        Facilis, sed delectus iusto commodi error pariatur dignissimos cum vitae saepe consectetur in tempore repudiandae excepturi doloribus atque distinctio quaerat itaque mollitia placeat? Dolorum provident dolorem, beatae adipisci nisi omnis?
+        Quod totam ad similique non hic ipsum possimus ullam doloribus quae quibusdam sequi officiis fugit, nesciunt veniam molestiae, id earum vitae aliquid praesentium! Recusandae, ipsum. Harum fugit dolore distinctio consequatur.
+        Explicabo corrupti sequi quidem debitis omnis excepturi consequuntur? Voluptatum perspiciatis necessitatibus eveniet quisquam aperiam quia commodi, id minus sit facilis animi quam numquam veritatis saepe nostrum esse eos minima quo?
+        Temporibus ipsa natus doloremque, officia earum error eveniet reprehenderit non, nostrum vero repellendus veniam culpa doloribus, mollitia placeat sunt iste. Quo itaque delectus dolorem enim nihil totam laborum tempore molestiae.
+        Saepe debitis a cum fugit corrupti officiis dolores porro temporibus veniam, tempora repudiandae explicabo iste delectus incidunt, quaerat ex placeat suscipit odit. Beatae, minima dolor. Rerum numquam expedita atque quisquam!
+        Architecto eligendi quam magni debitis dolorum perspiciatis facere repudiandae voluptas eveniet esse alias maxime minus veritatis iusto, fugiat totam nostrum incidunt voluptates fugit numquam possimus similique excepturi nobis! Sit, reprehenderit?
+        Ipsa laudantium aliquid aperiam ex, fugiat ipsum quod officiis doloribus eligendi, tenetur amet quis quaerat magni. Facere corrupti temporibus, natus voluptatem eum dolorum minima molestias dolore neque accusamus magni nesciunt?
+        Assumenda fuga at blanditiis aspernatur dolorum autem iure aliquid commodi! Saepe nostrum hic, necessitatibus, corrupti error quam, porro reiciendis non consectetur neque a modi nam harum commodi possimus. Cumque, ex?
+        Tempore, inventore ad possimus quae molestias aspernatur, est doloribus beatae, ex sint eum magni dolore eius placeat quos culpa harum mollitia magnam. Qui aut ipsam ratione. Commodi similique nobis corporis.
+        Expedita exercitationem reiciendis mollitia. Earum quis obcaecati praesentium. Dicta repellendus atque consectetur provident odit nihil temporibus dolore sunt veritatis ullam excepturi animi beatae laborum rem praesentium, dignissimos eum cumque optio!
+        Beatae sequi officiis obcaecati architecto atque at aliquid voluptate, magnam amet voluptatibus enim tenetur? Porro neque possimus, commodi quidem ipsa obcaecati, aliquam facere debitis doloribus nostrum modi quisquam vel provident.
+        Dignissimos quia incidunt quasi non, fugiat doloremque molestiae quisquam repellat cumque rerum ab nobis earum. Et numquam fugit voluptatum deserunt eum a, quaerat commodi aut ex inventore quasi est unde.
+        Vel facere, libero, dolore porro commodi aut, blanditiis quos ipsa unde nesciunt hic veritatis. Minus quo ratione culpa odit assumenda, sit aspernatur sapiente impedit in accusamus itaque hic! Aspernatur, voluptatibus!
+        Et, dolor assumenda expedita impedit at dolores nemo! Magni nemo, laudantium possimus aliquam similique amet reprehenderit nostrum ea blanditiis molestias assumenda iusto atque explicabo, natus quae ex! Excepturi, ipsam natus!
+        Deleniti quae corporis ipsum numquam? Ipsam, non enim saepe ipsa eius repellat ipsum tempore exercitationem iste, vel explicabo dicta magnam quod voluptate, harum molestiae tenetur! Architecto fugiat voluptatum pariatur ea.
+        Autem suscipit aut, quae harum modi eius voluptatum nulla officiis! Commodi reprehenderit iure quo enim explicabo voluptate maiores, rem nihil maxime similique. Quisquam doloribus natus libero perferendis quis, voluptatem alias!
+        Doloremque expedita voluptas quia nihil impedit perferendis pariatur inventore reprehenderit incidunt, ipsam enim magnam distinctio voluptatem deserunt praesentium numquam architecto modi! Consectetur quasi impedit molestias magni fuga, reprehenderit vero recusandae.
+        Saepe quasi id dolorem iusto, impedit itaque possimus ullam optio voluptas animi inventore harum aperiam eaque veritatis aut, ab excepturi dolore at non ea nostrum hic. Deserunt totam unde omnis?
+        Ipsam suscipit, quia aliquam iure repudiandae voluptatum porro. Voluptates vero animi dolorem harum repellendus tenetur aliquid quia ducimus mollitia commodi facilis, a, eaque nulla veniam est magni, culpa et voluptatem.
+        Ad, quis unde dicta recusandae, et, odio iste nesciunt doloremque corporis consectetur fuga harum accusantium consequatur! Id perferendis architecto, pariatur recusandae non voluptatem vel doloremque sint accusantium porro fugit eius.
+        Culpa sint impedit libero. Corporis, et! Doloribus et, nam ducimus voluptate, id, omnis sit officiis nisi illo veritatis cumque adipisci quibusdam soluta at a placeat. Quam exercitationem veniam nam tenetur?
+        Suscipit, debitis libero possimus incidunt commodi atque ipsam aperiam architecto dolores. Consequatur quos repudiandae voluptate nesciunt ad ex recusandae dolores id repellat architecto dolor corrupti, ratione numquam saepe. Magnam, minima.
+        Nemo placeat itaque est ullam voluptate dolorum veniam soluta! Provident eaque a incidunt qui porro nulla dolorum, eius cum pariatur, dolorem beatae illo blanditiis, id sint. Dignissimos quisquam officia veritatis!
+        Adipisci, voluptas. Libero qui, minus beatae quidem in corrupti, dolore voluptates deleniti aut molestias nam quam! Nisi ratione, perferendis quas, animi magni nihil dolorum officia ipsum nulla libero repellat impedit?
+        Corrupti possimus quibusdam, eveniet nulla est aspernatur id aut? Quod odio dolore amet, ullam numquam rerum ipsa recusandae soluta quibusdam, voluptas doloremque vel laborum adipisci quidem repudiandae tenetur, sapiente hic?
+        Molestias, fuga. Alias nostrum, saepe officiis ipsum incidunt inventore et aliquam nemo blanditiis amet quaerat, veniam explicabo minus error est esse culpa quae ducimus quia autem quod voluptatum? Veniam, ducimus.
+        Incidunt deserunt tenetur modi qui necessitatibus, impedit, temporibus vitae neque, harum quo repellat dolor ad? Fugit quidem perferendis accusantium maxime vero, atque temporibus! Fugit ipsum odit corrupti, magnam veritatis laborum.
+        Quos, est suscipit deserunt, iusto ipsam asperiores temporibus doloribus inventore doloremque voluptas aliquam numquam esse in sed? Praesentium assumenda facilis quo obcaecati recusandae deleniti hic consectetur itaque ex, omnis id.
+        Eum adipisci animi beatae qui? Harum suscipit non et rerum blanditiis recusandae aspernatur beatae accusamus quidem facere animi accusantium, quae fuga voluptas saepe debitis quos maxime iusto quod, sit atque.
+        Ex accusamus officia itaque, sequi, voluptas, quis et vitae officiis inventore qui nam voluptate! Cum itaque ducimus recusandae nihil ab culpa dolorum voluptatem expedita sit, officia debitis! Nihil, magnam quisquam!
+        A aliquam similique eum impedit. Esse eius debitis nihil iure ab animi, sit corporis recusandae eum consectetur iusto at sunt consequuntur! Excepturi amet molestias magni eum eaque consequuntur id ea.
+        Consequuntur tenetur quia quibusdam dolorum ducimus consectetur, soluta, debitis error corporis doloribus accusamus repellat? Rem, ullam. Voluptatum, cupiditate quidem, at voluptatem corporis quas ad ut quibusdam iste architecto quos repellendus.
+        Quis debitis consequuntur aut odio beatae esse sit, accusantium explicabo ipsam amet vitae! Veritatis optio blanditiis libero eos enim, perspiciatis ea atque, et ad, fugit consectetur maxime reiciendis officia repellendus.
+        Suscipit, nihil fugiat. Pariatur voluptatibus corrupti temporibus ab perferendis at, unde, veritatis qui iure dolorem consequuntur. Dignissimos magni minus impedit voluptatum rem vel, quos cum eaque doloribus et dicta minima?
+        Saepe ad cumque sint sit cum, sunt laborum consectetur, iure veniam illum ut delectus distinctio autem dolore recusandae aliquid quis iusto dolor molestiae doloremque commodi, consequatur corporis modi? Obcaecati, labore!
+        Qui voluptates, labore provident possimus asperiores optio culpa laborum odio. In impedit ullam, quasi officiis, et unde eos nisi ipsam labore sit reiciendis deleniti aliquam minus eius, illo possimus dignissimos.
+        Officiis molestiae architecto magnam laborum, voluptate nisi impedit ad mollitia molestias similique omnis quos ipsum excepturi facilis voluptatibus nostrum incidunt repellat quis? In voluptatem quibusdam ab, hic sint facilis temporibus!
+        Facilis doloremque labore quasi id iusto, deserunt ducimus nihil eveniet aliquam sint quisquam numquam unde illum cupiditate libero veniam obcaecati saepe possimus corporis. Corrupti ducimus assumenda earum sint fugit eveniet?
+        Ab, vel! Possimus quam repudiandae dignissimos, iure dicta, vel quae architecto debitis officiis, consequatur autem ut voluptatum incidunt rerum? Adipisci, ullam voluptatum animi minima quasi laboriosam provident perspiciatis nobis esse.
+        Et mollitia id consequatur voluptatem non eos, asperiores tempora rem autem laboriosam obcaecati repudiandae cumque eum suscipit quibusdam dolores reiciendis dicta aspernatur dolorem consequuntur sunt. Repellat porro dicta molestiae at?
+        Excepturi nobis culpa accusamus adipisci? Fuga aspernatur quia consequatur fugit voluptates accusantium neque delectus necessitatibus sed. Illo quod omnis, temporibus officia sequi praesentium nobis autem libero, nulla sed maxime. Recusandae!
+        Repellendus repellat amet accusamus vel dicta, aliquid perspiciatis hic animi. Ad maxime quidem nemo, at veritatis ipsam sint et dolore tempore, quos corporis illo cum corrupti non dolor. Assumenda, laudantium.
+        Distinctio maiores quam voluptatum sapiente at expedita. Natus ratione repudiandae tempora provident eum similique, quaerat totam doloremque atque. Beatae, commodi. Modi labore quibusdam iusto quos error libero aperiam odio iure!
+        Distinctio tenetur vel earum quibusdam sint velit eum modi accusantium doloremque nemo sed, beatae praesentium aut rerum fugiat impedit perferendis natus ex culpa commodi? Doloribus consectetur dolor suscipit est sint?
+        Quas reiciendis quos nobis expedita incidunt magni delectus amet veritatis fugit vero quidem eaque autem at repellendus cumque quasi, mollitia adipisci, vitae quaerat, quod atque esse. In repellendus nulla sapiente.
+        Error ipsum harum, modi perspiciatis id quasi corporis nostrum alias. Repellendus assumenda debitis modi ea ab voluptates quod velit iusto impedit nam eos sapiente, illum est pariatur culpa sit sed.
+        Culpa in nam voluptas iusto fugit expedita corrupti dolores quod. Impedit voluptate excepturi quasi sunt magni aliquid voluptas. Amet placeat explicabo sed optio vero corporis, temporibus aut minus necessitatibus facilis.
+    </div>
+    <div id="fondo" class="fondo"></div>
+    <div id="ventana" class="ventana">
+        
+        <p>Hola</p>
+        <p>Esto es una ventana modal</p>
+        <p>
+            <button id="btnCerrar">Cerrar Ventana JQuery</button>
+            <button onclick="fCerrar()">Cerrar Ventana Javascript</button>
+        </p>
+        
+    </div>
+</body>
+</html>

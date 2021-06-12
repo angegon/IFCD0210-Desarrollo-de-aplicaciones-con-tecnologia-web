@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fRevisar(){
+            var objetos = document.querySelectorAll("li");
+            console.log(objetos);
+            for (i=0; i<objetos.length; i++){
+                objetos[i].style.backgroundColor="blue"; 
+                objetos[i].style.color="#fff";    
+                objetos[i].style.margin="10px";                
+            }
+        }        
+    </script>
+</head>
+<body onload="fRevisar()">
+    <div class="nivel1">
+        <div>
+            <span>hola</span>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <div><span>segundo</span></div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Hamburguesa</title>
+    <style>
+        .container{
+            display: grid;
+            /* Número de columnas con su ancho */
+            grid-template-columns:  200px 1fr 200px;
+             /* Número de filas con su alto */
+            grid-template-rows: 70px 1fr 1fr 100px;
+            /* Maquetación por áreas */
+            grid-template-areas: 
+                "pepe   pepe     pepe" 
+                "aside  section1 article" 
+                "aside  section2 article" 
+                "footer footer   footer";
+        }
+        .header{
+            background-color: brown;
+            color: yellow;
+            grid-area: pepe;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav{
+            background-color: green;
+            grid-area: aside;
+        }
+        .section1{
+            background-color: blue;
+            grid-area: section1;
+        }
+        .section2{
+            background-color: beige;
+            grid-area: section2;
+        }
+        .article{
+            background-color: red;
+            grid-area: article;
+        }
+        .footer{
+            background-color: black;
+            color: yellow;
+            grid-area: footer; 
+            display: flex;
+            justify-content: space-between;
+        }
+        @media screen and (max-width:768px){
+            .container{
+                 grid-template-columns: 200px 1fr;
+                /* Número de filas con su alto */
+                grid-template-rows: 70px 1fr 1fr 1fr 100px;
+                /* Maquetación por áreas */
+                grid-template-areas: 
+                    "pepe     pepe" 
+                    "aside      section1"
+                    "aside      section2"
+                    "article    article" 
+                    "footer     footer";
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>HEADER</h2>
+            <p>EJERCICIO DE MAQUETACIÓN GRID</p>
+            <p>Maquetación</p>
+        </div>
+        <div class="nav">
+            <h2>NAV</h2>
+            <ul>
+                <li>About</li>
+                <li>Cine</li>
+                <li>Música</li>
+                <li>Donde estamos</li>
+            </ul>
+        </div>
+        <div class="section1">
+            <h2>SECTION</h2>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, quaerat iste? Tempore repellat impedit cum, aut expedita nisi excepturi officiis illo eos reprehenderit blanditiis natus sequi placeat odit qui corporis.
+        </div>
+        <div class="article">
+            <h2>ARTICLE</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At facere quas optio perferendis quo reiciendis laudantium incidunt recusandae adipisci eligendi voluptatum placeat, cupiditate ipsam nemo nisi deserunt. Non, hic deserunt?
+            
+        </div>
+        <div class="section2">
+            <h2>SECTION</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur delectus vero animi perspiciatis ea laborum, minus aliquid qui ipsam! Dolor accusantium hic neque sunt at officia ratione perferendis quibusdam sequi?
+        </div>
+        <div class="footer">
+            <h2>FOOTER</h2>
+            <p>&copy;JRT Junio-2021</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Hamburguesa</title>
+    <style>
+        .container{
+            display: grid;
+            /* Número de columnas con su ancho */
+            grid-template-columns: 1fr;
+             /* Número de filas con su alto */
+            grid-template-rows: 70px 70px 1fr 70px;
+            /* Maquetación por áreas */
+            grid-template-areas: "header" "nav" "section" "footer";
+        }
+        .header{
+            grid-area: header;
+            background: lightblue;
+            color:yellow;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            font-size: 30px;
+        }
+        .botonXi{
+            font-size: 40px;
+            color: black;
+            cursor: pointer;
+            display: none;
+        }
+        .nav{
+            grid-area: nav;
+            background: lightsalmon;
+        }
+        .section{
+            grid-area: section;
+            background: lightgreen;
+        }
+        .footer{
+            grid-area: footer;
+            background: black;
+            color: white;
+        }
+        .boton{
+            z-index: 999;
+            position: absolute;
+            top: 0px;
+            height: 100vh;
+            width: 100vw;
+            display: block;
+        }
+        @media screen and (max-width:768px) {
+            .container{
+                grid-template-rows: 70px 0px 1fr 70px;
+                /*grid-template-areas: "header" "section" "footer";*/
+            }
+            .botonXi{
+                display: block;
+            }
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $(".botonXi").on("click", function(){
+                $(".nav").addClass("boton");
+            });
+            
+            $("#btnCerrar").on("click", function(){
+                $(".nav").removeClass("boton");
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>HEADER</p>
+            <p class="botonXi" title="Mostrar menú">&Xi;</p>   
+        </div>
+        <div class="nav">
+            <ul>
+                <li>Opcion 1</li>
+                <li>Opcion 2</li>
+                <li>Opcion 3</li>
+                <li><button id="btnCerrar">Cerrar</button></li>
+            </ul>
+        </div>
+        <div class="section">SECTION</div>
+        <div class="footer">FOOTER</div>
+    </div>
+</body>
+</html>
