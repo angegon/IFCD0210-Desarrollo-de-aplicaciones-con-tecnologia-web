@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Digital&tal</title>
+    <meta name="description" content="Desarrollo de aplicaciones con tecnologías web: práctica formularios, tablas y listas">
+    <meta name="author" content="Javier Lorenzo Fernández">
+    <meta name="keywords" content="HTML, CSS">
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  </head>
+
+  <body>
+    <header class="mainNavbar withSticky">
+      <nav class="isNavbar">
+        <a href="#home" class="link isActive"><i class="fa fa-home"></i> <span>Home</span></a>
+        <a href="#search" class="link"><i class="fa fa-search"></i> <span>Search</span></a>
+        <a href="#contact" class="link"><i class="fa fa-envelope"></i> <span>Contact</span></a>
+      </nav>
+      <nav class="isNavbar">
+        <a href="#login" class="link"><i class="fa fa-user"></i> <span>Login</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Main sections wrapper -->
+      <div class="mainContentWrapper">
+        <!-- breadcrumb -->
+        <nav class="breadcrumb isNavbar">
+          <a href="#home" class="link"><span>Home</span></a>
+          <a href="#category" class="link"><span>Category</span></a>
+          <a href="#article" class="link isCurrent"><span>Article</span></a>
+        </nav>
+        <!-- blog post with lists & table -->
+        <article>
+          <header class="header">
+            <h1>
+              Tipos de desarrollo de aplicaciones web más relevantes
+            </h1>
+            <p>
+              <em>El desarrollo de aplicaciones web te permite tener una app que será accesible desde cualquier navegador en cualquier dispositivo. Además, al contrario de lo que sucede con las aplicaciones nativas, no requieren descarga.</em>
+            </p>
+          </header>
+
+          <section class="isArticleSection">
+            <h2>¿Qué es una aplicación web?</h2>
+            <figure>
+              <img src="img/aplicaciones-web.png" alt="Imagen Aplicación Web">
+              <figcaption>F1. Imagen Aplicación Web</figcaption>
+            </figure>
+            <p>
+              Una <strong>aplicación web o web app</strong> es una versión de una página web que ha sido optimizada, normalmente por un equipo de desarrollo, para poder ser utilizada desde un teléfono móvil. Gracias a esto se adapta a cualquier dispositivo.
+            </p>
+            <p>
+              Estas son <strong>4 características de una aplicación web</strong> que te ayudarán a diferenciarlas de otros tipos de apps:
+            </p>
+            <ol>
+              <li><strong>Requieren un único desarrollo para cualquier dispositivo</strong>. Un mismo desarrollo en HTML5 es suficiente para cualquier sistema operativo.</li>
+              <li><strong>No es necesario descargarlas</strong>. La aplicación se aloja en un servidor y se accede a ella a partir de un navegador. Esto significa que es necesario estar conectado para acceder a ella.</li>
+              <li><strong>Son accesibles desde cualquier navegador</strong>. Si tienes un navegador instalado en el dispositivo (Firefox, Safari, Chrome…) podrás acceder a la aplicación web.</li>
+              <li><strong>Aparecen como resultado en los buscadores tradicionales</strong>. Al no necesitar descarga no las encontrarás en las app stores, pero sí aparecerán como resultado en motores como Google.</li>
+            </ol>
+            <p>
+              Aunque las <strong>aplicaciones nativas</strong> permiten desarrollos más complejos, también son más costosos y no siempre necesarios. <strong>La decisión dependerá del uso que se vaya a hacer de la aplicación</strong>.
+            </p>
+          </section>
+
+          <section class="isArticleSection">
+            <h2>Ventajas y beneficios de las aplicaciones web</h2>
+            <ul>
+              <li><strong>Se ahorra tiempo</strong>: al ser apps de fácil gestión, se pueden realizar tareas sin tener que descargar o instalar programas adicionales.</li>
+              <li><strong>Se recuperan datos</strong>: la información puede ser recuperada desde cualquier dispositivo a través del nombre y la contraseña.</li>
+              <li>Al contratar un servidor ajeno, <strong>las tareas y acciones del software no consumen recursos</strong> propios en tus sistemas.</li>
+              <li><strong>Es compatible con múltiples plataformas</strong>: solo necesitan contar con un navegador web.</li>
+              <li><strong>No hay virus</strong>: los datos que se guardan en el servidor de la app no se ven afectados por virus, gracias a sus sistemas de seguridad.</li>
+              <li><strong>Se actualiza de manera continua e inmediata.</strong></li>
+            </ul>
+          </section>
+
+          <section class="isArticleSection">
+            <h2>Leguajes de programación más utilizados</h2>
+            <div class="scrollableTable">
+              <table class="table">
+                <caption>
+                  <small>TIOBE Index for April 2021</small>
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Apr 2021</th>
+                    <th>Apr 2020</th>
+                    <th>Programming Language</th>
+                    <th>Ratings</th>
+                    <th>Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>C</td>
+                    <td>14.32%</td>
+                    <td>-2.40%</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>Java</td>
+                    <td>11.23%</td>
+                    <td>-5.49%</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>Python</td>
+                    <td>11.03%</td>
+                    <td>+1.72%</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>C++</td>
+                    <td>7.14%</td>
+                    <td>+0.36%</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>C#</td>
+                    <td>4.91%</td>
+                    <td>+0.16%</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>Visual Basic</td>
+                    <td>4.55%</td>
+                    <td>-0.18%</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>JavaScript</td>
+                    <td>2.44%</td>
+                    <td>+0.06%</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>14</td>
+                    <td>Assembly language</td>
+                    <td>2.32%</td>
+                    <td>+1.16%</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>PHP</td>
+                    <td>1.84%</td>
+                    <td>-0.54%</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>SQL</td>
+                    <td>1.83%</td>
+                    <td>-0.34%</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="socialMediaItems">
+                      <a href="#" class="socialMediaItem facebook" data-text="Síguenos en Facebook"><i class="fa fa-facebook"></i></a>
+                      <a href="#" class="socialMediaItem twitter" data-text="Síguenos en Twitter"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="socialMediaItem google" data-text="Síguenos en Google"><i class="fa fa-google"></i></a>
+                      <a href="#" class="socialMediaItem linkedin" data-text="Síguenos en LinkedIn"><i class="fa fa-linkedin"></i></a>
+                      <a href="#" class="socialMediaItem youtube" data-text="Suscríbete a nuestro canal"><i class="fa fa-youtube"></i></a>
+                    </td>
+                    <td colspan="2"><small>Daniel González 11:22 18/12/20</small></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <ul class="moreItemsNavBar withFlexbox">
+              <li><a href="#">&lt;&lt;</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#" class="isActive">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">&gt;&gt;</a></li>
+            </ul>
+          </section>
+          <!-- form to write a blog post comment -->
+          <footer>
+            <div>
+              <h3>Déjanos un comentario</h3>
+              <form class="postCommentForm withFlexbox" action="" method="POST" autocomplete="on">
+                <label for="fname">Nombre completo <span>*</span></label>
+	              <input type="text" id="fname" name="fname" placeholder="Tu nombre y apellidos" required>
+
+                <label for="email">Correo Electrónico <span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+                <label for="comment">Tu comentario <span>*</span></label>
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Tu comentario es..." maxlength="3000" required></textarea>
+
+                <input type="submit" value="Enviar" onclick="console.log(`¡${this.value} mi comentario, leches!`)">
+              </form>
+            </div>
+          </footer>
+        </article>
+      </div>
+
+      <!-- Aside column with login & other forms -->
+      <aside class="aside">
+        <div class="card">
+          <header class="cardHeader">
+            <h3>¡Logéate!</h3>
+          </header>
+          <figure class="cardBody">
+            <img src="img/jalofernandez-glitch-profile.gif" alt="Imagen de perfil">
+          </figure>
+          <form class="cardFooter" action="" method="POST" autocomplete="on">
+            <label for="fname">Nombre de usuario</label>
+            <input type="text" id="fname" name="fname" placeholder="Tu nombre de usuario" required>
+
+            <label for="pass">Contraseña</label>
+            <input type="password" id="pass" name="pass" placeholder="Tu contraseña" required>
+
+            <input type="submit" value="Login">
+
+            <div class="isCheckbox">
+              <input type="checkbox" id="rememberMe" name="rememberMe" value="true" required>
+              <label for="rememberMe">Recuérdame</label>
+            </div>
+
+            <div class="formFooter">
+              <input type="reset" value="Cancelar">
+              <small>¿Olvidaste tu <br><a href="#">contraseña</a>?</small>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <header class="cardHeader">
+            <h3>Únete al newsletter</h3>
+          </header>
+          <form action="" method="POST" autocomplete="on">
+            <div>
+              <label for="fname">Nombre</label>
+              <input type="text" id="fname" name="fname" placeholder="Tu nombre y apellidos" required>
+
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+              <div class="isCheckbox">
+                <input type="checkbox" id="newsletter" name="newsletter" required>
+                <label for="newsletter">Newsletter diaria</label>
+              </div>
+            </div>
+            <div class="formFooter cardBody">
+              <input type="submit" value="Login">
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <header class="cardHeader">
+            <h3>Género</h3>
+          </header>
+          <form action="" method="POST" autocomplete="on">
+            <div>
+              <div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Chorbo</label>
+              </div>
+              <div>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Chorba</label>
+              </div>
+              <div>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Otros</label>
+              </div>
+            </div>
+            <div class="formFooter cardBody">
+              <input type="submit" value="Enviar">
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <header>
+            <h3>Buscar en Google</h3>
+            <form class="formToSearch" action="" method="GET">
+              <input type="search" id="search" name="search" placeholder="Buscar..." required>
+              <input type="submit" value="" onclick="alert('¡Buscar en Google!')">
+            </form>
+          </header>
+        </div>
+
+        <div class="card">
+          <header class="cardHeader">
+            <h3>Formulario de contacto</h3>
+          </header>
+          <form class="cardFooter" action="" method="POST" autocomplete="on">
+            <label for="fname">Nombre completo <span>*</span></label>
+	          <input type="text" id="fname" name="fname" placeholder="John Doe" required>
+
+            <label for="phone">Teléfono <span>*</span></label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" max="9" placeholder="666002121" required>
+
+            <label for="email">Correo Electrónico <span>*</span></label>
+            <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+
+            <label for="birthDate">Fecha de nacimiento <span>*</span></label>
+            <input type="date" id="birthDate" name="birthDate" required>
+
+            <label for="comment">Consulta <span>*</span></label>
+            <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Tu consulta..." maxlength="3000" required></textarea>
+
+            <input type="submit" value="Login">
+
+            <div class="isCheckbox">
+              <input type="checkbox" id="rememberMe" name="rememberMe" required>
+              <label for="rememberMe">Acepto los <a href="">términos y condiciones</a></label>
+            </div>
+          </form>
+        </div>
+      </aside>
+
+    </main>
+
+    <footer class="footer imageBackground footerImg withFlexbox">
+      <p class="legalLinksNavbar">
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Política de cookies</a>
+      </p>
+      <p class="copyright">
+        <small>&copy; Todos los derechos reservados, <b>2021</b>. <br>Powered by <b>Blogger</b></small>
+      </p>
+    </footer>
+
+    <div class="toTopContainer">
+      <a href="#top">
+        <i class="fa fa-arrow-circle-up"></i>
+      </a>
+    </div>
+    
+  </body>
+</html>

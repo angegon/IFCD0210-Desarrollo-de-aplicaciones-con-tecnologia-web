@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estructura del documento HTML</title>
+  <meta name="description" content="Desarrollo de aplicaciones con tecnologías web">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Javier Lorenzo Fernández">
+  <link rel="icon" href="favicon.ico" type="image/ico">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+<body>
+  <!-- Práctica UF1841 del módulo MF0491_3 del curso IFCD0210 en la escuela CFTIC sobre estructura de HTML -->
+
+  <!-- Imp! Usaremos estructura semántica de elementos -->
+  <!-- Cabecera -->
+  <header>
+    <h1>Mi página web</h1>
+    <hr/>
+    <h4>Un sitio web creado por mi</h4>
+  </header>
+  <!-- Navegación principal -->
+  <nav>
+    <div class="wrapper">
+      <a href="#">Home</a>
+      <a href="#" class="active">Link</a>
+      <a href="#">Link</a>
+      <a href="#" class="right">Link</a>
+    </div>
+  </nav>
+  <!-- Contenedor del contenido principal del documento -->
+  <main class="wrapper">
+    <section>
+      <article>
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Mar 3, 2021</h5>
+        <div class="img">Imagen</div>
+        <p><small>Some text caption...</small></p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu molestie ipsum. Quisque commodo pulvinar est a lacinia. Vestibulum imperdiet diam gravida ultricies porta. Suspendisse finibus, libero sit amet vehicula fringilla, ex dui congue neque, a pellentesque tellus neque id metus...
+        </p>
+        <a href="#" class="link">&rarr; <span>Read more</span></a>
+      </article>
+      <article>
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Mar 3, 2021</h5>
+        <div class="img">Imagen</div>
+        <p><small>Some text caption...</small></p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu molestie ipsum. Quisque commodo pulvinar est a lacinia. Vestibulum imperdiet diam gravida ultricies porta. Suspendisse finibus, libero sit amet vehicula fringilla, ex dui congue neque, a pellentesque tellus neque id metus...
+        </p>
+        <a href="#" class="link">&rarr; <span>Read more</span></a>
+      </article>
+    </section>
+    <!-- Navegación secundaria (generalmente dentro del propio documento) -->
+    <aside>
+      <h2>About Me</h2>
+      <h5>Photo of me:</h5>
+      <div class="img">Imagen</div>
+      <p>Some text about me and my personal issues...</p>
+      <h3>More text</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div class="img">Imagen</div>
+      <div class="img">Imagen</div>
+      <div class="img">Imagen</div>
+      <h2>Photo Skill</h2>
+      <h5>Photo Hobby:</h5>
+      <div class="img">Imagen</div>
+    </aside>
+  </main>
+  <!-- Pié de página -->
+  <footer>
+    <div class="wrapper">
+      <h2>Footer</h2>
+    </div>
+  </footer>
+</body>
+</html>

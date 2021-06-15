@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rojo{
+            background-color: red;
+            width:30px;
+            height:30px;
+        }
+        .verde{
+            background-color: green;
+            width:30px;
+            height:30px;
+        }
+        .float{
+            float: left;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    <p tabindex="1" lang="en">
+        ...What she <em>really</em> meant to say was, "This is not ok, it is 
+        <strong>excellent</strong>"!...
+    </p>
+    -->
+    <table tabindex="1" lang="es" summary="Lista de teléfonos particular">
+        <caption>Agenda de teléfonos</caption>
+        <tr>
+            <th id="r">Relación</th>
+            <th id="n">Nombre</th>
+            <th id="a">Apellidos</th>
+            <th id="t">Teléfono</th>
+        </tr>
+        <tr>
+            <th id="f1">Familia</th>
+            <td headers="f1 n">Pepe</td>
+            <td headers="f1 a">Pérez</td>
+            <td headers="f1 t">6477</td>
+        </tr>
+        <tr>
+            <th id="f2">Amiga</th>
+            <td headers="f2 n">Ana</td>
+            <td headers="f2 a">Ruiz</td>
+            <td headers="f2 t">45634</td>
+        </tr>
+        <tr>
+            <th id="f3">Trabajo</th>
+            <td headers="f3 n">Eva</td>
+            <td headers="f3 a">García</td>
+            <td headers="f3 t">68979</td>
+        </tr>
+    </table>
+    <div>
+        <div class="float">
+            <p class="rojo"></p>
+            Cierra ventana
+        </div>
+        <div class="float">
+            <p class="verde"></p>
+            Abre ventana
+        </div>
+        <div class="clear"></div>
+        
+    </div>
+    <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="http://jigsaw.w3.org/css-validator/images/vcss"
+                alt="¡CSS Válido!" />
+        </a>
+    </p>
+              
+</body>
+</html>

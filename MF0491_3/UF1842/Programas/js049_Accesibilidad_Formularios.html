@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="jquery.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="POST">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="name" id="nombre">
+            <br>
+            <input type="radio" name="sexo" id="hombre" checked title="Prueba">
+            <label for="hombre">Hombre</label>
+            <br>
+            <input type="radio" name="sexo" id="mujer">
+            <label for="mujer">Mujer</label>
+            <br>
+            <fieldset>
+                <legend>Fecha de nacimiento</legend>
+                <input type="number" name="" id="dia" title="Día"> /
+                <input type="number" name="" id="mes" title="Mes"> /
+                <input type="number" name="" id="año" title="Año"> 
+            </fieldset>
+            <fieldset>
+                <legend>Búsqueda</legend>
+                <input type="text" name="" id="" title="Búsqueda por apellidos">
+                <button>Buscar</button>
+            </fieldset>
+            <label for="productos">Productos</label>
+            <select name="" id="productos">
+                <optgroup label="Frutas">
+                    <option value="">Uvas</option>
+                    <option value="">Naranjas</option>
+                    <option value="">Sandias</option>
+                </optgroup>
+                <optgroup label="Verduras">
+                    <option value="">Lechuga</option>
+                    <option value="">Escarola</option>
+                    <option value="">Berenjena</option>
+                </optgroup>
+            </select>
+        </form>
+    </div>
+</body>
+</html>

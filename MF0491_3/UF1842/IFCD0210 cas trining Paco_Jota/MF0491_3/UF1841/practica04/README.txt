@@ -1,0 +1,1 @@
+Paco, me he permitido el lujo de añadirte una segunda página llamada "iphone.html" enlazada desde "moviles.html" para practicar más el tema de los iframes. Lo he decorado como un móvil (con CSS) ajustando su aspect ratio a ese formato móvil y asociado a una serie de enlaces a proyectos propios. A ver qué te parece :)

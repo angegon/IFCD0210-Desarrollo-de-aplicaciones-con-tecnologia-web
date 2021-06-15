@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIS</title>
+    <script>
+        function fMostrar(objeto){
+            console.log("Texto: " + objeto.innerHTML);
+            var siguiente = objeto.nextElementSibling;
+            siguiente.style.backgroundColor = "yellow";
+            //var padre = objeto.parentElement;
+        }
+    </script>
+</head>
+<body>
+    <div onclick="fMostrar(this)">DIV</div>
+    <a href="">Algo</a>
+    <br>
+    <p onclick="fMostrar(this)">PARRAFO</p>
+    <p>
+        Algo
+    </p>
+    <br>
+    <p>  algo      
+        <div onclick="fMostrar(this)">DIV2</div>
+        <p>algo</p> 
+    </p>
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* VARS */
+:root {
+  --device-width: 360px;
+  --device-height: 720px;
+  --device-browser-height: 25px;
+  --device-border-radius: 30px;
+  --device-camera-size: 12px;
+}
+/* MODIFIERS */
+.sectionWrapper.withDevices {
+  background-color: var(--color-blue-darkest);
+}
+#proyectos .iframeMenu,
+#proyectos .iframeItem {
+  height: 560px; /* to overwrite value */
+}
+.sectionWrapper.withDevices .sectionIframe {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.sectionWrapper.withDevices .sectionIframe .withIframeMenu ul {
+  margin-top: 2rem;
+}
+
+/* IFRAME PROJECTS SECTION */
+.withDevice {
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  -o-transform: scale(0.75);
+  transform: scale(0.75);
+  position: relative;
+  bottom: 12%;
+}
+/* iphone´s Device & inner iFrame */
+.devicesWrapper {
+  position: relative;
+  margin: 0 auto;
+  background-color: #444;
+}
+.devicesWrapper,
+.iphone,
+.withIframe,
+iframe {
+  width: calc(var(--device-width) + 2px); /* to fit screen with notch */
+}
+.withIframe,
+iframe {
+  height: calc(var(--device-height) - var(--device-browser-height)); /* 680px device height less browser´s top bar */
+  border-bottom-left-radius: var(--device-border-radius);
+  border-bottom-right-radius: var(--device-border-radius);
+  position: absolute;
+  right: 0;
+}
+iframe {
+  top: var(--device-browser-height);
+  background-color: var(--color-header);
+  border-color: var(--color-blue-darkest);
+}
+.withIframe {
+  background-color: transparent;
+  top: 0;
+  z-index: 2;
+}
+/* iphone´s Case & Frame */
+.iphone {
+  z-index: 1;
+  box-shadow: 0px 0px 0px 14px #1f1f1f, 0px 0px 0px 8px #191919, 0px 0px 0px 16px #111;
+  height: var(--device-height);
+  border-radius: var(--device-border-radius);
+}
+.iphone::before,
+.iphone::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* iphone´s Buttons: volume & block ones */
+.iphone span,
+.iphone span::after {
+  width: 10px;
+  height: 50px;
+  background-color: #1f1f1f;
+  border-radius: 5px;
+}
+.iphone span {
+  top: 20%;
+  left: -18px;
+}
+.iphone span::after {
+  content: '';
+  position: relative;
+  display: block;
+  top: 60px;
+  left: 0;
+}
+.iphone span + span {
+  left: auto;
+  right: -18px;
+  height: 75px;
+}
+.iphone span + span::after {
+  display: none;
+}
+/* iphone´s bottom Swip Bar */
+.notch,
+.swipBar {
+  z-index: 3; /* over iframe below device frame */
+  position: absolute;
+}
+.swipBar {
+  width: 100px;
+  height: 4px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  bottom: 12px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* iphone´s Notch */
+.notch {
+  top: 0px;
+  left: 25%;
+  width: 50%;
+  height: 20px;
+  background-color: #1f1f1f;
+  border-radius: 0px 0px 10px 10px;
+}
+/* iphone´s Speaker inside notch */
+.notch span {
+  display: block;
+  color: transparent;
+  width: 65px;
+  height: 8px;
+  border-radius: 8px;
+  box-shadow: inset 0px -3px 3px 0px rgba(255, 255, 255, 0.2);
+  background-color: #101010;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* iphone´s Camera inside notch */
+.notch span::after {
+  content: '';
+  display: block;
+  width: var(--device-camera-size);
+  height: var(--device-camera-size);
+  border-radius: 50%;
+  box-shadow: inset 0px -3px 2px 0px rgb(255 255 255 / 20%);
+  position: relative;
+  left: 75px;
+  top: -2px;
+}
+.notch span::before {
+  content: '';
+  display: block;
+  width: calc(var(--device-camera-size) / 2);
+  height: calc(var(--device-camera-size) / 2);
+  background-color: var(--color-header);
+  border-radius: 4px;
+  box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 1px;
+  left: 78px; /* span::after width + 3 more pixels */
+}

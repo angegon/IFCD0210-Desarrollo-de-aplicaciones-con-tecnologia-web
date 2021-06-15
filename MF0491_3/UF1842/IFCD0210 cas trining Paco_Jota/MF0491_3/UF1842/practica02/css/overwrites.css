@@ -1,0 +1,38 @@
+/* to overwritte Bootstrap styles by default */
+:root {
+  --margin-top: 0.5rem;
+}
+.is-hidden {
+  display: none;
+}
+/* Color */
+.is-success {
+  color: #6ebd56;
+}
+.is-danger {
+  color: #d55053;
+}
+/* Form validation messages */
+.msg {
+  margin-top: var(--margin-top);
+  display: block;
+}
+/* Tables */
+.table caption,
+.is-table caption {
+  caption-side: top;
+}
+.is-table {
+  margin-top: var(--margin-top);
+  min-width: 225px;
+  text-align: right;
+}
+.is-table caption {
+  text-align: right;
+}
+.is-table thead {
+  border-bottom: 1px dashed grey;
+}
+.is-table thead th {
+  font-size: 85%;
+}

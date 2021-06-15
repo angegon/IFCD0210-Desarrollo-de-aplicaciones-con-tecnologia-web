@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile news | Home</title>
+    <meta name="description" content="Desarrollo de aplicaciones con tecnologías web: práctica video, audio e iframe">
+    <meta name="author" content="Javier Lorenzo Fernández">
+    <meta name="keywords" content="HTMl, CSS">
+    <link rel="icon" href="favicon.ico" type="image/icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  </head>
+  
+  <body>
+    <header id="top" class="hero heroImg imageBackground withFlexbox">
+      <div class="heroTitle">
+        <h1>Información sobre móviles</h1>
+        <h3>Las novedades más actuales de Internet</h3>    
+      </div>
+    </header>
+
+    <div class="mainNavbar withSticky">
+      <nav class="withWrapper">
+        <a href="#novedades" class="link"><i class="fa fa-bookmark"></i> <span>Novedades</span></a>
+        <a href="#losmejores" class="link"><i class="fa fa-star"></i> <span>Los mejores</span></a>
+        <a href="#loultimo" class="link"><i class="fa fa-history"></i> <span>Lo último</span></a>
+        <a href="#visitanos" class="link"><i class="fa fa-map-marker"></i> <span>Visítanos</span></a>
+        <a href="iphone.html" class="link"><i class="fa fa-mobile"></i> <span>Proyectos</span></a>
+      </nav>
+    </div>
+
+    <input type="checkbox" id="darkTheme" name="darkTheme" value="" data-text-dark="Dark theme" data-text-light="Light theme">
+  
+    <main>
+      <section id="novedades" class="sectionWrapper">
+        <h2 class="sectionTitle withSticky">
+          Novedades móviles
+        </h2>
+        <div class="sectionItemsList withWrapper">
+
+          <article class="sectionItem is33">
+            <video
+              class="sectionItemVideo"
+              poster="img/poster-iphone12pro.jpg"
+              title="iPhone 12 Pro review" 
+              muted loop controls
+            >
+              <source src="video/video-iphone12Pro.mp4" type="video/mp4">
+              Ops, no puedes ver este vídeo : (
+            </video>
+            <div>
+              <h2 class="sectionItemTitle">
+                <a href="#">iPhone 12 Pro 5G</a>
+              </h2>
+              <p class="sectionItemDesc">
+                El 5G llega al Pro. El chip A14 Bionic no admite comparación con el de ningún otro smartphone. El avanzado sistema de cámaras lleva la fotografía con poca iluminación a otro nivel y alcanza su máxima expresión en el iPhone 12 Pro Max. Y el Ceramic Shield ofrece cuatro veces más resistencia a las caídas. El iPhone 12 Pro abre un universo de posibilidades. ¿Te atreves?
+              </p>
+            </div>
+          </article>
+
+          <article class="sectionItem is33">
+            <video
+              class="sectionItemVideo"
+              poster="img/poster-galaxy-s21-ultra.jpg"
+              title="Galaxy S21 Ultra 5G review" 
+              muted loop controls
+            >
+              <source src="video/video-galaxy-s21-ultra.mp4" type="video/mp4">
+              Ops, no puedes ver este vídeo : (
+            </video>
+            <div>
+              <h2 class="sectionItemTitle">
+                <a href="#">Galaxy S21 Ultra 5G</a>
+              </h2>
+              <p class="sectionItemDesc">
+                Presentamos Galaxy S21 Ultra 5G. Diseñado con una cámara con corte de contorno exclusiva que marca una revolución en la fotografía, te permite capturar vídeo en 8K con calidad de vídeo y fotografías impresionantes, todo a la vez. Y con el chipset más rápido de Galaxy, el cristal más resistente, 5G y una batería para todo el día, Ultra hace honor a su nombre sin inmutarse.
+              </p>
+            </div>
+          </article>
+
+          <article class="sectionItem is33">
+            <video
+              class="sectionItemVideo"
+              poster="img/poster-redmi-note10pro.jpg"
+              title="RedMi Note 10 pro review" 
+              muted loop controls
+            >
+              <source src="video/video-redmi-note10pro.mp4" type="video/mp4">
+              Ops, no puedes ver este vídeo : (
+            </video>
+            <div>
+              <h2 class="sectionItemTitle">
+                <a href="#">RedMi Note 10 pro</a>
+              </h2>
+              <p class="sectionItemDesc">
+                El Mi Note 10 cuenta con una cámara de 108 MP con una resolución fotográfica de hasta 2032x9024, la cual es 12 veces mayor que la resolución 4K. Con su sensor súper grande de tamaño 1/1.33", la cámara del Mi Note 10 supera a la mayoría de cámaras digitales. Al capturar más luz y detalles, reproduce fielmente la belleza de los paisajes. ¿No es impresionante?
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="losmejores" class="sectionWrapper">
+        <h2 class="sectionTitle withSticky">
+          Los mejores 2021
+        </h2>
+        <div class="sectionIframe withFlexbox">
+          <div class="iframeMenu withCustomList">
+            <ul>
+              <li><a href="https://www.youtube.com/embed/cnXapYkboRQ" target="proyector">Apple iPhone 12 Pro</a></li>
+              <li><a href="https://www.youtube.com/embed/kYPHTSEU49Y" target="proyector">Samsung Galaxy S21 Ultra</a></li>
+              <li><a href="https://www.youtube.com/embed/T04yiCoN41A" target="proyector">Huawei Mate 40 Pro</a></li>
+              <li><a href="https://www.youtube.com/embed/cjWKI0dNGhU" target="proyector">OPPO Find X2 Pro</a></li>
+              <li><a href="https://www.youtube.com/embed/EMqgyJjrY8k" target="proyector">Sony Xperia 1 (mark) II</a></li>
+              <li><a href="https://www.youtube.com/embed/cWSgaBsuSLU" target="proyector">OnePlus 8T</a></li>
+              <li><a href="https://www.youtube.com/embed/sLyOcAvyDKw" target="proyector">ASUS Zenfone 7 Pro</a></li>
+              <li><a href="https://www.youtube.com/embed/BkmS8SM9P9w" target="proyector">Xiaomi Poco F2 Pro</a></li>
+            </ul>
+          </div>
+          <div class="iframeItem">
+            <iframe 
+              src="" 
+              frameborder="0" 
+              width="100%" 
+              height="500" 
+              name="proyector" 
+              title="Marco en línea" 
+              srcdoc="<div style='max-width: 320px; color: white; text-align: center; margin: 4rem auto; font-family: sans-serif; line-height: 1.5; letter-spacing: 1px;'><h4>Proyector de vídeos</h4><p>Esto es un marco en línea, iframe, para visualizar vídeos. Clica en los enlaces del menú lateral para cargar y reproducir el vídeo elegido 👌</p></div>"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="loultimo" class="sectionWrapper">
+        <h2 class="sectionTitle withSticky">
+          Lo último
+        </h2>
+        <div class="sectionItemsList withHero">
+          <article class="sectionItem withImg">
+            <picture class="sectionItemImg">
+              <source media="(min-width: 900px)" srcset="img/m1-chip-large.jpg" />
+              <source media="(min-width: 500px)" srcset="img/m1-chip-medium.jpg" />
+              <img src="img/m1-chip-small.jpg" alt="Chip M1 de Apple">
+              <!-- <figcaption>Chip M1 de Apple</figcaption> -->
+            </picture>
+          </article>
+          <div class="sectionItemHero heroTitle">
+            <img src="img/m1-chip-icon-large.jpg" alt="Chip M1 de Apple" width="80" height="80">
+            <h3>Chip M1 de Apple</h3>
+            <p class="sectionItemDesc">
+              El chip M1 de Apple eleva el Mac mini a otra categoría. Con un rendimiento top, gráficos supersónicos, memoria unificada ultraveloz y un Neural Engine avanzado, nuestro ordenador de mesa más versátil rompe todos los moldes.
+            </p>
+            <a href="#" class="btn" title="Visítanos">
+              Más información
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="visitanos" class="sectionWrapper">
+        <h2 class="sectionTitle withSticky">
+          Visítanos
+        </h2>
+        <div class="sectionItemsList withHero">
+          <article class="sectionItem withImg">
+            <iframe width="100%" height="400" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJiVU04useQg0RA4H40Qdl7jI&amp;key=AIzaSyDMlW8moTM7oB0zzRGfzWGOLSwwEv64t3o" allowfullscreen></iframe>
+          </article>
+        </div>
+      </section>
+    </main>
+  
+    <footer class="footer imageBackground footerImg withFlexbox">
+      <div class="innerLinksNavbar sectionItemsList withCustomList">
+        <div class="sectionItem is25">
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Política de cookies</a></li>
+            <li><a href="#">Nota legal</a></li>
+            <li><a href="#">Mapa web</a></li>
+          </ul>
+        </div>
+        <div class="sectionItem is25">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#">Comprar móvil</a></li>
+            <li><a href="#">Vender móvil</a></li>
+            <li><a href="#">Reparar Móvil</a></li>
+            <li><a href="#">Seguro Móvil</a></li>
+            <li><a href="#">Recompra móvil</a></li>
+            <li><a href="#">Plan Renove Móvil</a></li>
+          </ul>
+        </div>
+        <div class="sectionItem is25">
+          <h5>Marcas</h5>
+          <ul>
+            <li><a href="#">Móviles Apple</a></li>
+            <li><a href="#">Móviles Samsung</a></li>
+            <li><a href="#">Móviles Huawei</a></li>
+            <li><a href="#">Móviles Sony</a></li>
+            <li><a href="#">Móviles Xiaomi</a></li>
+            <li><a href="#">Móviles Oppo</a></li>
+          </ul>
+        </div>
+        <div class="sectionItem is25">
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="#">Av. de España Nº1</a></li>
+            <li><a href="#">28000 Madrid, España</a></li>
+            <li><a href="#">coreo@dominio.com</a></li>
+            <li><a href="#">www.dominio.com</a></li>
+          </ul>
+          <div class="socialMediaNavbar">
+            <a href="#" class="socialMediaItem facebook" data-text="Síguenos en Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="socialMediaItem twitter" data-text="Síguenos en Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="socialMediaItem google" data-text="Síguenos en Google"><i class="fa fa-google"></i></a>
+            <a href="#" class="socialMediaItem linkedin" data-text="Síguenos en LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="socialMediaItem youtube" data-text="Suscríbete a nuestro canal"><i class="fa fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="legalLinksNavbar">
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Política de cookies</a>
+      </div>
+    </footer>
+
+    <div class="toTopContainer">
+      <a href="#top">
+        <i class="fa fa-arrow-circle-up"></i>
+      </a>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="fontawesome.min.css">
+
+    <style type="text/css">
+        body {
+            background-color: #009;
+            color: #FFF;
+        }
+
+        h3 {            
+            padding: 10px 0 0 25px;
+            cursor: pointer;
+        }
+
+        h3.cerrar {
+            background-image: url(imgs/close.png);
+        }
+
+        .respuesta {
+            margin-left: 25px;
+        }
+
+        .titulo {
+            text-align: center;
+        }
+
+        .principal {
+            margin-left: 200px;
+            margin-top: 150px;
+        }
+        .respuesta{
+            /*display: none;*/
+        }
+    </style>
+
+    <script>
+        function fMostrar(objeto){
+            // Necesito saber cual es el siguiente div
+            var div_a_mostrar = objeto.nextElementSibling;
+                
+            // Pongo todos de blanco
+            fPoner_H3_Blanco();
+            
+            if( div_a_mostrar.style.display == "block"){
+                // Si la respuesta está visible --> Ponerla invisible y de color blanco
+                // Oculto todas las respuestas
+                fOcultar_Respuestas(); // Pongo todos de blanco
+                fPoner_H3_Blanco();
+            } else {
+                fOcultar_Respuestas(); // Pongo todos de blanco
+                fPoner_H3_Blanco();
+                // Poner h3 de color rojo
+                objeto.style.color="red";
+                // Poner visible la respuesta
+                div_a_mostrar.style.display="block";
+            }          
+            
+        }
+
+        function fOcultar_Respuestas(){
+            var elementos = document.querySelectorAll(".respuesta");
+            console.log(elementos);
+            for (i=0; i<elementos.length; i++){
+                elementos[i].style.display="none";
+            }
+        }
+        function fPoner_H3_Blanco(){
+            var elementos = document.querySelectorAll("h3");
+            //console.log(elementos);
+            for (i=0; i<elementos.length; i++){
+                elementos[i].style.color="#fff";
+            } 
+        }
+        
+    </script>
+</head>
+<body onload="fOcultar_Respuestas()">
+    <h1>FAQ</h1>
+    <div class="principal">
+        <h2>Preguntas frecuentes</h2>
+        <h3 onclick="fMostrar(this)">¿Qué programa utilizas para grabar los vídeos?</h3>
+        <div class="respuesta">
+            <p>Utilizo Camtasia versión 7 junto con el programa gratuito ZoomIt</p>
+        </div>
+
+        <h3 onclick="fMostrar(this)">¿Puedes pasarme la página donde te has descargado el Dreamweaver? Es que a mi me pide códigos</h3>
+        <div class="respuesta">
+            <p>Todo el software utilizado por Píldoras Informáticas es 100% legal. Desconozco si existen páginas a tal
+                efecto y si las conociera, tampoco podría divulgarlas pues constituye un delito.</p>
+        </div>
+
+        <h3 onclick="fMostrar(this)">¿Para cuándo el curso de PHP/MySql?</h3>
+        <div class="respuesta">
+            <p>El curso de PHP/MySql será el siguiente después de terminar los de Java y JavaScript</p>
+        </div>
+
+        <h3 onclick="fMostrar(this)">¿Por qué no ordenas los vídeos? Así no hay quien encuentre nada</h3>
+        <div class="respuesta">
+            <p>Los vídeos se encuentran perfectamente ordenados. Puedes acceder a las listas de reproducción de mi canal
+                donde podrás acceder a ellos organizados por curso y número de vídeo</p>
+        </div>
+
+        <h3 onclick="fMostrar(this)">Estoy en el vídeo nº 18 del curso VBA Excel. Llevo ahí 3 meses. ¿Por qué no publicas más vídeos?</h3>
+        <div class="respuesta">
+            <p>El curso de VBA Excel contiene 56 vídeos ya terminados desde hace un año. Accede a la lista de
+                reproducción de mi canal y podrás ver todos los cursos y vídeos organizados por curso y nº de vídeo</p>
+        </div>
+
+        <h3 onclick="fMostrar(this)">Hola. Muy buenos los vídeos. Dame una dirección de correo para pasarte una BBDD con la que tengo problemas
+        </h3>
+        <div class="respuesta">
+            <p>Gracias por el comentario. Lamentablemente no tengo tiepo para atender temas informáticos personales. Tan
+                solo resuelvo dudas relacionadas con los cursos</p>
+        </div>
+
+        <h3 onclick="fMostrar(this)">Hola. Excelente tu canal. Tengo una duda: Resulta que tengo una BBDD con 29 tablas con 51 campos cada una.
+            ¿Por qué cuando imprimo no me sale la fecha de alta en la empresa de mis empleados?</h3>
+        <div class="respuesta">
+            <p>Hola. Gracias por el comentario. Este tipo de dudas resulta un poco complicado resolverlas a distancia.
+                Las consultas para el tarot y la bola de cristal las contesto solo el 30 de febrero. Siento no ser de
+                más ayuda. Un saludo</p>
+        </div>
+    </div>
+</body>
+
+</html>

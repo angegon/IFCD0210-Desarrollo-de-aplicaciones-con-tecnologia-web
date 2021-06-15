@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es-ES">
+	<head>
+	<meta charset="utf-8">
+		<title>Conversión de unidades con JavaScript</title>
+
+		<!-- Información sobre el documento web -->
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="description" content="Confección y publicación de páginas web">
+		<meta name="author" content="Francisco">
+		<meta name="generator" content="Visual Studio Code">
+			
+		<!-- Etiquetas de adaptación del contenido -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<!-- FAVICON (icono de favoritos)-->
+		<link rel="icon" href="javascript.png" type="image/png">
+
+		<!-- Enlace externo a un documento de estilos CSS -->
+		<link rel="stylesheet" href="estilos.css" type="text/css">
+			
+		<!-- Enlace externo a un documento de funciones JavaScript -->
+		<script src="funciones.js"></script>
+	</head>
+
+	<body>
+		<div class="container mt-3 mb-3">
+			<h2>
+				<strong>Operaciones de conversión de unidades con JavaScript</strong>
+			</h2>
+			<hr>
+			<div class="p-3 rounded mb-3" style="background-color: rgba(0,0,0,0.1)">
+
+				<!-- Volumen -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  1: (volumen)</u></strong><br>
+						<strong>Crear una función que convierta los litros en decilitros, centilitros y  mililitros.</strong><br>
+						(1 litro = 10 decilitros), (1 litro = 100 centilitros), (1 litro = 1000 mililitros)</p>
+						<form id="form1" name="form1" method="post">
+							<label for="number1">Introduce un número de litros:</label>
+							<br>
+							<input type="number" name="number1" id="number1">
+							<input type="button" name="button1" id="button1" value="Enviar" onClick="volumen()">
+						</form>
+						<p id="etiqueta1"></p>
+					</div>
+				</div>
+
+				<!-- Longitud -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  2: (longitud)</u></strong><br>
+						<strong>Crear una función que convierta los kilómetros en metros, centímetros y  milímetros.</strong><br>
+						(1 km = 1000 metros), (1 metro = 100 centímetros), (1 centímetro = 10 milímetros)</p>
+						<form id="form2" name="form2" method="post">
+							<label for="number2">Introduce un número de kilómetros:</label><br>
+							<input type="number" name="number2" id="number2">
+							<input type="button" name="button2" id="button2" value="Enviar" onclick="longitud()">
+						</form>
+						<p id="etiqueta2"></p>
+					</div>
+				</div>
+
+				<!-- Tiempo -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  3: (tiempo)</u></strong><br>
+						<strong>Crear una función que convierta un número de días en horas, minutos y segundos.</strong><br>
+						(1 día = 24 horas), (1 hora = 60 minutos), (1 minuto = 60 segundos)</p>
+						<form id="form3" name="form3" method="post">
+							<label for="number3">Introduce un número de días:</label><br>
+							<input type="number" name="number3" id="number3">
+							<input type="button" name="button3" id="button3" value="Enviar" onclick="tiempo()">
+						</form>
+						<p id="etiqueta3"></p>
+					</div>
+				</div>
+
+				<!-- Temperatura -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  4: (temperatura)</u></strong><br>
+						<strong>Crear una función que convierta los grados centígrados en grados Fahrenheit y  grados Kelvin.</strong><br>
+						(℉= ( ℃ * 1. 8 ) + 32 ), ( ℃ + 273.15 )</p>
+						<form id="form4" name="form4" method="post">
+							<label for="number4">Introduce un número de grados:</label><br>
+							<input type="number" name="number4" id="number4">
+							<input type="button" name="button4" id="button4" value="Enviar" onclick="temperatura()">
+						</form>
+						<p id="etiqueta4"></p>
+					</div>
+				</div>
+
+				<!-- Peso -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  5: (peso)</u></strong><br>
+						<strong>Crear una función que convierta las toneladas en kilogramos, gramos,  miligramos.</strong><br>
+						(1 tonelada = 1000 kilogramos), (1 kilogramo = 1000 gramos), (1 gramo = 1000 miligramos)</p>
+						<form id="form5" name="form5" method="post">
+							<label for="number5">Introduce un número de toneladas:</label><br>
+							<input type="number" name="number5" id="number5">
+							<input type="button" name="button5" id="button5" value="Enviar" onclick="peso()">
+						</form>
+						<p id="etiqueta5"></p>
+					</div>
+				</div>
+
+				<!-- Pesaje -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  6: (pesaje)</u></strong><br>
+						<strong>Crear una función que convierta los kilogramos en onzas, libras y piedras, quilates.</strong><br>
+						(1kg = 0.1575 piedras), (1 kg = 2.2046 libras),(1kg = 35.274 onzas), (1 kg = 5000 quilates)</p>
+						<form id="form6" name="form6" method="post">
+							<label for="number6">Introduce un número de kilogramos:</label><br>
+							<input type="number" name="number6" id="number6">
+							<input class="btn-success" type="button" name="button6" id="button6" value="Enviar" onclick="pesaje()">
+						</form>
+						<p id="etiqueta6"></p>
+					</div>
+				</div>
+
+				<!-- Distancia -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  7: (distancia)</u></strong><br>
+						<strong>Crear una función que convierta los kilómetros en millas, pies, yardas, pulgadas.</strong><br>
+						(1 km = 0,621371 millas), (1 km = 1093,61 yardas), (1 km = 3280,84 pies), (1 km = 39370,1 pulgadas)</p>
+						<form id="form7" name="form7" method="post">
+							<label for="number7">Introduce un número de kilómetros:</label><br>
+							<input type="number" name="number7" id="number7">
+							<input type="button" name="button7" id="button7" value="Enviar" onclick="distancia()">
+						</form>
+						<p id="etiqueta7"></p>
+					</div>
+				</div>
+
+				<!-- Moneda -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  8: (moneda)</u></strong><br>
+						<strong>Crear una función que convierta los euros en dólares US, libras, yenes, yuanes.</strong><br>
+						(1€ = 1.22 dólares), (1€ = 0,91 libras), (1€ = 126.08 yenes), (1€ = 7.97 yuanes)</p>
+						<form id="form8" name="form8" method="post">
+							<label for="number8">Introduce un importe en Euros:</label><br>
+							<input type="number" name="number8" id="number8">
+							<input type="button" name="button8" id="button8" value="Enviar" onclick="moneda()">
+						</form>
+						<p id="etiqueta8"></p>
+					</div>
+				</div>
+
+				<!-- Velocidad -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  9: (velocidad)</u></strong><br>
+						<strong>Crear una función que convierta los kilómetros por hora en metros por segundo, millas por hora, nudos y pies por segundo.</strong><br>
+						(1km/h = 0,621371 m/h), (1 km/h = 0,539957 nudos), (1km/h = 0,277778 m/s), (1km/h = 0,911344 p/s), </p>
+						<form id="form9" name="form9" method="post">
+							<label for="number9">Introduce un número de kilómetros por hora:</label><br>
+							<input type="number" name="number9" id="number9">
+							<input type="button" name="button9" id="button9" value="Enviar" onclick="velocidad()">
+						</form>
+						<p id="etiqueta9"></p>
+					</div>
+				</div>
+
+				<!-- Áreas -->
+				<div class="col-12">
+					<div class="bg-white p-3 mb-3 h-100 rounded shadow">
+						<p><strong><u>Ejercicio  10: (áreas)</u></strong><br>
+						<strong>Crear una función que convierta los kilómetros cuadrados en hectáreas, acres y millas cuadradas.</strong><br>
+						(1km2 = 100 hectáreas), (1km2 = 247,105 acres), (1km2 = 0,386102 millas cuadradas)</p>
+						<form id="form10" name="form10" method="post">
+							<label for="number10">Introduce un número de kilómetros cuadrados:</label><br>
+							<input type="number" name="number10" id="number10">
+							<input type="button" name="button10" id="button10" value="Enviar" onclick="areas()">
+						</form>
+						<p id="etiqueta10"></p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
