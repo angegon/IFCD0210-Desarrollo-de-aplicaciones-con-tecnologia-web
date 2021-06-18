@@ -1,0 +1,8 @@
+<?php
+
+    for($i=0; $i<10; $i++){
+        $texto = $i + 1;
+        echo "<p class='parrafo$texto'>$texto</p>";
+    }
+
+?>
