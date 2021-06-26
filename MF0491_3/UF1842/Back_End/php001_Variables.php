@@ -22,7 +22,9 @@
 
     echo $resultado . "<br>";
 
-    //$hoy = date(2021, 6, 17);
+    $hoy = date("Y-m-d");
+    echo $hoy."<br>";
+
     $encontrado = true;
     
     echo 'Concatenado con \' ' . ($numero1 * $numero2) . '<br>';
@@ -31,4 +33,4 @@
     echo "La fórmula es $numero1 * $numero2 = $mult <br>";
     echo 'La fórmula es $numero1 * $numero2 = $mult <br>';
 ?>
-<?="Metido a pelo"?>
+<?="Metido a pelo ".$hoy?>

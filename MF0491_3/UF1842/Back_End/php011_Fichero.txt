@@ -1,35 +1,20 @@
-hola me llamo Ángel,
-
-esto es un fichero de prueba para el programa 11
-
-hasta luego!
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
-Hola
+Alfa
+Beta
+Gamma
+Epsilon
+PI
+Omega
+Delta
+Mucho pides
+Delta
+Mucho pides
+Delta
+Mucho pides
+Delta
+Mucho pides
+Delta
+Mucho pides
+Delta
+Mucho pides
+Delta
+Mucho pides

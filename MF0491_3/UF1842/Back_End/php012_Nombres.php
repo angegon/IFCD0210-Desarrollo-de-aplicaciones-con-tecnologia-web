@@ -1,11 +1,11 @@
 <?php
-    //si en el formulario se ha enviado algo, lo añado al fichero
-    if(isset($_POST['nombre']) && $_POST['nombre'] != ""){
-        $filedescriptor = fopen("php012_Fichero.txt", "a");
-
-        fwrite($filedescriptor, PHP_EOL . trim($_POST['nombre']));
-
-        fclose($filedescriptor);        
+    // Necesito saber si me enviado nombre o no
+    // Si me has enviado nombre, tendré que guardarlo
+    if (isset($_POST['nombre']) && $_POST['nombre'] != ""){
+        $fd = fopen("php012_Fichero.txt", "a");
+        $nombre = trim($_POST['nombre']);
+        fwrite ($fd, $nombre.PHP_EOL);
+        fclose($fd);
     }
 ?>
 <!DOCTYPE html>
@@ -16,46 +16,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nombres</title>
     <script>
-        function fValidar() {
+        function fValidar(){
             // Limpiar cualquier posible error anterior
-            document.getElementById("error").innerHTML = "";
+            document.getElementById("parrafo_error").inerHTML = "";
             // Hacer la validación
-            if (document.getElementById("nombre").value.trim == "") {
-                document.getElementById("error").innerHTML = "Has de introducir texto en la caja de texto";
+            if ( document.getElementById("nombre").value.trim() == ""){
+                document.getElementById("parrafo_error").innerHTML = "Nombre obligatorio";
                 document.getElementById("nombre").focus();
-                event.preventDefault(); // Anula el comportamiento predefinido del objeto generado, en este caso el button le quita el submit
+                event.preventDefault();
             }
         }
     </script>
 </head>
 <body>
-    <!-- 
-        Sacar la lista de nombres
-        Formulario para añadir nombres
+    <!-- Sacar la lista de nombres
+         Formulario para añadir nombres
     -->
     <div class="lista">
         <?php
-            $filedescriptor = fopen("php012_Fichero.txt", "r");
-            echo "<ul>";
-            while(!feof($filedescriptor)){
-                $linealeida = fgets($filedescriptor);
-                echo "<li>" . $linealeida . "</li><br>";
+            // Presentar los nombres en la web
+            $fd=fopen("php012_Fichero.txt", "r");
+            while ( !feof($fd) ){
+                $nombre = fgets($fd);
+                if ($nombre != ""){
+                    echo $nombre."<br>";
+                }                
             }
-            echo "</ul>";
-            fclose($filedescriptor);
+            fclose($fd);
         ?>
     </div>
+    <hr>
     <div class="formulario">
         <form action="" method="POST">
-            <label for="nombre">
+            <label for="nombre">Nombre 
                 <input type="text" name="nombre" id="nombre">
             </label>
             <br>
             <button onclick="fValidar()">Añadir</button>
             <br>
-            <p id="error">&nbsp;</p>
-        </form>            
+            <p id="parrafo_error">&nbsp;<p>
+        </form>
     </div>
-    
 </body>
 </html>

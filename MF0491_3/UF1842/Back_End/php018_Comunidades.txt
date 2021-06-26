@@ -1,0 +1,52 @@
+Andalucía#Sevilla#1950219
+Andalucía#Málaga#1685920
+Andalucía#Cádiz#1244049
+Andalucía#Granada#919168
+Andalucía#Córdoba#781451
+Andalucía#Almería#727945
+Andalucía#Jaén#631381
+Andalucía#Huelva#524278
+Aragón#Zaragoza#972528
+Aragón#Huesca#222687
+Aragón#Teruel#134176
+Asturias#Asturias#1018784
+Canarias#Las Palmas#1131065
+Canarias#Santa Cruz de Tenerife#1044887
+Cantabria#Cantabria#582905
+Castilla y León#Valladolid#520649
+Castilla y León#León#456439
+Castilla y León#Burgos#357650
+Castilla y León#Salamanca#329245
+Castilla y León#Zamora#170588
+Castilla y León#Palencia#160321
+Castilla y León#Ávila#157664
+Castilla y León#Segovia#153478
+Castilla-La Mancha#Toledo#703772
+Castilla-La Mancha#Ciudad Real#495045
+Castilla-La Mancha#Albacete#388270
+Castilla-La Mancha#Guadalajara#261955
+Castilla-La Mancha#Cuenca#196139
+Castilla-La Mancha#Soria#88884
+Cataluña#Barcelona#5743402
+Cataluña#Gerona#761947
+Cataluña#Tarragona#804664
+Cataluña#Lérida#438517
+Ceuta#Ceuta#84202
+Comunidad de Madrid#Madrid#6779888
+Comunidad Valenciana#Valencia#5743402
+Comunidad Valenciana#Alicante#1879888
+Comunidad Valenciana#Castellón#585590
+Extremadura#Badajoz#672137
+Extremadura#Cáceres#391850
+Galicia#La Coruña#1121815
+Galicia#Pontevedra#945408
+Galicia#Lugo#327946
+Galicia#Orense#306650
+Islas Baleares#Baleares#1171543
+La Rioja#La Rioja#319914
+Melilla#Melilla#87076
+Navarra#Navarra#661197
+País Vasco#Vizcaya#1159443
+País Vasco#Guipúzcoa#727121
+País Vasco#Álava#333940
+Región de Murcia#Murcia#1511251

@@ -1,44 +1,43 @@
 <?php
-    $mensaje_error = "&nbsp;";
-    // Almacenar los datos en una array php
-    $filedescriptor = fopen("php013_Fichero.txt", "r");
-    //Crear el array vacio
+    $mensaje_error="&nbsp;";
+    // Almacenar los datos en un array PHP
+    // Crear el array vacío
     $datos = array();
-
-    while(!feof($filedescriptor)){
-        $nombre = fgets($filedescriptor);
+    // Rellenarlo con los datos del fichero
+    $fd=fopen("php013_Fichero.txt", "r");
+    while ( !feof($fd) ){
+        $nombre = fgets($fd);
         if ($nombre != ""){
-            $datos[] = trim($nombre)
-        }
+            $datos[] = trim($nombre);
+        }                
     }
-    fclose($filedescriptor);
+    fclose($fd);
 
-    /**
-     * Si existe nombre comprobar si ya está en la lista
-     * sino está añadirlo
-     * si está dar mensaje al usuario
-     */
+    // Si existe nombre,
+    //  Comprobar si ya está en la lista
+    //  si no está, añadirlo
+    //  si está, dar un mensaje al usuario
     $recibido = "";
-    if (isset($_POST['nombre'])){
+    if ( isset($_POST['nombre'])){
         $recibido = $_POST['nombre'];
         $encontrado = false;
-        for($i = 0; $i < count($datos); i++){
-            if(strcasecompare($recibido , $datos[i]){
+        for ($i=0; $i<count($datos);  $i++){
+            if ( strcasecmp( $recibido, $datos[$i]) == 0 ){
                 $encontrado = true;
-                breack;
+                break;
             }
         }
-        if($encontrado){
-            // Notificamos al usuario de que  ya está añadido
+        if ($encontrado == true){
+            // Dar mensaje al usuario
             $mensaje_error = "Ese nombre ya existe";
-            echo $mensaje_error;
         } else {
-            // Lo añado
+            // Lo puedo añadir
             $fd = fopen("php013_Fichero.txt", "a");
-
-            fwrite($fd, PHP_EOL, $recibido);
-
-            fclose($fd)
+            fwrite( $fd, $recibido.PHP_EOL);
+            fclose( $fd );
+            // Lo añado también al array de datos
+            $datos[] = $recibido;
+            $recibido = "";
         }
     }
 ?>
@@ -50,46 +49,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nombres no duplicados</title>
     <script>
-        function fValidar() {
+        function fValidar(){
             // Limpiar cualquier posible error anterior
-            document.getElementById("error").innerHTML = "";
+            document.getElementById("parrafo_error").inerHTML = "";
             // Hacer la validación
-            if (document.getElementById("nombre").value.trim == "") {
-                document.getElementById("error").innerHTML = "Has de introducir texto en la caja de texto";
+            if ( document.getElementById("nombre").value.trim() == ""){
+                document.getElementById("parrafo_error").innerHTML = "Nombre obligatorio";
                 document.getElementById("nombre").focus();
-                event.preventDefault(); // Anula el comportamiento predefinido del objeto generado, en este caso el button le quita el submit
+                event.preventDefault();
             }
         }
     </script>
 </head>
 <body>
-    <!-- 
-        Sacar la lista de nombres
-        Formulario para añadir nombres
+    <!-- Sacar la lista de nombres
+         Formulario para añadir nombres
     -->
     <div class="lista">
         <?php
-            $filedescriptor = fopen("php012_Fichero.txt", "r");
-            echo "<ul>";
-            while(!feof($filedescriptor)){
-                $linealeida = fgets($filedescriptor);
-                echo "<li>" . $linealeida . "</li><br>";
+            for ($i=0; $i<count($datos); $i++){
+                echo $datos[$i] . "<br>";
             }
-            echo "</ul>";
-            fclose($filedescriptor);
         ?>
     </div>
+    <hr>
     <div class="formulario">
         <form action="" method="POST">
-            <label for="nombre">
-                <input type="text" name="nombre" id="nombre">
+            <label for="nombre">Nombre 
+                <input type="text" name="nombre" id="nombre" value="<?=$recibido?>">
             </label>
             <br>
             <button onclick="fValidar()">Añadir</button>
             <br>
-            <p id="error">&nbsp;<?=$mensaje_error?></p>
-        </form>            
+            <p id="parrafo_error">
+                <?=$mensaje_error?>    
+            <p>
+        </form>
     </div>
-    
 </body>
 </html>

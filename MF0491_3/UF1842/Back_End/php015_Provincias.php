@@ -1,52 +1,41 @@
-<?php
-    // Leer el fichero
-    $fd = fopen("php015_Provincias.txt", "r");
-
-    $html = "<table border='1'>";
-    $contador_registros = 0;
-    $cabecera_de_menu = "";
-    while(!feof($fd)){
-        $registro = fgets($fd);
-        if($registro != ""){
-            // explode, devuelve un array con los campo separados
-            // str_split devuelvve tantos grupos de n letras como se solicite
-            $array_columnas = explode("#", $registro);
-            //echo "Antes de separar " . $registro . "<br>";
-            //echo "Despues de separar " . print_r($array_columnas);
-            //echo "<hr>";
-            if ($contador_registros > 0 ){
-                $html .= "<tr><td>". $array_columnas[0] . "</td><td> " . $array_columnas[1] . "</td><td> " . $array_columnas[2] . "</td></tr>";
-            } else {
-                //$cabecera_de_menu = "<table border='1'><tr><th>". $array_columnas[0] . "</th><th> " . $array_columnas[1] . "</th><th> " . $array_columnas[2] . "</th></tr></table>";
-                $html .= "<tr><th> Nombre Comunidad </th><th> Nombre Provincia </th><th> nº de habitantes</th></tr>";                
-            }
-            $contador_registros++;
-        }
-    }
-    fclose($fd);
-    $html .= "</table>";
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frutas</title>
+    <title>Provincias</title>
 </head>
 <body>
-    <header>
-        HABITANTES
-    </header>
-    <nav>
-        <p><?=$cabecera_de_menu?></p>
-        <?=$html?>
-    </nav>
-    <section>
-
-    </section>
-    <footer>
-        &copy; AGM
-    </footer>
+    <div class="container">
+        <?php
+            $contador = 0;  
+            $html = "<table border=1>";
+            $fd = fopen("php015_Fichero.txt", "r");
+            while (!feof($fd)){
+                $registro = fgets($fd);
+                $datos_separados = explode("#", $registro);
+                //echo gettype($registro). "<br>";
+                if ( $contador == 0 ){
+                    $html .= "<tr>";
+                    $html .= "      <th>" . $datos_separados[0] . "</th>";
+                    $html .= "      <th>" . $datos_separados[1] . "</th>";
+                    $html .= "      <th>" . $datos_separados[2] . "</th>";
+                    $html .= "</tr>";
+                } else{
+                    $hab= $datos_separados[2];
+                    $html .= "<tr>";
+                    $html .= "      <td>" . $datos_separados[0] . "</td>";
+                    $html .= "      <td>" . $datos_separados[1] . "</td>";
+                    $html .= "      <td>" . number_format ($hab,0, ",",".") . "</td>";
+                    $html .= "</tr>";
+                }
+                $contador++;
+            }
+            fclose($fd);
+            $html .= "</table>";
+            echo $html;
+        ?>
+    </div>
 </body>
 </html>

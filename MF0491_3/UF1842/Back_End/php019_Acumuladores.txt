@@ -1,0 +1,15 @@
+Enero#Nómina#5000
+Enero#Luz#-50
+Enero#Agua#-40
+Enero#Gas#-30
+Enero#Teléfono#-40
+Febrero#Nómina#5000
+Febrero#Luz#-45
+Febrero#Agua#-40
+Febrero#Gas#-30
+Febrero#Teléfono#-40
+Marzo#Nómina#5000
+Marzo#Luz#-45
+Marzo#Agua#-40
+Marzo#Gas#-30
+Marzo#Teléfono#-40

@@ -1,10 +1,12 @@
 <?php
-    // Para incluir fichero externos hay varias opciones, include, require, include_once, require_once
-    // once garantiza que solo tienes una copia en memoria de lo que has cargado
-    // require implica que sino lo encuentra aborta el programa
-    //include ("no_existe.php");
-    //require ("no_existe.php");
-    require_once ("php008_Funciones_Externas.php"); 
+/*
+    include
+    include_once
+    require
+    require_once
+*/
+    //require ("xxx.php");
+    require_once ("php08_Funciones_Externas.php");
     // Datos del programa    
     $agenda = array( 
         array("Pepe","Informático", "86856", array("futbol", "cerveza", "padel")),
@@ -12,9 +14,7 @@
         array("Álvaro","Exmilitar", "568", array("sofá", "coches") ),
         array("Javier","Diseñador", "567567", array()),
         array("José Luís","Financiero", "45764575", array("números", "balonmano","programación"))
-    ); 
-    
-
+    );  
 ?>
 
 <!DOCTYPE html>
@@ -86,13 +86,19 @@
             ?>
         </nav>
         <section>
-            <?php //Hay que distinguir entre la primera llamada que no recibe datos.
-                if (isset($_GET["nombre"])){
+            <?php
+                if ( isset( $_GET["nombre"] ) ){
                     $nombre_pedido = $_GET["nombre"];
-                    fImprimirDetalle();
-                    echo "<br>";
-                    fImprimirDetalle_Tabla_sencilla();
+                    fImprimirDetalle_Tabla_Sencilla();
                 }
+                
+            ?>
+        </section>
+        <section>
+            <?php
+                
+                fImprimirDetalle_Tabla_Todos();            
+                
             ?>
         </section>
         <footer>&copy;JRT</footer>

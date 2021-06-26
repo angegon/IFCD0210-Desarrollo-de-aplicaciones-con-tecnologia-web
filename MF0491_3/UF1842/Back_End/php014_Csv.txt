@@ -1,2 +1,4 @@
-Nombre#PrimerApellido#SegundoApellido
-angel#gonzalez#martin
+FRUTAS#CANTIDAD#PRECIO/Kg
+Naranjas#20#1.66
+Limones#40#1.44
+Sandías#30#0.80

@@ -1,1 +1,4 @@
-Hola
+Lunes
+Martes
+Miércoles
+Jueves

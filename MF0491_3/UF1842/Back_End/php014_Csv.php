@@ -1,28 +1,43 @@
 <?php
     // Leer el fichero
-    $fd = fopen("php014_Csv.txt", "r");
-
-    $html = "<table border='1'>";
+    $fd = fopen("php014_CSV.txt", "r");
+    $html ="<table border=1>";
     $contador_registros = 0;
-    $cabecera_de_menu = "";
-    while(!feof($fd)){
+    $cabecera_de_menu="";
+    while ( !feof($fd) ){
+
         $registro = fgets($fd);
-        if($registro != ""){
-            // explode, devuelve un array con los campo separados
-            // str_split devuelvve tantos grupos de n letras como se solicite
-            $array_columnas = explode("#", $registro);
+        if ( $registro != ""){
+            // explode devuelve un array con los campos separados
+            // str_split devuelve tantos grupos de n letras como se solicite 
+            /*
+            $split = str_split($registro, 3);
+            print_r ($split);
+            echo "<br>";
+            */
+            $columnas = explode("#", $registro);
+            /*
             echo "Antes de separar " . $registro . "<br>";
-            echo "Despues de separar " . print_r($array_columnas);
+            echo "columnas: ";
+            print_r($columnas);
             echo "<hr>";
-            if ($contador_registros > 0 ){
-                $html .= "<tr><td>". $array_columnas[0] . "</td><td> " . $array_columnas[1] . "</td><td> " . $array_columnas[2] . "</td></tr>";
-            } else {
-                //$cabecera_de_menu = "<table border='1'><tr><th>". $array_columnas[0] . "</th><th> " . $array_columnas[1] . "</th><th> " . $array_columnas[2] . "</th></tr></table>";
-                $html .= "<tr><th>". $array_columnas[0] . "</th><th> " . $array_columnas[1] . "</th><th> " . $array_columnas[2] . "</th></tr>";                
-            }
+            */
+            if ($contador_registros >0){
+                $html .= "<tr>";
+                $html .= "      <td>" . $columnas[0] . "</td>";
+                $html .= "      <td>" . $columnas[1] . "</td>";
+                $html .= "      <td>" . $columnas[2] . "</td>";
+                $html .= "</tr>";
+            } else{
+                $html .= "<tr>";
+                $html .= "      <th>" . $columnas[0] . "</th>";
+                $html .= "      <th>" . $columnas[1] . "</th>";
+                $html .= "      <th>" . $columnas[2] . "</th>";
+                $html .= "</tr>"; 
+            }            
             $contador_registros++;
         }
-    }
+    }    
     fclose($fd);
     $html .= "</table>";
 ?>
@@ -46,7 +61,7 @@
 
     </section>
     <footer>
-        &copy; AGM
+        &copy;JRT
     </footer>
 </body>
 </html>
