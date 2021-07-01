@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container div {
+    text-align: center;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px black;
+}
+.nombre {
+    font-family: Algerian;
+    font-size: 20px;
+    color: blue;
+    text-shadow: 1px 1px black;
+}
+
+.precio {
+    font-family: Arial;
+    font-size: 16px;
+    color: green;
+    text-shadow: 1px 1px black;
+}
+
+.imagen {
+    width: 100px;
+}
+
