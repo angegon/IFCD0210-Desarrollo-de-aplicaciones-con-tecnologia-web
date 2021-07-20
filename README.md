@@ -12,25 +12,6 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 <br><br>
 <nav id="menu">
     <ul>
-        <li><a href="#">Ejercicios Javascript
-        </a>
-            <ul>
-                <li><a href="./MF0491_3/UF1842/Programas/js001_Repaso.html" target="_blank">Ejercicio js001_Repaso</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js002_Condicionales.html" target="_blank">Condicionales 1</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js003_Condicionales.html" target="_blank">Condicionales 2</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js004_Bucles.html" target="_blank">Bucles</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js005_Tabla_Multiplicar.html" target="_blank">Tabla de Multiplicar</a></li>                                                                  
-                <li><a href="./MF0491_3/UF1842/Programas/js006_Ajedrez.html" target="_blank">Ajedrez</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js007_Arrays.html" target="_blank">Arrays 1</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js008_Arrays.html" target="_blank">Arrays 2</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js009_Arrays_bidimensionales.html" target="_blank">Arrays Bidimensionales 1</a></li> 
-                <li><a href="./MF0491_3/UF1842/Programas/js009_ArraysBidimensionales.html" target="_blank">Arrays Bidimensionales 2</a></li>
-                <li><a href="./MF0491_3/UF1842/Programas/js010_Array_NDimensional.html" target="_blank">Array NDimensional</a></li>                                                                                 
-                <li><a href="./MF0491_3/UF1842/Otros/MenuConCSS/menu.html" target="_blank">Menú desplegable con CSS tradicional no Responsive</a></li>                
-                <li><a href="./MF0491_3/UF1842/Otros/MenuConCSS/menuFlexNoResponsive.html" target="_blank">Menú desplegable con Flex no Responsive</a></li>                
-                <li><a href="./MF0491_3/UF1842/Otros/flexbox2/index.html" target="_blank">Cabecera con Flex Box</a></li>    
-            </ul>
-        </li>
         <li><a href="#">HTML</a>
             <ul>
                 <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de HTML y muchos más..</a></li>
