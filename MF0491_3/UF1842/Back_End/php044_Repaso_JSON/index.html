@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JSON</title>
+    <script src="jquery.js"></script>
+    <script>
+        function fSaludoGeneral(){
+            // Pedir al servidor el saludo general
+            var pido = "peticion=saludo_general";
+            $.get("servidor.php", pido, function(response){
+                document.getElementById("saludo_general").innerHTML = response;
+            });
+        }
+        function fSaludoPersonalizado(){
+            // Pedir al servidor el saludo al usuario que te han escrito
+            var nombre = document.getElementById("nombre").value;
+            // Componer los datos solicitados como GET
+            var pido_get = "peticion=saludo_personalizado&nombre=" + nombre;
+            $.get("servidor.php", pido_get, function(response){
+                document.getElementById("saludo_personalizado").innerHTML = response;
+            });
+        }
+        function fSaludoPersonalizadoPost(){
+            var nombre = document.getElementById("nombre").value;
+            // Componer los datos solicitados como JSON
+            var pido_post = { "peticion":"saludo", "nombre":nombre };
+            $.post("servidor.php", pido_post, function(response){
+                document.getElementById("saludo_personalizado").innerHTML = response;
+            });
+        }
+        function fPedirLista(){
+            var pido_post = { "peticion":"dame_lista" };
+            $.post("servidor.php", pido_post, function(response){
+                console.log(response);
+                var data = JSON.parse(response);
+                console.log(data);
+                var texto = "";
+                for (i=0;i<data.length; i++){
+                     texto += data[i].nombre + "<br>";
+                }
+                document.getElementById("div_lista").innerHTML = texto;
+            });
+        }
+        function fPedirListaGet(){
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Saludo General" onclick="fSaludoGeneral()">
+    <div id="saludo_general"></div>
+    Nombre <input type="text" name="nombre" id="nombre">
+    <input type="button" value="Saludo Personalizado" onclick="fSaludoPersonalizado()">
+    <input type="button" value="Saludo Personalizado POST" onclick="fSaludoPersonalizadoPost()">
+    <div id="saludo_personalizado"></div>
+
+    <input type="button" value="Pedir Lista" onclick="fPedirLista()">
+    <input type="button" value="Pedir Lista" onclick="fPedirListaGet()">
+    <div id="div_lista"></div>
+</body>
+</html>

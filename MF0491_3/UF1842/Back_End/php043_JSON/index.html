@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <script src="jquery.js"></script>
+    <script src="mi_script.js"></script>
+    <script>
+        $(document).ready(function(){
+            fPintar_Tabla();
+
+            $("#btnId").on("click", function(){
+                var id = $("#id").val();
+                fImprimirId(id);
+            });
+        });
+    </script>
+</head>
+<body>
+    ID <input type="number" name="id" id="id">
+    <input id="btnId" type="button" value="Pedir ID">
+    <div id="visor"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Los datos a pedir se suelen llamar REQUEST, los datos recibidos se llaman RESPONSE
+            // Para pedir datos mediante AJAX, $.get(URL, datos_a_enviar, funcion_de_recogida_de_datos)
+            $("#btnSaludar").on("click", function(){
+                $.get("backend.php", null, function(response){
+                    console.log(response);
+                    $(".visor").html(response);
+                });
+            });
+
+            $("#btnSaludarNombre").on("click", function(){
+                // Serialize convierte los datos a datos transmitibles en modo GET
+                var datos_envio = $("#frm_nombre").serialize(); 
+                console.log(datos_envio);
+                $.get("backend.php", datos_envio, function(response){
+                    //console.log(response);
+                    $(".visor").html(response);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Ajax Asyncronous Javascript and XML </h2>
+
+    <input type="button" id="btnSaludar" value="Saludar">
+
+    <form id="frm_nombre">
+        Nombre: <input type="text" name="nombre" id="nombre">
+        Apellidos: <input type="text" name="apellidos" id="apellidos">
+        <input type="button" id="btnSaludarNombre" value="Saludar">
+    </form>
+
+    <div class="visor">
+
+    </div>
+</body>
+</html>

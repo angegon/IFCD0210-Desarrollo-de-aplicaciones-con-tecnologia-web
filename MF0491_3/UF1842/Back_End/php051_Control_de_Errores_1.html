@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de errores</title>
+    <script>
+        // Ventana para sacar mensajes
+        //alert("Hola")
+
+        // Ventana para pedir información
+        /*
+        const nombre = prompt("Dime tu nombre")
+        if (nombre == null){
+            console.log("Has pulsado cancelar");
+        } else{
+            console.log(nombre);
+        }
+        */
+
+        // Ventana para confirmación
+        /*
+        const confirmacion = confirm("Estas seguro?")
+        if (confirmacion == true){
+            console.log("Has pulsado aceptar");
+        } else{
+            console.log("Has pulsado cancelar");
+        }
+        console.log(confirmacion);
+        */
+        /*
+        try {
+            let numero = prompt("Teclee un número")
+            console.log(typeof(numero));
+            numero = parseInt(numero) * 2
+            console.log(numero);
+        } catch (error){
+            console.log("*** Error *** " + error);
+        } finally {
+            console.log("FINAL");
+        }
+        */
+        /*
+            Bloques de control de errores
+            try {
+
+            } catch (error){
+
+            } finally {
+
+            }
+        */
+        let num = "";
+        do {
+            try {
+                num = prompt("Teclee numero")
+                if (isNaN(num)){
+                    throw new Error("No es numérico")
+                }
+                num = parseInt(num) * 2 
+                           
+            } catch(error) {
+                console.log(error);
+            }
+        }  while (isNaN(num));
+        console.log(num);
+
+        console.log("Hola");
+        console.error("Hola");
+        console.warn("Hola");
+        console.info("Hola");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

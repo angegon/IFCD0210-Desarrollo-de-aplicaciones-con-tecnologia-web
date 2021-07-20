@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Errores</title>
+    <script>
+
+        // Ventanas para pedir información
+        const nombre = promt("Dime tu nombre: ");
+        if (nombre == null){
+            console.log("Has pulsado cancelar");
+        } else {
+            console.log(nombre);
+        }
+        // Ventanas para confirmación, devuelve true o false
+        const confirmacion = confirm("Estas seguro?")
+        console.log(confirmacion);
+
+        // Bloques de control de errores try catch finally
+        try {
+            let numero = prompt("Teclee un número: ");
+            console.log(typeof(numoer));
+            numero = parseInt(numero) * 2;
+            console.log(numero);
+        } catch (error) {
+            console.log("**** Error ****" + error);
+        } finally {
+            console.log("Final");
+        }
+
+        let num = "";
+        do {
+            try {
+                num = prompt("Teclee número");
+                if (isNaN(num)) {
+                    throw new Error("No es numérico.");
+                }
+                num = parseInt(num) * 2;
+            } catch (error) {
+                console.log("Error: " + error);
+            }
+        } while (isNaN(num));
+        console.log(num);
+
+        console.log("hola");
+        console.error("Hola");
+        console.warn("Hola");
+        console.info("hola");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

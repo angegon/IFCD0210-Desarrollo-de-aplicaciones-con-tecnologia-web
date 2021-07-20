@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Destructuring </title>
+    <script>
+
+        lista = [];
+
+        perro = {
+            tipo : "Perro", 
+            nombre: "Neron", 
+            raza: "Doberman",
+            edad: 10,
+            vivo: false,
+            fecha_adopcion: new Date("2011-12-20 12:30")
+        }
+
+        lista.push(perro);
+
+        gato = {
+            tipo: "Gato",
+            nombre: "Con Botas", 
+            raza: "Siames",
+            edad: 4,
+            vivo: true,
+            fecha_adopcion: new Date("2015-05-03 10:25:40")
+        }
+
+        lista.push(gato);
+
+        lista.forEach(animal => {
+            const {nombre, raza, edad, tipo, vivo, fecha_adopcion} = animal;
+            linea = tipo + " - " + nombre + " - " + raza + " - " + edad + " - " + vivo + " - " + fecha_adopcion;
+            console.log(linea);
+            
+            // Otra manera de hacer lo anterior
+
+            linea = ` ${tipo} - ${nombre}  -  ${raza} - ${edad}  - ${vivo}  -  ${fecha_adopcion}`;
+            console.log(linea);
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

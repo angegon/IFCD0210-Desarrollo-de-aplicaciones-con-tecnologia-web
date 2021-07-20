@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a Fetch</title>
+    <style>
+        .flex{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+    <script>
+        function fPedir(){
+            // La función fetch en su formato básico permite pedir via GET
+            // su format es fetch(URL_a_quien_se_lo_pido)
+            fetch("https://pokeapi.co/api/v2/pokemon/")
+                .then (function(response){
+                    return response.json();
+                })
+                .then (function(data){
+                    console.log(data);
+                    texto = "<ul>";
+                    data.results.forEach(objeto => {
+                        console.log(objeto.name);
+                        texto += "<li class='flex'>" + objeto.name + " - " + objeto.url + "</li>";
+
+                    });
+                    texto += "</ul>";
+                    document.getElementById("visor").innerHTML = texto;
+                });
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Pedir" onclick="fPedir()">
+    <div id="visor">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de tareas</title>
+    <script src="scripts.js"></script>
+    <script>
+        function fFormulario(opcion_formulario){
+            if (document.getElementById("frm_tareas").style.display == 'block'){
+                document.getElementById("frm_tareas").style.display = 'none';
+                return;
+            } 
+            else {
+                document.getElementById("frm_tareas").style.display = 'block';
+            }
+
+            document.getElementById("peticion").value = opcion_formulario;
+            
+            if (opcion_formulario == 'a') {
+                document.getElementById("id").value = 0;
+                document.getElementById('nombre').value = '';
+                document.getElementById('descripcion').value = '';
+                document.getElementById('fecha').value = '';
+                document.getElementById('estado').value = 'Sin iniciar';
+                document.getElementById("btnGrabar").style.display = 'inline-block';
+                document.getElementById("btnCancelar").style.display = 'inline-block';
+                document.getElementById("btnModificar").style.display = 'none';
+                document.getElementById("btnEliminar").style.display = 'none';
+            }
+
+            document.getElementById("div_formulario").style.display = 'block';
+        }
+        function fCancelar(){
+            document.getElementById("div_formulario").style.display = 'none';
+
+        }
+
+        function fGrabar(){
+            const objeto = document.getElementById("frm_tareas");
+
+
+            datos_envio = new FormData(objeto);
+            fetch("servidor.php", {
+                method: "post",
+                body: datos_envio
+            })
+            .then(function(respuesta){
+                return respuesta.text();
+            })
+            .then( function(data){
+                //alert(data);
+                if(data > 0) {
+                    fMostrar_Lista_Tareas();
+                }
+                else{
+                    document.getElementById("td_error").value = "No se ha podido grabar";
+                }
+            })
+            .finally(function(){
+                document.getElementById("div_formulario").style.display = 'none';
+            })
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #div_formulario{
+            display: none;
+        }
+
+    </style>
+</head>
+<body onload="fInicio()">
+    <section>
+        <div id="div_formulario">
+            <form id="frm_tareas">
+                <input type="text" name="peticion" id="peticion">
+                <input type="text" name="id" id="id">
+                <table>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>
+                            <input type="text" name="nombre" id="nombre" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Descripción</td>
+                        <td>
+                            <textarea name="descripcion" id="descripcion" maxlength="250"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fecha</td>
+                        <td>
+                            <input type="date" name="fecha" id="fecha">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Estado</td>
+                        <td>
+                            <select name="estado" id="estado">
+                                <option value="Sin iniciar">Sin iniciar</option>
+                                <option value="Iniciada">Iniciada</option>
+                                <option value="Finalizada">Finalizada</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" id="btnCancelar" onclick="fCancelar()">Cancelar</button>
+                            <button type="button" id="btnGrabar" onclick="fGrabar()">Grabar</button>
+                            <button type="button" id="btnModificar" onclick="fModificar()">Modificar</button>
+                            <button type="button" id="btnEliminar" onclick="fEliminar()">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="td_error"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <h2>Lista de tareas</h2>
+        <div id="div_lista">
+
+        </div>
+    </section>
+</body>
+</html>

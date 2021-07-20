@@ -1,0 +1,29 @@
+.container{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 30px 1fr 30px;
+    grid-template-areas: 
+        "header     header"
+        "nav        section"
+        "footer     footer";        
+}
+header{
+    grid-area: header;
+    background-color: black;
+    color:white;
+}
+nav{
+    grid-area: nav;
+    background-color: lightgreen;
+    color:green;
+}
+section{
+    grid-area: section;
+    background-color: lightblue;
+    color:blue;
+}
+footer{
+    grid-area: footer;
+    background-color: black;
+    color:white;
+}

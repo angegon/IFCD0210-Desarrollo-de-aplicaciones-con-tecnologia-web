@@ -1,59 +1,10 @@
 <?php
-    require_once("Modelos/Temas_MDL.php");
-    require_once("Modelos/Preguntas_MDL.php");
-    require_once("Controladores/Temas_CTRLR.php");
-    require_once("Controladores/Preguntas_CTRLR.php");
+    require_once "Modelos/Temas_MDL.php";
+    require_once "Modelos/Preguntas_MDL.php";
+    require_once "Controladores/Temas_CTRLR.php";
+    require_once "Controladores/Preguntas_CTRLR.php";
 
-    // Insertar un tema
-    $tema = new Temas_MDL(0, "Prueba de Insert");
-    $nregistros_insertados = Temas_CTRLR::Insertar($tema);
-
-    if ($nregistros_insertados == 0){
-        echo "No he podido grabar <br>";
-    } else {
-        echo "Registro grabado <br>";
-    }
-
-    // Modificar un tema
-    $tema = new Temas_MDL(9, ".net");
-    $nregistros_insertados = Temas_CTRLR::Modificar($tema);
-
-    if ($nregistros_insertados == 0){
-        echo "No he podido Modificar <br>";
-    } else {
-        echo "Registro Modificado <br>";
-    }
-
-    // Eliminar un tema
-    $nregistros_insertados = Temas_CTRLR::Eliminar(8);
-
-    if ($nregistros_insertados == 0){
-        echo "No he podido Borrar <br>";
-    } else {
-        echo "Registro Borrado <br>";
-    }
-
-    // Insertar una pregunta
-    $pregunta = new Preguntas_MDL(null, "un objeto es.....", "La instanciación de una clase.", "La reserva de memoria de las propiedades", "ambas respuestas anteriores", "ninguna de las anteriores", 1, 3);
-    $nregistros_insertados = Preguntas_CTRLR::Insertar($pregunta);
-
-    if ($nregistros_insertados == 0){
-        echo "No he podido grabar la pregunta <br>";
-    } else {
-        echo "Pregunta grabada <br>";
-    }
-
-    // Modificar una pregunta
-    $pregunta = new Preguntas_MDL(9, "Como me llamo?...", "Angel.", "Juan", "Pepe", "ninguna de las anteriores", 1, 1);
-    $nregistros_insertados = Preguntas_CTRLR::Modificar($pregunta);
-
-    if ($nregistros_insertados == 0){
-        echo "No he podido Modificar la pregunta <br>";
-    } else {
-        echo "Pregunta Modificada <br>";
-    }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -61,29 +12,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test por temas</title>
+    <link rel="stylesheet" href="../Estilos/css.css">
+    <script>
+        function fCargar_Pregunta( id ){
+            document.getElementById("operacion").value = 'cp';
+            document.getElementById("id").value = id;
+            document.getElementById("frm_operacion").submit();
+        }
+        function fComprobar(){
+            
+            if (
+                 (document.getElementById("rd1").checked == true && document.getElementById("correcta").value == 1) ||
+                 (document.getElementById("rd2").checked == true && document.getElementById("correcta").value == 2) ||
+                 (document.getElementById("rd3").checked == true && document.getElementById("correcta").value == 3) ||
+                 (document.getElementById("rd4").checked == true && document.getElementById("correcta").value == 4) 
+                ){
+                    document.getElementById("mensaje").innerHTML = "Enhorabuena. Es correcto";
+                 } else{
+                    document.getElementById("mensaje").innerHTML = "No es correcto";
+                 }
+        }
+    </script>
 </head>
 <body>
+    <form id="frm_operacion" action="" method="POST">
+        <input type="hidden" name="operacion" id="operacion">
+        <input type="hidden" name="id" id="id">
+    </form>
     <div class="container">
-        <header></header>
+        <header>Preguntas tipo</header>
         <nav>
-            <?php
-                //$Ctrlr = new Temas_CTRLR();
-                //echo $Ctrlr->Pintar_UL();
-
-                //si es statica
+            <?php   
                 echo Temas_CTRLR::Pintar_UL();
             ?>
         </nav>
         <section>
-        <?php
-                //$Ctrlr = new Temas_CTRLR();
-                //echo $Ctrlr->Pintar_UL();
-
-                //si es statica
-                Preguntas_CTRLR::Recupera_Todos(1);
+            <?php
+                if ( isset($_POST['operacion']) ){
+                    echo Preguntas_CTRLR::Seleccionar_Pregunta( $_POST['id'] );
+                }
+                
             ?>
         </section>
-        <footer></footer>
+        <footer>&copy;JRT-2021</footer>
     </div>
 </body>
 </html>

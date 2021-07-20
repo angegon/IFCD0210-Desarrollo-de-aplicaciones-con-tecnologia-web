@@ -1,0 +1,100 @@
+<script>
+// JSON -> Javascript Object Notacion
+// Conjunto de pares variable:valor
+
+const lista = [{nombre:"Melones", procedencia:"Villaconejos", precio:0.5},
+               {nombre:"Kiwis", procedencia:"Perú", precio:2.5} ];
+
+var fruta = {
+    nombre:"Manzanas",
+    procedencia:"Santander",
+    precio:1
+}
+lista.push(fruta);
+
+var fruta = {
+    nombre:"Uvas",
+    precio:1
+}
+lista.push(fruta);
+
+var fruta = {
+    nombre:"Plátanos",
+    procedencia:"Canarias",
+    precio:2
+}
+lista.push(fruta);
+
+//console.log (lista);
+alert(lista);
+
+$texto ="";
+for(i=0; i<lista.length; i++){
+    var objeto = lista[i];
+    objeto.color='amarillo';
+    $texto += objeto.nombre  + " - ";
+    if (objeto.procedencia == null){
+        $texto += "NO SE"
+    } else{
+        $texto += objeto.procedencia;
+    }
+    $texto += " - ";
+    objeto.precio + objeto.color + "\n";
+}
+console.log($texto);
+alert ($texto);
+
+const personas=[];
+var persona = {
+    nombre : "Luis",
+    deportes:["fútbol","Natación"],
+}
+personas.push(persona);
+
+var persona = {
+    nombre : "Ana",
+    deportes:["pádel","Natación", "ciclismo"]
+}
+personas.push(persona);
+
+var persona = {
+    nombre : "Pepe",
+    deportes:["pádel","tenis", "billar"]
+}
+personas.push(persona);
+
+console.log(personas);
+
+// Para cada persona
+//      imprimir el nombre
+//      para cada deporte
+//          imprimir el deporte
+console.log(personas)
+for (i=0; i<personas.length; i++){
+    linea = personas[i].nombre;
+    for (j=0; j<personas[i].deportes.length; j++){
+        linea += "-" + personas[i].deportes[j]
+    }
+    console.log(linea);
+}
+// Solución con foreach
+personas.forEach(persona => {
+    linea = persona.nombre;
+    persona.deportes.forEach(deporte => {
+        linea += " - " + deporte;
+    });
+    console.log(linea);
+});
+
+/*
+console.log (fruta.nombre)
+console.log (fruta.procedencia)
+console.log (fruta.precio)
+fruta.recogida = "2021-06-30"
+fruta.nombre = "Uvas";
+console.log(fruta);
+*/
+
+
+
+</script>

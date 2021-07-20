@@ -1,0 +1,38 @@
+<script>
+function Imprime_Numero(numero){
+    return "FUNCTION " + numero;
+}
+const retorno = Imprime_Numero(5);
+console.log(retorno);
+
+const Imprimir_NUM = function(num1,num2){
+    return "DESDE ANONIMA " +num1+num2;
+}
+const retor = Imprimir_NUM(6,7);
+console.log(retor);
+
+// Funcion flecha
+const Flecha = (numero) => "DESDE FLECHA " + numero;
+const ret = Flecha(7);
+console.log(ret);
+
+// Funcion flecha
+const Flecha2 = (num1, num2) => {
+    return "DESDE FLECHA " + num1 + num2;
+}
+const ret2 = Flecha2(7,5);
+console.log(ret2);
+
+const Sumar = (n1,n2=1000) => (n1 + n2);
+console.log ( Sumar(4,5) );
+// Template strings
+// van entre apóstrofes 'raros' 
+// Para incluir una variable, ${variable}
+const Sumar2 = (n1,n2=1000) => 
+     `${n1} sumado a  ${n2} es igual a ${n1+n2}`;
+
+console.log ( Sumar2(4,7) );
+
+
+
+</script>

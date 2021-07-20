@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automóviles Asíncrona</title>
+    <script src="script.js"></script>
+    <script>
+        function fFiltrarPost(){
+            let marca = document.getElementById("marca").value;
+            // Crear objeto FormData
+            const datos_envio = new FormData();
+            // Añadir los parametros necesarios
+            datos_envio.append("peticion", "filtrar_post");
+            datos_envio.append("marca", marca);
+            // Método post lleva body
+            fetch("servidor.php", {
+                method: "POST",
+                body: datos_envio
+            })
+            .then( (response)=> response.json())
+            .then( (datos)=>{
+                console.log(datos);
+                let texto = "POST<br>";
+                datos.forEach(objeto => {
+                    texto += objeto.auto_marca + " - " + objeto.auto_modelo + "<br>";
+                });
+                document.getElementById("filtro").innerHTML += texto
+            })
+        }
+    </script>
+</head>
+<body onload="fInicio()">
+    <section>
+        <div id="texto">
+
+        </div>
+        <h2>Lista de Automóviles</h2>
+        <div id="lista">
+
+        </div>
+    </section>
+    <article>
+        Marca <input type="text" name="marca" id="marca">
+        <button type="button" onclick="fFiltrar()">Filtrar</button>
+        <button type="button" onclick="fFiltrarPost()">Filtrar Post</button>
+        <div id="filtro"></div>
+    </article>
+</body>
+</html>

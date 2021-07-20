@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Automoviles</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            // Nada más cargar la página, rellenael div
+            $("#operacion").val("lista_automoviles");
+            var datos_envio = $("#frm_operacion").serialize();
+
+            $.get("backend.php", datos_envio, function(response){
+                console.log(response);
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="frm_operacion">
+        <input type="hidden" name="operacion" id="operacion">
+    </form>
+    <main>
+        <header>Automoviles</header>
+        <nav></nav>
+        <section>
+            <div class="lista_automoviles">
+
+            </div>
+        </section>
+        <footer>$copy;2021</footer>
+    </main>
+</body>
+</html>
