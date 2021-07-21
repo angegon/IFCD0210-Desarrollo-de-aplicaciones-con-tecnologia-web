@@ -6,128 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD de tareas</title>
     <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script>
-        function fFormulario(opcion_formulario){
-            if (document.getElementById("frm_tareas").style.display == 'block'){
-                document.getElementById("frm_tareas").style.display = 'none';
-                return;
-            } 
-            else {
-                document.getElementById("frm_tareas").style.display = 'block';
-            }
+        function fFiltro(){
+            const texto = document.getElementById("filtro").value;
 
-            document.getElementById("peticion").value = opcion_formulario;
+            const URL = "servidor.php?peticion=filtro&texto="+ texto;
             
-            if (opcion_formulario == 'a') {
-                document.getElementById("id").value = 0;
-                document.getElementById('nombre').value = '';
-                document.getElementById('descripcion').value = '';
-                document.getElementById('fecha').value = '';
-                document.getElementById('estado').value = 'Sin iniciar';
-                document.getElementById("btnGrabar").style.display = 'inline-block';
-                document.getElementById("btnCancelar").style.display = 'inline-block';
-                document.getElementById("btnModificar").style.display = 'none';
-                document.getElementById("btnEliminar").style.display = 'none';
-            }
-
-            document.getElementById("div_formulario").style.display = 'block';
-        }
-        function fCancelar(){
-            document.getElementById("div_formulario").style.display = 'none';
-
+            fetch(URL)
+            .then((respuesta) =>respuesta.json())
+            .then((datos)=>{
+                //console.log(datos);
+                fPintar_Tabla(datos);
+            })
         }
 
-        function fGrabar(){
-            const objeto = document.getElementById("frm_tareas");
+        function fPintar_Tabla(datos_convertidos_a_JSON_javascript){
+            //console.log(datos_convertidos_a_JSON_javascript); 
+            let salida = "<table border=1>";
 
+            salida += "<caption>";
+            salida += "<span>Lista de " + datos_convertidos_a_JSON_javascript.length + " tareas </span>";
+            salida += `<span><button type='button' onclick='fFormulario(\"a\", 0)'>Form. Añadir</button></span>`;
+            salida += "</caption>";
+            salida += "<tr><th>ID</th><th>Nombre</th><th>Descripcion</th><th>Fecha</th><th>Estado</th><th colspan='2'>Acciones</th><tr>";
+            datos_convertidos_a_JSON_javascript.forEach(objeto => {
+                salida += "<tr>";
+                salida += "<td>" + objeto.tar_id + "</td>";
+                salida += "<td>" + objeto.tar_nombre + "</td>";
 
-            datos_envio = new FormData(objeto);
-            fetch("servidor.php", {
-                method: "post",
-                body: datos_envio
-            })
-            .then(function(respuesta){
-                return respuesta.text();
-            })
-            .then( function(data){
-                //alert(data);
-                if(data > 0) {
-                    fMostrar_Lista_Tareas();
+                if (objeto.tar_descripcion == null){
+                    objeto.tar_descripcion = "";
                 }
-                else{
-                    document.getElementById("td_error").value = "No se ha podido grabar";
-                }
-            })
-            .finally(function(){
-                document.getElementById("div_formulario").style.display = 'none';
-            })
+                const descripcion = objeto.tar_descripcion.replaceAll("\r\n", "<br>");
+                salida += "<td>" + descripcion + "</td>";
+                salida += "<td>" + objeto.tar_fecha + "</td>";
+                salida += "<td>" + objeto.tar_estado + "</td>";
+                salida += `<td><button type='button'onclick='fFormulario(\"m\",${objeto.tar_id})'> Form. Modificar</button></td>`;
+                salida += `<td><button type='button' onclick='fFormulario(\"b\", ${objeto.tar_id})'> Form. Borrar</button></td>`; 
+                salida += "</tr>";
+            });
+            salida += "</table>";
+            document.getElementById("div_lista").innerHTML = salida;
         }
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        #div_formulario{
-            display: none;
-        }
-
-    </style>
 </head>
+
 <body onload="fInicio()">
+
     <section>
-        <div id="div_formulario">
-            <form id="frm_tareas">
-                <input type="text" name="peticion" id="peticion">
-                <input type="text" name="id" id="id">
-                <table>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>
-                            <input type="text" name="nombre" id="nombre" maxlength="50">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Descripción</td>
-                        <td>
-                            <textarea name="descripcion" id="descripcion" maxlength="250"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fecha</td>
-                        <td>
-                            <input type="date" name="fecha" id="fecha">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Estado</td>
-                        <td>
-                            <select name="estado" id="estado">
-                                <option value="Sin iniciar">Sin iniciar</option>
-                                <option value="Iniciada">Iniciada</option>
-                                <option value="Finalizada">Finalizada</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <button type="button" id="btnCancelar" onclick="fCancelar()">Cancelar</button>
-                            <button type="button" id="btnGrabar" onclick="fGrabar()">Grabar</button>
-                            <button type="button" id="btnModificar" onclick="fModificar()">Modificar</button>
-                            <button type="button" id="btnEliminar" onclick="fEliminar()">Eliminar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="td_error"></td>
-                    </tr>
-                </table>
-            </form>
+        <div id="div_fondo">
+            <div id="div_formulario">
+                <form id="frm_tareas">
+                    <input type="hidden" name="peticion" id="peticion">
+                    <input type="hidden" name="id" id="id">
+                    <table>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>
+                                <input type="text" name="nombre" id="nombre" maxlength="50" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Descripción</td>
+                            <td>
+                                <textarea name="descripcion" id="descripcion" maxlength="250"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fecha</td>
+                            <td>
+                                <input type="date" name="fecha" id="fecha">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Estado</td>
+                            <td>
+                                <select name="estado" id="estado">
+                                    <option value="Sin iniciar">Sin iniciar</option>
+                                    <option value="Iniciada">Iniciada</option>
+                                    <option value="Finalizada">Finalizada</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" id="btnCancelar" onclick="fCancelar()">Cancelar</button>
+                                <button type="button" id="btnOperar" onclick="fGrabar()">Grabar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="td_error"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
-        <h2>Lista de tareas</h2>
+
+        Filtro: <input type="text" name="filtro" id="filtro" onkeyup="fFiltro()">
+
         <div id="div_lista">
 
         </div>
     </section>
+
 </body>
 </html>

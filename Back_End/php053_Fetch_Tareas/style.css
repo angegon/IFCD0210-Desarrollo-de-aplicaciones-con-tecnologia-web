@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#div_lista{
+    display: flex;
+    justify-content: center;
+}
+#div_formulario{
+    width: 300px;
+    height: 300px;
+    z-index: 20;
+    opacity: 1;
+    background-color: white;
+    color: black;
+}
+#div_fondo{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: black;
+    opacity: .7;
+}

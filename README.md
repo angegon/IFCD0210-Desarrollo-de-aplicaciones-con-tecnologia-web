@@ -10,11 +10,18 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
 590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, Css, Javascript, php, mysql <a href=" https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank">Más info </a>
 
 <br><br>
+Otros Recursos:
 <nav id="menu">
     <ul>
+        <li><a href="#">FullStack</a>
+            <ul>
+                <li><li><a href="https://www.youtube.com/c/jonmircha/playlists"  target="_blank">Cursos de FullStack Jon Mircha</a></li>
+                <li><li><a href="https://fullstackopen.com/es/"  target="_blank">Cursos de FullStack Universidad Finlandia</a></li>
+                <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de FullStack BluuWeb</a></li>
+            </ul>
+        </li>
         <li><a href="#">HTML</a>
             <ul>
-                <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de HTML y muchos más..</a></li>
                 <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5 youtube</a></li>
                 <li><a href="https://github.com/Asabeneh/30-Days-Of-HTML" target="_blank">Curso de HTML5 en Github</a></li>
                 <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"> Elementos semánticos</a></li>
@@ -55,9 +62,11 @@ Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
                 <li><a href="https://fonts.google.com/" target="_blank"> Fonts gratis</a></li>
             </ul>
         </li>
-        <li><a href="#">Images Gratuitas</a>
+        <li><a href="#">Imagenes Gratuitas</a>
             <ul>
                 <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
+                <li><a href="https://pixabay.com/" target="_blank"> Imagenes gratis 2</a></li>
+                <li><a href="https://placeimg.com/" target="_blank"> Imagenes gratis 2</a></li>
             </ul>
         </li>
         <li><a href="#">Proyectos Tutorizados</a>

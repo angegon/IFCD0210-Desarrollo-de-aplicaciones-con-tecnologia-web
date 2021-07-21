@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamiento Select y Input:Date con javascript</title>
+    <script>
+        function fPulse(){
+            const obj_select = document.getElementById("select");
+            // Hay una variable en el array options del select
+            // que siempre me indica la posición del option seleccionado
+            console.log(obj_select.options);
+            obj_select.options.selectedIndex = 1;
+
+            // Para obtener la fecha hora de hoy
+            let fecha = new Date("2021-07-21 09:50:01");
+            const dia = fecha.getDate();
+            const mes = fecha.getMonth() + 1;
+            const año = fecha.getFullYear();
+
+            // El formato del value de un input:date tiene que ser aaaa-mm-dd
+            const obj_input = document.getElementById("fecha");
+            //var fecha = "2021-07-21";
+            obj_input.value = año + "-0" + mes + "-" + dia; 
+
+        }
+    </script>
+</head>
+<body>
+    <select name="select" id="select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <br>
+    Fecha: <input type="date" name="fecha" id="fecha">
+    <br>
+    <input type="button" value="Pulse" onclick="fPulse()">
+</body>
+</html>
