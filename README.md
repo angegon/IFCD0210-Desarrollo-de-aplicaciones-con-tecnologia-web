@@ -3,24 +3,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./MF0491_3/UF1842/Otros/MenuConCSS/css3.css">
+    <!--<link rel="stylesheet" href="./MF0491_3/UF1842/Otros/MenuConCSS/css3.css">-->
 </head>
 <body>
-Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
-590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, CSS, Javascript, php, mysql <a href="https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank"><b>Más información</b></a>
+<p> Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
+590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, CSS, Javascript, php, mysql <a href="https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank"><b>Más información</b></a> </p>
 
 <br><br>
 Otros Recursos:
 <nav id="menu">
     <ul>
-        <li><a href="#"><b>FullStack</b></a>
+        <li><b>FullStack</b>
             <ul>
                 <li><a href="https://www.youtube.com/c/jonmircha/playlists"  target="_blank">Cursos de FullStack Jon Mircha</a></li>
                 <li><a href="https://fullstackopen.com/es/"  target="_blank">Cursos de FullStack Universidad Finlandia</a></li>
                 <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de FullStack BluuWeb</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>HTML</b></a>
+        <li><b>HTML</b>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5 youtube</a></li>
                 <li><a href="https://github.com/Asabeneh/30-Days-Of-HTML" target="_blank">Curso de HTML5 en Github</a></li>
@@ -32,7 +32,7 @@ Otros Recursos:
                 <li><a href="https://validator.w3.org/" target="_blank"> Validador html</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>CSS</b></a>
+        <li><b>CSS</b>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=OWKXEJN67FE" target="_blank"> Curso 1</a> </li>
                 <li><a href="https://www.youtube.com/watch?v=-k-w8JpTNwA&list=PLROIqh_5RZeDbvISffzihyxzqJBt_z3-Z" target="_blank"> Curso 2</a></li>
@@ -45,7 +45,7 @@ Otros Recursos:
                 <li><a href="https://www.youtube.com/watch?v=UBoEXXzjUw4" target="_blank"> De floats a flex y grid</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Javascript</b></a>
+        <li><b>Javascript</b>
             <ul>
                 <li><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank"> Curso de 30 días de Javascript en Github</a></li>
                 <li><a href="https://github.com/jonasschmedtmann/complete-javascript-course" target="_blank"> Curso Javascript en Github</a></li>    
@@ -57,24 +57,24 @@ Otros Recursos:
                 <li><a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank"> Eventos del DOM</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Fonts</b></a>
+        <li><b>Fonts</b>
             <ul>
                 <li><a href="https://fonts.google.com/" target="_blank"> Fonts gratis</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Imagenes Gratuitas</b></a>
+        <li><b>Imagenes Gratuitas</b>
             <ul>
                 <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
                 <li><a href="https://pixabay.com/" target="_blank"> Imagenes gratis 2</a></li>
                 <li><a href="https://placeimg.com/" target="_blank"> Imagenes gratis 2</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Proyectos Tutorizados</b></a>
+        <li><b>Proyectos Tutorizados</b>
             <ul>
                 <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Compatibilidad Navegadores</b></a>
+        <li><b>Compatibilidad Navegadores</b>
             <ul>
                 <li><a href="https://caniuse.com/?search=grid" target="_blank">Compatibilidad etiquetas, etc..</a></li>
             </ul>
