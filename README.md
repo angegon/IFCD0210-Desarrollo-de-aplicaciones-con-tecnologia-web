@@ -7,20 +7,20 @@
 </head>
 <body>
 Curso IFCD0210 - Desarrollo de Aplicaciones con Tecnología Web
-590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, CSS, Javascript, php, mysql <a href="https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank"><b>Más info</b></a>
+590 horas(con prácticas de 80 horas incluidas) utilizando tecnologías Html, CSS, Javascript, php, mysql <a href="https://sede.sepe.gob.es/especialidadesformativas/RXBuscadorEFRED/DetalleEspecialidadFormativa.do?codEspecialidad=IFCD0210" target="_blank"><b>Más información</b></a>
 
 <br><br>
 Otros Recursos:
 <nav id="menu">
     <ul>
-        <li><a href="#">FullStack</a>
+        <li><a href="#"><b>FullStack</b></a>
             <ul>
                 <li><a href="https://www.youtube.com/c/jonmircha/playlists"  target="_blank">Cursos de FullStack Jon Mircha</a></li>
                 <li><a href="https://fullstackopen.com/es/"  target="_blank">Cursos de FullStack Universidad Finlandia</a></li>
                 <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de FullStack BluuWeb</a></li>
             </ul>
         </li>
-        <li><a href="#">HTML</a>
+        <li><a href="#"><b>HTML</b></a>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=kN1XP-Bef7w" target="_blank">Curso de HTML5 youtube</a></li>
                 <li><a href="https://github.com/Asabeneh/30-Days-Of-HTML" target="_blank">Curso de HTML5 en Github</a></li>
@@ -32,7 +32,7 @@ Otros Recursos:
                 <li><a href="https://validator.w3.org/" target="_blank"> Validador html</a></li>
             </ul>
         </li>
-        <li><a href="#">CSS</a>
+        <li><a href="#"><b>CSS</b></a>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=OWKXEJN67FE" target="_blank"> Curso 1</a> </li>
                 <li><a href="https://www.youtube.com/watch?v=-k-w8JpTNwA&list=PLROIqh_5RZeDbvISffzihyxzqJBt_z3-Z" target="_blank"> Curso 2</a></li>
@@ -45,7 +45,7 @@ Otros Recursos:
                 <li><a href="https://www.youtube.com/watch?v=UBoEXXzjUw4" target="_blank"> De floats a flex y grid</a></li>
             </ul>
         </li>
-        <li><a href="#">Javascript</a>
+        <li><a href="#"><b>Javascript</b></a>
             <ul>
                 <li><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank"> Curso de 30 días de Javascript en Github</a></li>
                 <li><a href="https://github.com/jonasschmedtmann/complete-javascript-course" target="_blank"> Curso Javascript en Github</a></li>    
@@ -57,24 +57,24 @@ Otros Recursos:
                 <li><a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank"> Eventos del DOM</a></li>
             </ul>
         </li>
-        <li><a href="#">Fonts</a>
+        <li><a href="#"><b>Fonts</b></a>
             <ul>
                 <li><a href="https://fonts.google.com/" target="_blank"> Fonts gratis</a></li>
             </ul>
         </li>
-        <li><a href="#">Imagenes Gratuitas</a>
+        <li><a href="#"><b>Imagenes Gratuitas</a>
             <ul>
                 <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
                 <li><a href="https://pixabay.com/" target="_blank"> Imagenes gratis 2</a></li>
                 <li><a href="https://placeimg.com/" target="_blank"> Imagenes gratis 2</a></li>
             </ul>
         </li>
-        <li><a href="#">Proyectos Tutorizados</a>
+        <li><a href="#"><b>Proyectos Tutorizados</b></a>
             <ul>
                 <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
             </ul>
         </li>
-        <li><a href="#">Compatibilidad Navegadores</a>
+        <li><a href="#"><b>Compatibilidad Navegadores</a>
             <ul>
                 <li><a href="https://caniuse.com/?search=grid" target="_blank">Compatibilidad etiquetas, etc..</a></li>
             </ul>
