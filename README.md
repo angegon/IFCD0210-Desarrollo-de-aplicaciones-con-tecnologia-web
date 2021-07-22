@@ -15,8 +15,8 @@ Otros Recursos:
     <ul>
         <li><a href="#">FullStack</a>
             <ul>
-                <li><li><a href="https://www.youtube.com/c/jonmircha/playlists"  target="_blank">Cursos de FullStack Jon Mircha</a></li>
-                <li><li><a href="https://fullstackopen.com/es/"  target="_blank">Cursos de FullStack Universidad Finlandia</a></li>
+                <li><a href="https://www.youtube.com/c/jonmircha/playlists"  target="_blank">Cursos de FullStack Jon Mircha</a></li>
+                <li><a href="https://fullstackopen.com/es/"  target="_blank">Cursos de FullStack Universidad Finlandia</a></li>
                 <li><a href="https://bluuweb.github.io/" target="_blank">Cursos de FullStack BluuWeb</a></li>
             </ul>
         </li>
