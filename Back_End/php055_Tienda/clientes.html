@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <script src="scripts/scriptClientes.js"></script>
+    <link rel="stylesheet" href="estilos/styleClientes.css">
+</head>
+
+<body onload=fInicio()>
+    <div>
+        Filtro de busqueda por código(min 3 caracteres): <input type="text" name="filtro_codigo" id="filtro_codigo" onkeyup="fFiltrar('empresa')">
+        <br>
+        Filtro de busqueda por empresa(min 3 caracteres): <input type="text" name="filtro_empresa" id="filtro_empresa" onkeyup="fFiltrar('empresa')">
+        <br>
+        Parar Ordenar por columna, haz click en la columna deseada.
+    </div>
+
+    <div id="div_clientes">
+
+    </div>
+</body>
+</html>

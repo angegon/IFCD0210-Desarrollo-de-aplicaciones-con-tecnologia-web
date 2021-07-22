@@ -1,0 +1,6 @@
+th{
+    cursor : pointer;
+}
+th:hover{
+    font-size:20px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <script>
+        function fInicio(){
+            fCargar_Usuarios();
+        }
+
+        function fCargar_Usuarios(){
+            const URL = "servidor.php?peticion=recupera_todos_usuarios";
+            fetch( URL )
+            .then( (respuesta) => respuesta.json())
+            .then ( (datos) => {
+                //console.log(datos);
+                let salida = "<table border=1>";
+                salida += "<tr><th>ID</th><th>Nombre</th><th>Password</th><th>Admin</th><th>Acciones</th></tr>";
+                datos.forEach(objeto => {
+                    salida += "<tr>";
+                    salida += "<td>" + objeto.usu_id + "</td>";
+                    salida += "<td>" + objeto.usu_nombre + "</td>";
+                    salida += "<td>" + objeto.usu_password + "</td>";
+                    salida += "<td>" + objeto.usu_administrador + "</td>";
+                    salida += "<td>";
+                    salida += `     <input type='button' value='Borrar' onclick='fOperar("b", ${objeto.usu_id})'>`;
+                    salida += `    <input type='button' value='Modificar' onclick='fOperar("m", ${objeto.usu_id})'>`;
+                    salida += "</td>";
+                    salida += "</tr>";
+                });
+                salida += "</table>";
+                document.getElementById("div_usuarios").innerHTML = salida;
+
+            })
+        }
+    </script>
+</head>
+<body onload=fInicio()>
+    <div id="div_usuarios">
+
+    </div>
+</body>
+</html>
