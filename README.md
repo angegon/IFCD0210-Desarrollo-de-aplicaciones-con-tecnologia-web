@@ -62,7 +62,7 @@ Otros Recursos:
                 <li><a href="https://fonts.google.com/" target="_blank"> Fonts gratis</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Imagenes Gratuitas</a>
+        <li><a href="#"><b>Imagenes Gratuitas</b></a>
             <ul>
                 <li><a href="https://www.pexels.com/es-es/" target="_blank"> Imagenes gratis 1</a></li>
                 <li><a href="https://pixabay.com/" target="_blank"> Imagenes gratis 2</a></li>
@@ -74,7 +74,7 @@ Otros Recursos:
                 <li><a href="https://www.frontendmentor.io/solutions" target="_blank">Frontend Mentor</a></li>
             </ul>
         </li>
-        <li><a href="#"><b>Compatibilidad Navegadores</a>
+        <li><a href="#"><b>Compatibilidad Navegadores</b></a>
             <ul>
                 <li><a href="https://caniuse.com/?search=grid" target="_blank">Compatibilidad etiquetas, etc..</a></li>
             </ul>
