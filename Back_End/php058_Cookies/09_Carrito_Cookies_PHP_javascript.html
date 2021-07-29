@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito con cookies</title>
+    <script src="cookies.js"></script>
+    <script>
+        // Mi programa va a trabajar con los datos de carrito[];
+        // Cada elemento del carrito va a ser
+        //      producto, cantidad, precio
+        let carrito = [];
+
+        function fInicio(){
+            let cookie_leida = decodeURIComponent(getCookie("carrito"));
+            //console.log(cookie_leida);
+            if (cookie_leida != null){
+                carrito = JSON.parse(cookie_leida);
+                fPintarCarrito();
+            }
+        }
+
+        function fPintarCarrito(){
+            //console.log(carrito);
+
+            let salida = "<table>";
+            salida += "<tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>";
+            console.log(carrito);
+            for (let i = 0; i < carrito.length; i++){
+                console.log(carrito.length);
+                salida += "<tr>";
+                salida += "     <td>" + carrito[i].producto + "</td>";
+                salida += "     <td>" + carrito[i].cantidad + "</td>";
+                salida += "     <td>" + carrito[i].precio + "</td>";
+                salida += "</tr>";
+            }
+
+            /*carrito.forEach(pedido => {
+
+            });*/
+            salida += "</table>";
+            document.getElementById("div_visor").innerHTML = salida;
+        }
+    </script>
+</head>
+<body onload=fInicio()>
+    <form id="frm" action="09_Carrito_Cookies_PHP_Javascript.php" method="post" >
+        <table>
+            <tr>
+                <td>Producto</td>
+                <td>
+                    <input type="text" name="producto" id="producto" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td>
+                    <input type="text" name="cantidad" id="cantidad"  min="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td>
+                    <input type="text" name="precio" id="precio" min="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button>Pedir</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="div_visor"></div>
+</body>
+</html>

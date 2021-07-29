@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies con array</title>
+    <script src="cookies.js"></script>
+    <script>
+        const nombres = [ "Pepe", "Juan", "Luis" ];
+        //console.log( nombres );
+        console.log( JSON.stringify(nombres) );
+        setCookie ( "lista_nombres", JSON.stringify(nombres), 10 );
+
+        const lista_nombres = getCookie("lista_nombres");
+        console.log( JSON.parse(lista_nombres) );
+
+        const tarea = {
+            nombre: "barrer",
+            fecha: "2021-07-27"
+        }
+        console.log("TAREA", tarea);
+        console.log("TAREA STRINGIFY", JSON.stringify(tarea));
+        setCookie("tarea", JSON.stringify(tarea), 10)
+        const mitarea = JSON.parse (getCookie('tarea'));
+        console.log("MITAREA", mitarea);
+
+        const peliculas = [
+            { titulo: "Lo que el viento se llevó", genero: "Drama"},
+            { titulo: "Rambo", genero: "Acción"}
+        ]
+        console.log("PELICULAS", JSON.stringify(peliculas));
+        setCookie( "lista_peliculas", JSON.stringify(peliculas), 10 );
+        const lista_peliculas = getCookie("lista_peliculas");
+        if (lista_peliculas == null){
+            alert ("no existe")
+        } else{
+            console.log("Reconvertido",JSON.parse (lista_peliculas));
+        }
+        lista_clase = [
+            { nombre: "Jose Luís", apellidos: "Masía Lizana"},
+            { nombre: "Mariano", apellidos: "García Ruíz"},
+            { nombre: "Angel", apellidos: "González Martín"},
+            { nombre: "Jorge", apellidos: "Fernández Martínez"},
+            { nombre: "Alberto", apellidos: "Polo Bandera"},
+            { nombre: "Adrián", apellidos: "Rodríguez Barrientos"},
+            { nombre: "Álvaro", apellidos: "González Devesa"},
+            { nombre: "Jose Ignacio", apellidos: "Ruíz Indalecio"}
+        ]
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

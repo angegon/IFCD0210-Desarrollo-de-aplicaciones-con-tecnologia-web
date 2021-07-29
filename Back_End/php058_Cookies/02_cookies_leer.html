@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leer cookies</title>
+    <script src="cookies.js"></script>
+    <script>
+        function fInicio() {
+            const mis_cookies = document.cookie;
+            console.log("Mis_Cookies", mis_cookies);
+            const cookies_separadas = mis_cookies.split("; ");
+            console.warn("SEPARADAS", cookies_separadas);
+            for (i = 0; i < cookies_separadas.length; i++) {
+                const separada = cookies_separadas[i].split("=");
+                console.log(separada);
+                if (separada[0] == "prueba") {
+                    console.log("PRUEBA", separada[1]);
+                    document.getElementById("visor").innerHTML += "prueba : " + separada[1] + "<br>";
+                }
+                if (separada[0] == "animales") {
+                    console.log("ANIMALES", separada[1]);
+                    const json = JSON.parse(separada[1]);
+                    console.log("JSON", json);
+                    document.getElementById("visor").innerHTML += "clase: " + json.clase + "<br>"
+                    document.getElementById("visor").innerHTML += "patas: " + json.patas + "<br>"
+                    document.getElementById("visor").innerHTML += "color: " + json.color + "<br>"
+                }
+                if (separada[0] == "nombres") {
+                    console.log("NOMBRES", separada[1]);
+                    let nombres = separada[1].split("#");
+                    document.getElementById("visor").innerHTML += "nombre 1 : " + nombres[0] + "<br>";
+                    document.getElementById("visor").innerHTML += "nombre 2 : " + nombres[1] + "<br>";
+                    document.getElementById("visor").innerHTML += "nombre 3 : " + nombres[2] + "<br>";
+                }
+            }
+
+            
+
+            const dato = getCookie('animales');
+            document.getElementById("visor").innerHTML += "<b>" + dato + "</b>";
+        }
+    </script>
+</head>
+
+<body onload="fInicio()">
+    <div id="visor"></div>
+</body>
+
+</html>

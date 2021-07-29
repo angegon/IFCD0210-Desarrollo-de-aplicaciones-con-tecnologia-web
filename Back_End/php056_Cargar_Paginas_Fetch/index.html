@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga Dinámica de contenidos</title>
+    <script>
+        function fCargar( que_cargo ){
+            const URL = "servidor.php?peticion=cargar_pagina&pagina=" + que_cargo;
+            // Peticion
+            fetch(URL)
+            //Recepcion de la respuesta y retorno de la conversión
+            .then ( (respuesta) => {
+                if (!respuesta.ok){
+                    throw Error("Error en Fetch" + respuesta.status + "\n" + respuesta.statusText);
+                }
+                console.log(respuesta);
+                return respuesta.text()
+            })
+            // Recepciona la conversion y la procesa
+            .then ( (datos)=>{
+                document.getElementById("div_carga").innerHTML = datos;
+            })
+            .catch ( (error) => {
+                console.log(error);
+            })
+            .finally ( () => {
+                console.log("Fin de Programa");
+            })
+        }
+    </script>
+</head>
+<body>
+    <header>Carga Dinámica</header>
+    <nav>
+        <ul>
+            <li onclick="fCargar('home')">Home</li>
+            <li onclick="fCargar('contacto')">Contacto</li>
+            <li onclick="fCargar('quiensomos')">Quienes somos</li>
+            <li onclick="fCargar('fichero')">Fichero</li>
+            <li onclick="fCargar('excel')">excel</li>
+
+        </ul>
+    </nav>
+    <section>
+        <div id="div_carga">
+
+        </div>
+    </section>
+    <footer>
+        Pie
+    </footer>
+</body>
+</html>

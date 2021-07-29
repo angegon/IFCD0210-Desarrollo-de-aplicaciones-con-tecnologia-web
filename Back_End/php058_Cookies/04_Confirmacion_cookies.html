@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmacion de cookies</title>
+    <style>
+        #div_cookies{
+            display: none;
+            background-color: black;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left:0;
+            height: 150px;
+            width: 100vw;
+        }
+    </style>
+    <script src="cookies.js"></script>
+    <script>
+        function fInicio(){
+            // Comprobar si ya me autorizó a usar cookies
+            // A la cookie de autorización le vamos a llamar cookie_autorizacion
+            const autorizacion = getCookie("cookie_autorizacion");
+            if (autorizacion == null){
+                document.getElementById("div_cookies").style.display="block";
+            }
+        }
+        function fRespuesta( si_no ){
+            if ( si_no == 'si'){
+                setCookie( "cookie_autorizacion","ok", 365);
+                document.getElementById("div_cookies").style.display="none";
+            } else{
+                location = "http://www.google.es";
+            }
+        }
+        function fLogin(){
+            if ( document.getElementById("chk_guardar").checked == true ){
+                const alias = document.getElementById("alias").value;
+                const password = document.getElementById("password").value;
+                setCookie (alias, password, 365);
+            }
+        }
+        function fBlur(){
+            const alias = document.getElementById("alias").value;
+            const password = getCookie( alias );
+            if ( password != null ){
+                document.getElementById("password").value = password;
+            } else{
+                document.getElementById("password").value = "";
+            }
+        }
+    </script>
+</head>
+<body onload="fInicio()">
+    <section>
+        <table>
+            <tr>
+                <td>Alias</td>
+                <td>
+                    <input type="text" name="alias" id="alias" onblur="fBlur()">
+                </td>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+                <td>Guardar contraseña</td>
+                <td>
+                    <input type="checkbox" name="chk_guardar" id="chk_guardar">
+                </td>
+                <td colspan="2">
+                    <input type="button" value="Login" onclick="fLogin()">
+                </td>
+            </tr>
+        </table>
+    </section>
+    <article>
+        <div id="div_cookies">
+            <p>Esta web utiliza cookies. ¿Está conforme?</p>
+            <p>
+                <input type="button" value="Si" onclick= "fRespuesta('si')">
+                <input type="button" value="No" onclick= "fRespuesta('no')">
+            </p>
+        </div>
+    </article>
+</body>
+</html>

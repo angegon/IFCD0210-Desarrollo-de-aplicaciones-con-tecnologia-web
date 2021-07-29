@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cookies</title>
+    <script src="cookies.js"></script>
+    <script>
+        /*
+            Crear cookie
+            document.cookie="nombre_de_cookie = valor_de_cookie; expires=fecha_UTC"
+        */
+        // fecha de hoy
+        let fecha = new Date();
+        console.log("FECHA", fecha.getTime());
+        // fecha incrementada
+        fecha.setTime( fecha.getTime() + 3 * 24 * 60 * 60 * 1000);
+
+        document.cookie = "prueba=Prueba de cookie;expires=" + fecha.toUTCString();
+
+        let nombres = ["pepe", "juan", "Luis"];
+        let nombres_string = nombres.join("#");
+        console.warn(nombres_string);
+        document.cookie = "nombres=" + nombres_string + ";expires=" + fecha.toUTCString();
+
+        let animales = {
+            clase: "leopardo",
+            patas: 4,
+            color: "moteado"
+        }
+        let animales_string = JSON.stringify(animales);
+        console.log(animales_string);
+        document.cookie = "animales=" + animales_string + ";expires=" + fecha.toUTCString();
+
+        let con_funcion = "Generada por mi funcion";
+        setCookies("con_mi_funcion", con_funcion, 10);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

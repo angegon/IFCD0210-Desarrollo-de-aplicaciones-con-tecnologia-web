@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de clase</title>
+    <script src="cookies.js"></script>
+    <script>
+        let lista_clase = [];
+
+        function fInicio(){
+            const variable = getCookie("lista_de_clase");
+            if (variable != null){
+                lista_clase = JSON.parse(variable);
+            } else {
+                document.getElementById("visor").innerHTML = "no existe la cookie";
+                return;
+            }
+            let salida = "<table>";
+            salida += "<tr>";
+            salida += "     <th>Nombre</th>";
+            salida += "     <th>Apellido</th>";
+            salida += "</tr>";
+            lista_clase.forEach(element => {
+                salida += "<tr>";
+                salida += `     <td>${element.nombre}</td>`;
+                saluda += `     <td>${element.apellidos}</td>`;
+            });
+            salida += "</table>";
+            document.getElementById("visor").innerHTML = salida;
+        }
+        
+    </script>
+</head>
+<body onload="fInicio()">
+    <div id="div_visor">
+
+    </div>
+</body>
+</html>

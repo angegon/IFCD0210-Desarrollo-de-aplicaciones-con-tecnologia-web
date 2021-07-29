@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Ficheros</title>
+    <script>
+        function fEnvio(){
+
+            if (document.getElementById("fichero").files.length == 0){
+                alert("Selecciona un archivo");
+                return;
+            } else {
+                if (document.getElementById("fichero").files[0].size > 1000000){
+                    document.getElementById("div_contestacion").innerHTML = "Fichero demasiado grande!";
+                    return;
+                }
+                if (document.getElementById("fichero").files[0].type != "image/jpeg"){
+                    document.getElementById("div_contestacion").innerHTML = "Extensión no soportada!";
+                    return;
+                }
+
+                obj_formulario = document.getElementById("frm");
+                const datos_envio = new FormData(obj_formulario);
+
+                for (let par of datos_envio){
+                    console.log(par[0], par[1]);
+                }
+                /*datos_envio.forEach(objeto => {
+                    console.log(objeto);
+                });*/
+                //datos_envio.append("nombre", "valor");
+                fetch ("servidor.php",{
+                    method: 'post',
+                    body: datos_envio
+                })
+                .then ( (respuesta) => {
+                    return respuesta.text();
+                })
+                .then ( (datos) => {
+                    //console.log(datos);
+                    document.getElementById("div_contestacion").innerHTML = "Fichero subido correctamente!";
+                })
+                .finally ( ()=>{
+                    console.log("Terminado");
+                })
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="frm" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="peticion" value="recoge_fichero">
+        Nombre: <input type="text" name="nombre" id="nombre">
+        Fichero: <input type="file" name="fichero" id="fichero">
+        <br>
+        <input type="button" value="Enviar" onclick="fEnvio()">
+    </form>
+    <div id="div_constetacion"></div>
+</body>
+</html>

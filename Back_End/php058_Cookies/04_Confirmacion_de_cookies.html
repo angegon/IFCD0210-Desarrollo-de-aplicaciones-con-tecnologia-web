@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de cookies</title>
+    <script src="cookies.js"></script>
+    <script>
+        function fRespuesta(respuesta){
+            if (respuesta == "si"){
+                setCookie("cookie_autorizacion", "ok", 365)
+                document.getElementById("div_cookies").style.display = "none";
+
+            } else {
+                location = "http://www.google.es";
+            }
+        }
+
+        function fInicio(){
+            // Comprobar si ya me autorizo a usar cookies
+            // a la cookie de autorización le vamos a llamar cookie_autorización
+            const autorizacion = getCookie("cookie_autorizacion");
+            if (autorizacion == null){
+                document.getElementById("div_cookies").style.display = "block";
+            } else {
+                document.getElementById("div_cookies").style.display = "none";
+            }
+            console.log(autorizacion);
+        }
+    </script>
+    <style>
+        #div_cookies{
+            display: none;
+            background-color: black;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 100px;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body onload="fInicio()">
+    <article>
+        <div id="div_cookies">
+            <p> Esta web utiliza cookies. ¿Está conforme?</p>
+            <p>
+                <input type="button" value="Si" onclick="fRespuesta('si')">
+                <input type="button" value="No" onclick="fRespuesta('no')">
+            </p>
+        </div>
+    </article>
+    
+</body>
+</html>

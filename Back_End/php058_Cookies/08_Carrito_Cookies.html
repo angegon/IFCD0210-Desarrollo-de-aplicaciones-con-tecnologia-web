@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito con cookies</title>
+    <script src="cookies.js"></script>
+    <script>
+        // Mi programa va a trabajar con los datos de carrito[];
+        // Cada elemento del carrito va a ser
+        //      producto, cantidad, precio
+        let carrito = [];
+
+        function fInicio(){
+            let cookie_leida = getCookie("carrito");
+
+            if (cookie_leida != null){
+                carrito = JSON.parse(cookie_leida);
+                fPintarCarrito(carrito);
+            }
+        }
+
+        function fGuardarDatos(){
+            // Recoger datos
+            const producto = document.getElementById("producto").value;
+            const cantidad = document.getElementById("cantidad").value;
+            const precio = document.getElementById("precio").value;
+            const pedido = {
+                producto: producto, 
+                cantidad: cantidad, 
+                precio: precio
+            }
+            // Añadir el pedido al carrito
+            carrito.push(pedido);
+            // Para que no se pierda, lo guardo, persistencia
+            setCookie("carrito", JSON.stringify(carrito), 2);
+
+            // Si el usuario quiere hacer otro pedido, limpiar la pantalla
+            document.getElementById("producto").value = "";
+            document.getElementById("cantidad").value = "";
+            document.getElementById("precio").value = "";
+            document.getElementById("producto").focus();
+            
+            fPintarCarrito();
+            // Para que no se ejecute el submit
+            return false;
+        }
+
+        function fPintarCarrito(){
+            let salida = "<table>";
+            salida += "<tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>";
+            carrito.forEach(pedido => {
+                salida += "<tr>";
+                salida += "     <td>" + pedido.producto + "</td>";
+                salida += "     <td>" + pedido.cantidad + "</td>";
+                salida += "     <td>" + pedido.precio + "</td>";
+                salida += "</tr>";
+            });
+            salida += "</table>";
+            document.getElementById("div_visor").innerHTML = salida;
+        }
+    </script>
+</head>
+<body onload=fInicio()>
+    <form id="frm" action="09_Carrito_Cookies_PHP_Javascript.php" method="post" onsubmit="return fGuardarDatos()">
+        <table>
+            <tr>
+                <td>Producto</td>
+                <td>
+                    <input type="text" name="producto" id="producto" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td>
+                    <input type="text" name="cantidad" id="cantidad"  min="1" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td>
+                    <input type="text" name="precio" id="precio" min="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button>Pedir</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="div_visor"></div>
+</body>
+</html>
